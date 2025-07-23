@@ -1,0 +1,330 @@
+/* Genel Stil Ayarları */
+:root {
+    --primary-color: #4a5b4a; /* Askeri yeşil tonu */
+    --secondary-color: #3a4b3a; /* Daha koyu askeri yeşil */
+    --accent-color: #c0c0c0; /* Açık gri/metalik vurgu */
+    --text-color: #333;
+    --light-bg: #f0f2f5; /* Açık gri arka plan */
+    --dark-bg: #2c3e50; /* Koyu gri/mavi (eski hali, askeri temaya uygun) */
+    --white: #ffffff;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+}
+
+.container {
+    width: 85%; /* Konteyner genişliği biraz artırıldı */
+    max-width: 1200px; /* Maksimum genişlik eklendi */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Başlık (Header) */
+header {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 1rem 0;
+    border-bottom: var(--primary-color) 4px solid; /* Kalınlaştırıldı */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Gölge eklendi */
+}
+
+header h1 {
+    margin: 0;
+    padding-bottom: 5px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 2px; /* Harf aralığı eklendi */
+    text-transform: uppercase;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 20px; /* Boşluk artırıldı */
+}
+
+header nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px; /* Font boyutu büyütüldü */
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color); /* Vurgu rengi kullanıldı */
+}
+
+/* Ana Bölümler */
+section {
+    padding: 60px 0; /* Boşluk artırıldı */
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative; /* Arka plan efektleri için */
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1500x700/3a4b3a/ffffff?text=Askeri+Sahne') no-repeat center center/cover;
+    color: var(--white);
+    min-height: 500px; /* Yükseklik artırıldı */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Metin gölgesi */
+}
+
+.hero-section h2 {
+    font-family: var(--font-heading);
+    font-size: 3.5em; /* Font boyutu büyütüldü */
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-section p {
+    font-size: 1.2em; /* Font boyutu büyütüldü */
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.8;
+}
+
+.products-section {
+    background-color: var(--white);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+.products-section h2, .contact-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8em;
+    color: var(--dark-bg);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.product-grid {
+    display: grid; /* Flex yerine Grid kullanıldı */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Daha esnek ızgara */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-item {
+    background: var(--light-bg);
+    border: 1px solid var(--accent-color); /* Çerçeve rengi */
+    padding: 25px; /* Padding artırıldı */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Gölge artırıldı */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-8px); /* Daha belirgin yükselme */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Resim çerçevesi */
+}
+
+.product-item h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+.product-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+.contact-section {
+    background-color: var(--light-bg);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contact-section form {
+    max-width: 700px; /* Form genişliği artırıldı */
+    margin: 30px auto;
+    padding: 30px; /* Padding artırıldı */
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    border-top: 3px solid var(--primary-color); /* Üst kenarlık */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Boşluk artırıldı */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Boşluk artırıldı */
+    font-weight: bold;
+    color: var(--dark-bg);
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 22px); /* Padding ve border için ayar */
+    padding: 12px; /* Padding artırıldı */
+    border: 1px solid #bbb; /* Daha belirgin çerçeve */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color); /* Odaklandığında renk değişimi */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Butonlar */
+.btn-primary {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px; /* Padding artırıldı */
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Font boyutu büyütüldü */
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: var(--dark-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 0; /* Padding artırıldı */
+    margin-top: 40px;
+    border-top: 3px solid var(--primary-color);
+}
+
+footer p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* JavaScript ile gizlenecek/gösterilecek elemanlar */
+.hidden {
+    display: none;
+}
+
+#formMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Duyarlı Tasarım (Responsive Design) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header nav ul li {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .hero-section {
+        min-height: 350px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+        letter-spacing: 1px;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .products-section h2, .contact-section h2 {
+        font-size: 2em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Tek sütunlu düzen */
+    }
+
+    .product-item {
+        width: 90%;
+        margin: auto;
+    }
+
+    .contact-section form {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8em;
+    }
+
+    .btn-primary {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

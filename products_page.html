@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler - Başaran Askeri Ürünleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a2332;
+            --primary-green: #2d5a3d;
+            --accent-green: #4caf50;
+            --gold: #ffd700;
+            --dark-bg: #0f1419;
+            --card-bg: #1e2936;
+            --text-light: #ffffff;
+            --text-gray: #94a3b8;
+            --text-dark: #334155;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2d5a3d 0%, #1a2332 100%);
+            --gradient-card: linear-gradient(145deg, #1e2936 0%, #243447 100%);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-light);
+            background: var(--dark-bg);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "⚡";
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-green);
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: 80px;
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #4caf50 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-gray);
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        /* Search */
+        .search-container {
+            max-width: 400px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-gray);
+            font-size: 1.2rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-green);
+        }
+
+        .product-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(45, 90, 61, 0.3), rgba(26, 35, 50, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-image::before {
+            opacity: 1;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-green);
+            color: var(--text-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .view-details-btn {
+            background: transparent;
+            border: 2px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-details-btn:hover {
+            background: var(--accent-green);
+            color: var(--text-light);
+            transform: translateX(3px);
+        }
+
+        /* Product Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background: var(--gradient-card);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: var(--border-color);
+            color: var(--text-light);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .modal-gallery {
+            space-y: 1rem;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 60px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            opacity: 1;
+            border-color: var(--accent-green);
+        }
+
+        .modal-info h3 {
+            color: var(--text-light);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .modal-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .modal-features li {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .modal-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .specifications {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .modal-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--accent-green);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .contact-btn {
+            width: 100%;
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Loading & Error States */
+        .loading {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-gray);
+        }
+
+        .error {
+            text-align: center;
+            padding: 4rem 0;
+            color: #ef4444;
+        }
+
+        .no-products {
+            text-align: center;
+            padding: 4rem 0;
+            color: var(--text-gray);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .modal-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters {
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+                max-height: calc(100vh - 2rem);
+            }
+            
+            .modal-header,
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .product-card {
+                margin: 0 0.5rem;
+            }
+            
+            .modal-content {
+                margin: 0.5rem;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-success {
+            color: var(--accent-green);
+        }
+
+        .text-error {
+            color: #ef4444;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-green);
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">BAŞARAN</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#hakkimizda" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                <li><a href="#" class="nav-link" style="color: var(--accent-green);">Ürünler</a></li>
+                <li><a href="index.html#iletisim" class="nav-link">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">ÜRÜNLERİMİZ</h1>
+                <p class="page-subtitle">Güvenlik güçlerimizin ihtiyaçlarına yönelik en yüksek kalitede askeri ekipmanlar</p>
+            </div>
+
+            <!-- Search -->
+            <div class="search-container">
+                <div class="search-icon">🔍</div>
+                <input type="text" class="search-input" id="searchInput" placeholder="Ürün ara...">
+            </div>
+
+            <!-- Filters -->
+            <div class="filters" id="categoryFilters">
+                <button class="filter-btn active" data-category="all">Tümü</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <div class="loading">Ürünler yükleniyor...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <div class="modal-gallery">
+                        <div class="main-image" id="mainImage"></div>
+                        <div class="thumbnail-gallery" id="thumbnailGallery"></div>
+                    </div>
+                    <div class="modal-info">
+                        <div class="modal-price" id="modalPrice"></div>
+                        <div class="product-tags" id="modalTags"></div>
+                        <h3>Ürün Açıklaması</h3>
+                        <p class="modal-description" id="modalDescription"></p>
+                        <h3>Özellikler</h3>
+                        <ul class="modal-features" id="modalFeatures"></ul>
+                        <h3>Teknik Özellikler</h3>
+                        <div class="specifications" id="modalSpecifications"></div>
+                        <button class="contact-btn" onclick="window.location.href='index.html#iletisim'">
+                            İletişime Geç
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let allProducts = [];
+        let allCategories = [];
+        let filteredProducts = [];
+        let currentCategory = 'all';
+
+        // DOM elements
+        const productsGrid = document.getElementById('productsGrid');
+        const categoryFilters = document.getElementById('categoryFilters');
+        const searchInput = document.getElementById('searchInput');
+        const productModal = document.getElementById('productModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Modal elements
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalFeatures = document.getElementById('modalFeatures');
+        const modalSpecifications = document.getElementById('modalSpecifications');
+        const modalTags = document.getElementById('modalTags');
+        const mainImage = document.getElementById('mainImage');
+        const thumbnailGallery = document.getElementById('thumbnailGallery');
+
+        // Load products data
+        async function loadProducts() {
+            try {
+                // Mock JSON data - In real app, this would be fetch('./products.json')
+                const data = {
+  "categories": [
+    {
+      "id": "tactical-vests",
+      "name": "Taktik Yelekler",
+      "description": "Modüler ve güvenli taktik yelek sistemleri",
+      "icon": "🦺"
+    },
+    {
+      "id": "boots",
+      "name": "Operasyonel Botlar", 
+      "description": "Dayanıklı ve konforlu askeri botlar",
+      "icon": "🥾"
+    },
+    {
+      "id": "uniforms",
+      "name": "Askeri Üniformalar",
+      "description": "Fonksiyonel ve dayanıklı üniformalar",
+      "icon": "👔"
+    },
+    {
+      "id": "protective-gear",
+      "name": "Koruyucu Ekipmanlar",
+      "description": "Kişisel güvenlik ekipmanları",
+      "icon": "🛡️"
+    },
+    {
+      "id": "accessories",
+      "name": "Aksesuarlar",
+      "description": "Taktik aksesuarlar ve ekipmanlar",
+      "icon": "🎒"
+    }
+  ],
+  "products": [
+    {
+      "id": "tv-001",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+    {
+      "id": "tv-002", 
+      "name": "Compact Taktik Yelek Model B",
+      "category": "tactical-vests",
+      "price": "1.950",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Hafif ve kompakt tasarımlı günlük operasyon yelekleri",
+      "description": "Compact Model B, günlük devriye ve rutin güvenlik görevleri için optimize edilmiş hafif taktik yelektir. Ergonomik tasarımı ile uzun süreli kullanımda maksimum konfor sağlar.",
+      "features": [
+        "Hafif kompozit koruma",
+        "Ergonomik kesim",
+        "Hızlı takma-çıkarma sistemi",
+        "4 adet universal cep",
+        "Radyo holster bölmesi",
+        "Gece görüş uyumlu"
+      ],
+      "specifications": {
+        "Malzeme": "Ripstop Naylon, Kompozit Plaka",
+        "Ağırlık": "0.8 kg",
+        "Boyutlar": "XS, S, M, L, XL",
+        "Renk Seçenekleri": "Siyah, Lacivert, Gri",
+        "Garanti": "18 ay",
+        "Sertifika": "TSE EN"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["hafif", "kompakt"]
+    },
+    {
+      "id": "bot-001",
+      "name": "Tactical Pro Desert Boot",
+      "category": "boots",
+      "price": "1.250",
+      "currency": "TL", 
+      "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Çöl koşullarında üstün performans gösteren taktik bot",
+      "description": "Tactical Pro Desert Boot, sıcak iklim koşulları ve kumlu araziler için özel olarak tasarlanmıştır. Nefes alabilir yapısı ve üstün kavrama gücü ile zorlu operasyonlarda güvenilir performans sunar.",
+      "features": [
+        "Su geçirmez Gore-Tex membran",
+        "Vibram kauçuk taban",
+        "Hızlı bağlama sistemi",
+        "Anti-bakteriyel astar",
+        "Darbe emici topuk",
+        "Kaymaz taban deseni",
+        "8 inç yükseklik"
+      ],
+      "specifications": {
+        "Malzeme": "Süet Deri, Gore-Tex",
+        "Taban": "Vibram Kauçuk",
+        "Numaralar": "38-47",
+        "Renk": "Çöl Bej",
+        "Ağırlık": "650g (42 numara)",
+        "Garanti": "1 yıl"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["gore-tex", "vibram", "çöl"]
+    },
+    {
+      "id": "bot-002",
+      "name": "Urban Combat Boot",
+      "category": "boots",
+      "price": "980",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Şehir içi operasyonlar için tasarlanmış siyah bot",
+      "description": "Urban Combat Boot, şehir içi güvenlik operasyonları ve kapalı alan görevleri için optimize edilmiş modern bir bot tasarımıdır.",
+      "features": [
+        "Su dirençli deri",
+        "Ses emici taban",
+        "Çabuk kuruma özelliği",
+        "Yan fermuarlı sistem",
+        "Nefes alabilir mesh",
+        "6 inç kompakt tasarım"
+      ],
+      "specifications": {
+        "Malzeme": "Tam Deri, Mesh",
+        "Taban": "Kauçuk Kompozit",
+        "Numaralar": "39-46",
+        "Renk": "Siyah",
+        "Ağırlık": "520g (42 numara)",
+        "Garanti": "1 yıl"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["şehir", "sessiz", "kompakt"]
+    },
+    {
+      "id": "uni-001",
+      "name": "Multi-Cam BDU Set",
+      "category": "uniforms",
+      "price": "750",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Çok amaçlı kamuflaj desenli askeri üniforma seti",
+      "description": "Multi-Cam BDU Set, farklı coğrafi bölgelerde etkili kamuflaj sağlayan, dayanıklı ve fonksiyonel üniforma setidir.",
+      "features": [
+        "Ripstop kumaş teknolojisi",
+        "Multi-Cam kamuflaj deseni",
+        "8 fonksiyonel cep",
+        "Alev geciktirici özellik",
+        "Rip-stop yırtılma direnci",
+        "Kolay bakım ve yıkama"
+      ],
+      "specifications": {
+        "Malzeme": "65% Pamuk, 35% Polyester",
+        "Boyutlar": "XS-3XL",
+        "Renk": "Multi-Cam",
+        "Ağırlık": "1.1 kg (set)",
+        "Garanti": "6 ay",
+        "Bakım": "30°C yıkama"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["multi-cam", "ripstop", "alev-geciktirici"]
+    },
+    {
+      "id": "pro-001",
+      "name": "Kevlar Kask Sistemi",
+      "category": "protective-gear",
+      "price": "3.200",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "IIIA seviye balistik koruma sağlayan kask sistemi",
+      "description": "Kevlar Kask Sistemi, yüksek tehdit seviyelerinde maksimum kafa koruması sağlayan ileri teknoloji ürünüdür.",
+      "features": [
+        "IIIA balistik koruma",
+        "Modüler aksesuar rayları",
+        "Ayarlanabilir iç sistem",
+        "Gece görüş mount",
+        "Ses iletişim uyumlu",
+        "Anti-fragman astar"
+      ],
+      "specifications": {
+        "Malzeme": "Kevlar, Carbon Fiber",
+        "Ağırlık": "1.4 kg",
+        "Boyutlar": "S, M, L",
+        "Renk": "Siyah, Haki",
+        "Garanti": "3 yıl",
+        "Sertifika": "NIJ Level IIIA"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["kevlar", "balistik", "modüler"]
+    },
+    {
+      "id": "acc-001",
+      "name": "Taktik Sırt Çantası 45L",
+      "category": "accessories",
+      "price": "650",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "45 litre kapasiteli modüler taktik sırt çantası",
+      "description": "Uzun süreli operasyonlar için tasarlanmış, dayanıklı ve ergonomik taktik sırt çantası.",
+      "features": [
+        "45L ana hacim + 15L genişletme",
+        "MOLLE panel sistemi",
+        "Hidrasyon sistemi uyumlu",
+        "Çok bölmeli organizasyon",
+        "Su geçirmez ziplok",
+        "Reflektör detaylar"
+      ],
+      "specifications": {
+        "Kapasite": "45L (+15L genişletme)",
+        "Malzeme": "Cordura 1000D",
+        "Ağırlık": "2.1 kg",
+        "Boyutlar": "55x35x25 cm",
+        "Renk": "Siyah, Haki, Multi-cam",
+        "Garanti": "2 yıl"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["45L", "molle", "hidrasyon"]
+    },
+    {
+      "id": "acc-002",
+      "name": "Taktik Eldiven Seti",
+      "category": "accessories",
+      "price": "185",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Kesim dirençli taktik eldiven seti",
+      "description": "Yüksek dexterity ve koruma sağlayan profesyonel taktik eldiven seti.",
+      "features": [
+        "Kesim dirençli Level 5",
+        "Dokunmatik ekran uyumlu",
+        "Nefes alabilir kumaş",
+        "Kaymaz avuç içi",
+        "Ayarlanabilir bilek",
+        "Makine yıkama"
+      ],
+      "specifications": {
+        "Malzeme": "Sentetik Deri, Spandex",
+        "Boyutlar": "S, M, L, XL",
+        "Renk": "Siyah, Haki",
+        "Koruma": "ANSI Level 5",
+        "Garanti": "6 ay",
+        "Bakım": "Makine yıkama 30°C"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["kesim-dirençli", "dokunmatik", "level-5"]
+    }
+  ]
+};
+
+                allProducts = data.products;
+                allCategories = data.categories;
+                filteredProducts = [...allProducts];
+                
+                renderCategories();
+                renderProducts();
+            } catch (error) {
+                console.error('Error loading products:', error);
+                productsGrid.innerHTML = '<div class="error">Ürünler yüklenirken hata oluştu.</div>';
+            }
+        }
+
+        // Render category filters
+        function renderCategories() {
+            const categoryButtons = allCategories.map(category => 
+                `<button class="filter-btn" data-category="${category.id}">
+                    ${category.icon} ${category.name}
+                </button>`
+            ).join('');
+            
+            categoryFilters.innerHTML = `
+                <button class="filter-btn active" data-category="all">Tümü</button>
+                ${categoryButtons}
+            `;
+        }
+
+        // Render products
+        function renderProducts() {
+            if (filteredProducts.length === 0) {
+                productsGrid.innerHTML = '<div class="no-products">Aradığınız kriterlere uygun ürün bulunamadı.</div>';
+                return;
+            }
+
+            const productsHTML = filteredProducts.map(product => {
+                const category = allCategories.find(cat => cat.id === product.category);
+                const badgeText = product.featured ? 'ÖNERİLEN' : (product.tags.includes('yeni') ? 'YENİ' : '');
+                
+                return `
+                    <div class="product-card fade-in" onclick="openProductModal('${product.id}')">
+                        <div class="product-image" style="background-image: url('${product.image}')">
+                            ${badgeText ? `<div class="product-badge">${badgeText}</div>` : ''}
+                        </div>
+                        <div class="product-content">
+                            <div class="product-category">${category ? category.icon + ' ' + category.name : ''}</div>
+                            <h3 class="product-title">${product.name}</h3>
+                            <p class="product-description">${product.shortDescription}</p>
+                            <ul class="product-features">
+                                ${product.features.slice(0, 3).map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                            <div class="product-footer">
+                                <div class="product-price">${product.price} ${product.currency}</div>
+                                <a href="#" class="view-details-btn" onclick="event.stopPropagation(); openProductModal('${product.id}')">
+                                    Detaylar <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            productsGrid.innerHTML = productsHTML;
+        }
+
+        // Filter products by category
+        function filterByCategory(categoryId) {
+            currentCategory = categoryId;
+            
+            if (categoryId === 'all') {
+                filteredProducts = [...allProducts];
+            } else {
+                filteredProducts = allProducts.filter(product => product.category === categoryId);
+            }
+            
+            // Apply search filter if active
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm) {
+                filteredProducts = filteredProducts.filter(product =>
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.shortDescription.toLowerCase().includes(searchTerm) ||
+                    product.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            renderProducts();
+        }
+
+        // Search products
+        function searchProducts() {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            if (currentCategory === 'all') {
+                filteredProducts = [...allProducts];
+            } else {
+                filteredProducts = allProducts.filter(product => product.category === currentCategory);
+            }
+            
+            if (searchTerm) {
+                filteredProducts = filteredProducts.filter(product =>
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.shortDescription.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm) ||
+                    product.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            renderProducts();
+        }
+
+        // Open product modal
+        function openProductModal(productId) {
+            const product = allProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            const category = allCategories.find(cat => cat.id === product.category);
+            
+            // Set basic info
+            modalTitle.textContent = product.name;
+            modalPrice.textContent = `${product.price} ${product.currency}`;
+            modalDescription.textContent = product.description;
+            
+            // Set features
+            modalFeatures.innerHTML = product.features.map(feature => 
+                `<li>${feature}</li>`
+            ).join('');
+            
+            // Set specifications
+            modalSpecifications.innerHTML = Object.entries(product.specifications).map(([key, value]) =>
+                `<div class="spec-item">
+                    <span class="spec-label">${key}:</span>
+                    <span class="spec-value">${value}</span>
+                </div>`
+            ).join('');
+            
+            // Set tags
+            modalTags.innerHTML = product.tags.map(tag => 
+                `<span class="tag">${tag}</span>`
+            ).join('');
+            
+            // Set images
+            if (product.gallery && product.gallery.length > 0) {
+                mainImage.style.backgroundImage = `url('${product.gallery[0]}')`;
+                
+                if (product.gallery.length > 1) {
+                    thumbnailGallery.innerHTML = product.gallery.map((img, index) =>
+                        `<div class="thumbnail ${index === 0 ? 'active' : ''}" 
+                              style="background-image: url('${img}')"
+                              onclick="changeMainImage('${img}', this)"></div>`
+                    ).join('');
+                } else {
+                    thumbnailGallery.innerHTML = '';
+                }
+            } else {
+                mainImage.style.backgroundImage = `url('${product.image}')`;
+                thumbnailGallery.innerHTML = '';
+            }
+            
+            // Show modal
+            productModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Change main image in modal
+        function changeMainImage(imageUrl, thumbnailElement) {
+            mainImage.style.backgroundImage = `url('${imageUrl}')`;
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            thumbnailElement.classList.add('active');
+        }
+
+        // Close modal
+        function closeProductModal() {
+            productModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts();
+            
+            // Category filter clicks
+            categoryFilters.addEventListener('click', function(e) {
+                if (e.target.classList.contains('filter-btn')) {
+                    // Update active filter
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    // Filter products
+                    const category = e.target.dataset.category;
+                    filterByCategory(category);
+                }
+            });
+            
+            // Search input
+            searchInput.addEventListener('input', searchProducts);
+            
+            // Modal close events
+            closeModal.addEventListener('click', closeProductModal);
+            
+            productModal.addEventListener('click', function(e) {
+                if (e.target === productModal) {
+                    closeProductModal();
+                }
+            });
+            
+            // ESC key to close modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && productModal.classList.contains('active')) {
+                    closeProductModal();
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

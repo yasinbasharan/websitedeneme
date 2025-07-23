@@ -1,0 +1,299 @@
+{
+  "categories": [
+    {
+      "id": "tactical-vests",
+      "name": "Taktik Yelekler",
+      "description": "Modüler ve güvenli taktik yelek sistemleri",
+      "icon": "🦺"
+    },
+    {
+      "id": "boots",
+      "name": "Operasyonel Botlar", 
+      "description": "Dayanıklı ve konforlu askeri botlar",
+      "icon": "🥾"
+    },
+    {
+      "id": "uniforms",
+      "name": "Askeri Üniformalar",
+      "description": "Fonksiyonel ve dayanıklı üniformalar",
+      "icon": "👔"
+    },
+    {
+      "id": "protective-gear",
+      "name": "Koruyucu Ekipmanlar",
+      "description": "Kişisel güvenlik ekipmanları",
+      "icon": "🛡️"
+    },
+    {
+      "id": "accessories",
+      "name": "Aksesuarlar",
+      "description": "Taktik aksesuarlar ve ekipmanlar",
+      "icon": "🎒"
+    }
+  ],
+  "products": [
+    {
+      "id": "tv-001",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+    {
+      "id": "tv-002", 
+      "name": "Compact Taktik Yelek Model B",
+      "category": "tactical-vests",
+      "price": "1.950",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Hafif ve kompakt tasarımlı günlük operasyon yelekleri",
+      "description": "Compact Model B, günlük devriye ve rutin güvenlik görevleri için optimize edilmiş hafif taktik yelektir. Ergonomik tasarımı ile uzun süreli kullanımda maksimum konfor sağlar.",
+      "features": [
+        "Hafif kompozit koruma",
+        "Ergonomik kesim",
+        "Hızlı takma-çıkarma sistemi",
+        "4 adet universal cep",
+        "Radyo holster bölmesi",
+        "Gece görüş uyumlu"
+      ],
+      "specifications": {
+        "Malzeme": "Ripstop Naylon, Kompozit Plaka",
+        "Ağırlık": "0.8 kg",
+        "Boyutlar": "XS, S, M, L, XL",
+        "Renk Seçenekleri": "Siyah, Lacivert, Gri",
+        "Garanti": "18 ay",
+        "Sertifika": "TSE EN"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["hafif", "kompakt"]
+    },
+    {
+      "id": "bot-001",
+      "name": "Tactical Pro Desert Boot",
+      "category": "boots",
+      "price": "1.250",
+      "currency": "TL", 
+      "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Çöl koşullarında üstün performans gösteren taktik bot",
+      "description": "Tactical Pro Desert Boot, sıcak iklim koşulları ve kumlu araziler için özel olarak tasarlanmıştır. Nefes alabilir yapısı ve üstün kavrama gücü ile zorlu operasyonlarda güvenilir performans sunar.",
+      "features": [
+        "Su geçirmez Gore-Tex membran",
+        "Vibram kauçuk taban",
+        "Hızlı bağlama sistemi",
+        "Anti-bakteriyel astar",
+        "Darbe emici topuk",
+        "Kaymaz taban deseni",
+        "8 inç yükseklik"
+      ],
+      "specifications": {
+        "Malzeme": "Süet Deri, Gore-Tex",
+        "Taban": "Vibram Kauçuk",
+        "Numaralar": "38-47",
+        "Renk": "Çöl Bej",
+        "Ağırlık": "650g (42 numara)",
+        "Garanti": "1 yıl"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["gore-tex", "vibram", "çöl"]
+    },
+    {
+      "id": "bot-002",
+      "name": "Urban Combat Boot",
+      "category": "boots",
+      "price": "980",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Şehir içi operasyonlar için tasarlanmış siyah bot",
+      "description": "Urban Combat Boot, şehir içi güvenlik operasyonları ve kapalı alan görevleri için optimize edilmiş modern bir bot tasarımıdır.",
+      "features": [
+        "Su dirençli deri",
+        "Ses emici taban",
+        "Çabuk kuruma özelliği",
+        "Yan fermuarlı sistem",
+        "Nefes alabilir mesh",
+        "6 inç kompakt tasarım"
+      ],
+      "specifications": {
+        "Malzeme": "Tam Deri, Mesh",
+        "Taban": "Kauçuk Kompozit",
+        "Numaralar": "39-46",
+        "Renk": "Siyah",
+        "Ağırlık": "520g (42 numara)",
+        "Garanti": "1 yıl"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["şehir", "sessiz", "kompakt"]
+    },
+    {
+      "id": "uni-001",
+      "name": "Multi-Cam BDU Set",
+      "category": "uniforms",
+      "price": "750",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Çok amaçlı kamuflaj desenli askeri üniforma seti",
+      "description": "Multi-Cam BDU Set, farklı coğrafi bölgelerde etkili kamuflaj sağlayan, dayanıklı ve fonksiyonel üniforma setidir.",
+      "features": [
+        "Ripstop kumaş teknolojisi",
+        "Multi-Cam kamuflaj deseni",
+        "8 fonksiyonel cep",
+        "Alev geciktirici özellik",
+        "Rip-stop yırtılma direnci",
+        "Kolay bakım ve yıkama"
+      ],
+      "specifications": {
+        "Malzeme": "65% Pamuk, 35% Polyester",
+        "Boyutlar": "XS-3XL",
+        "Renk": "Multi-Cam",
+        "Ağırlık": "1.1 kg (set)",
+        "Garanti": "6 ay",
+        "Bakım": "30°C yıkama"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["multi-cam", "ripstop", "alev-geciktirici"]
+    },
+    {
+      "id": "pro-001",
+      "name": "Kevlar Kask Sistemi",
+      "category": "protective-gear",
+      "price": "3.200",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "IIIA seviye balistik koruma sağlayan kask sistemi",
+      "description": "Kevlar Kask Sistemi, yüksek tehdit seviyelerinde maksimum kafa koruması sağlayan ileri teknoloji ürünüdür.",
+      "features": [
+        "IIIA balistik koruma",
+        "Modüler aksesuar rayları",
+        "Ayarlanabilir iç sistem",
+        "Gece görüş mount",
+        "Ses iletişim uyumlu",
+        "Anti-fragman astar"
+      ],
+      "specifications": {
+        "Malzeme": "Kevlar, Carbon Fiber",
+        "Ağırlık": "1.4 kg",
+        "Boyutlar": "S, M, L",
+        "Renk": "Siyah, Haki",
+        "Garanti": "3 yıl",
+        "Sertifika": "NIJ Level IIIA"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["kevlar", "balistik", "modüler"]
+    },
+    {
+      "id": "acc-001",
+      "name": "Taktik Sırt Çantası 45L",
+      "category": "accessories",
+      "price": "650",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "45 litre kapasiteli modüler taktik sırt çantası",
+      "description": "Uzun süreli operasyonlar için tasarlanmış, dayanıklı ve ergonomik taktik sırt çantası.",
+      "features": [
+        "45L ana hacim + 15L genişletme",
+        "MOLLE panel sistemi",
+        "Hidrasyon sistemi uyumlu",
+        "Çok bölmeli organizasyon",
+        "Su geçirmez ziplok",
+        "Reflektör detaylar"
+      ],
+      "specifications": {
+        "Kapasite": "45L (+15L genişletme)",
+        "Malzeme": "Cordura 1000D",
+        "Ağırlık": "2.1 kg",
+        "Boyutlar": "55x35x25 cm",
+        "Renk": "Siyah, Haki, Multi-cam",
+        "Garanti": "2 yıl"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["45L", "molle", "hidrasyon"]
+    },
+    {
+      "id": "acc-002",
+      "name": "Taktik Eldiven Seti",
+      "category": "accessories",
+      "price": "185",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Kesim dirençli taktik eldiven seti",
+      "description": "Yüksek dexterity ve koruma sağlayan profesyonel taktik eldiven seti.",
+      "features": [
+        "Kesim dirençli Level 5",
+        "Dokunmatik ekran uyumlu",
+        "Nefes alabilir kumaş",
+        "Kaymaz avuç içi",
+        "Ayarlanabilir bilek",
+        "Makine yıkama"
+      ],
+      "specifications": {
+        "Malzeme": "Sentetik Deri, Spandex",
+        "Boyutlar": "S, M, L, XL",
+        "Renk": "Siyah, Haki",
+        "Koruma": "ANSI Level 5",
+        "Garanti": "6 ay",
+        "Bakım": "Makine yıkama 30°C"
+      },
+      "inStock": true,
+      "featured": false,
+      "tags": ["kesim-dirençli", "dokunmatik", "level-5"]
+    }
+  ]
+}
