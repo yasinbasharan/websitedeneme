@@ -65,20 +65,36 @@
         }
 
         .logo {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--gold);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .logo::before {
-            content: "⚡";
-            font-size: 2rem;
-            animation: pulse 2s infinite;
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {   
+            height: 150px;
+            width: auto;
+            max-width: 400px;
+            object-fit: contain;
+            filter: brightness(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            filter: brightness(1.3);
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .nav-menu {
@@ -597,6 +613,14 @@
             .contact-form {
                 padding: 1.5rem;
             }
+
+            .logo-image {
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -605,8 +629,12 @@
                 padding: 0 1rem;
             }
             
-            .logo {
-                font-size: 1.4rem;
+            .logo-image {
+                height: 35px;
+            }
+
+            .logo-text {
+                font-size: 1.1rem;
             }
             
             .hero-title {
@@ -651,7 +679,9 @@
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav-container">
-            <a href="#" class="logo">BAŞARAN</a>
+            <a href="#" class="logo">
+                <img src="/resimler/logo.png" alt="Başaran Askeri Ürünleri Logo" class="logo-image">
+            </a>
             <ul class="nav-menu">
                 <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
                 <li><a href="products_page.html" class="nav-link">Ürünler</a></li>
@@ -845,4 +875,102 @@
                         <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
                     </div>
                     
-                    <button type="submit"
+                    <button type="submit" class="submit-btn">Mesaj Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">BAŞARAN ASKERİ ÜRÜNLERİ</div>
+                <p>&copy; 2024 Başaran Askeri Ürünleri. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Gönderiliyor...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.textContent = 'Mesaj Gönderildi!';
+                submitBtn.classList.add('text-success');
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('text-success');
+                    this.reset();
+                }, 2000);
+            }, 1500);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.about-card, .product-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
