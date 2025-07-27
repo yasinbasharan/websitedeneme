@@ -4,36 +4,36 @@
       "id": "tactical-vests",
       "name": "Taktik Yelekler",
       "description": "Modüler ve güvenli taktik yelek sistemleri",
-      "icon": "🦺"
+      "icon": ""
     },
     {
       "id": "boots",
       "name": "Operasyonel Botlar", 
       "description": "Dayanıklı ve konforlu askeri botlar",
-      "icon": "🥾"
+      "icon": ""
     },
     {
       "id": "uniforms",
       "name": "Askeri Üniformalar",
       "description": "Fonksiyonel ve dayanıklı üniformalar",
-      "icon": "👔"
+      "icon": ""
     },
     {
       "id": "protective-gear",
       "name": "Koruyucu Ekipmanlar",
       "description": "Kişisel güvenlik ekipmanları",
-      "icon": "🛡️"
+      "icon": ""
     },
     {
       "id": "accessories",
       "name": "Aksesuarlar",
       "description": "Taktik aksesuarlar ve ekipmanlar",
-      "icon": "🎒"
+      "icon": ""
     }
   ],
   "products": [
     {
-      "id": "tv-001",
+      "id": "001",
       "name": "Elite Taktik Yelek Model A",
       "category": "tactical-vests",
       "price": "2.850",
@@ -68,7 +68,7 @@
       "tags": ["yeni", "popüler", "nato-standart"]
     },
     {
-      "id": "tv-002", 
+      "id": "002", 
       "name": "Compact Taktik Yelek Model B",
       "category": "tactical-vests",
       "price": "1.950",
@@ -101,7 +101,7 @@
       "tags": ["hafif", "kompakt"]
     },
     {
-      "id": "bot-001",
+      "id": "003",
       "name": "Tactical Pro Desert Boot",
       "category": "boots",
       "price": "1.250",
@@ -135,7 +135,7 @@
       "tags": ["gore-tex", "vibram", "çöl"]
     },
     {
-      "id": "bot-002",
+      "id": "004",
       "name": "Urban Combat Boot",
       "category": "boots",
       "price": "980",
@@ -168,7 +168,7 @@
       "tags": ["şehir", "sessiz", "kompakt"]
     },
     {
-      "id": "uni-001",
+      "id": "005",
       "name": "Multi-Cam BDU Set",
       "category": "uniforms",
       "price": "750",
@@ -200,7 +200,7 @@
       "tags": ["multi-cam", "ripstop", "alev-geciktirici"]
     },
     {
-      "id": "pro-001",
+      "id": "006",
       "name": "Kevlar Kask Sistemi",
       "category": "protective-gear",
       "price": "3.200",
@@ -232,7 +232,7 @@
       "tags": ["kevlar", "balistik", "modüler"]
     },
     {
-      "id": "acc-001",
+      "id": "007",
       "name": "Taktik Sırt Çantası 45L",
       "category": "accessories",
       "price": "650",
@@ -263,8 +263,466 @@
       "featured": false,
       "tags": ["45L", "molle", "hidrasyon"]
     },
+
     {
-      "id": "acc-002",
+      "id": "008",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+
+
+
+
+    {
+      "id": "009",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+
+
+
+    {
+      "id": "010",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+
+
+
+    {
+      "id": "011",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+
+
+
+    {
+      "id": "012",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+  {
+      "id": "013",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+    {
+      "id": "014",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+
+    {
+      "id": "015",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+
+    {
+      "id": "016",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+    {
+      "id": "017",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+    {
+      "id": "018",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+{
+      "id": "019",
+      "name": "Elite Taktik Yelek Model A",
+      "category": "tactical-vests",
+      "price": "2.850",
+      "currency": "TL",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "gallery": [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+      ],
+      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+      "features": [
+        "Balistik koruma sınıfı IIIA",
+        "MOLLE sistemi uyumlu",
+        "Su geçirmez Cordura kumaş",
+        "Nefes alabilir mesh astar",
+        "Ayarlanabilir omuz ve bel kayışları",
+        "Çabuk açılır güvenlik tokası",
+        "Reflektör şeritler (opsiyonel)"
+      ],
+      "specifications": {
+        "Malzeme": "Cordura 1000D, Kevlar",
+        "Ağırlık": "1.2 kg",
+        "Boyutlar": "S, M, L, XL, XXL",
+        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+        "Garanti": "2 yıl",
+        "Sertifika": "NATO STANAG 2920"
+      },
+      "inStock": true,
+      "featured": true,
+      "tags": ["yeni", "popüler", "nato-standart"]
+    },
+
+
+    {
+      "id": "020",
       "name": "Taktik Eldiven Seti",
       "category": "accessories",
       "price": "185",
@@ -295,5 +753,7 @@
       "featured": false,
       "tags": ["kesim-dirençli", "dokunmatik", "level-5"]
     }
+
+    
   ]
 }

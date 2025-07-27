@@ -3,26 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürünler - Başaran Askeri Ürünleri</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>Taktik Ekipman Kataloğu</title>
     <style>
-        :root {
-            --primary-dark: #1a2332;
-            --primary-green: #2d5a3d;
-            --accent-green: #4caf50;
-            --gold: #ffd700;
-            --dark-bg: #0f1419;
-            --card-bg: #1e2936;
-            --text-light: #ffffff;
-            --text-gray: #94a3b8;
-            --text-dark: #334155;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --gradient-primary: linear-gradient(135deg, #2d5a3d 0%, #1a2332 100%);
-            --gradient-card: linear-gradient(145deg, #1e2936 0%, #243447 100%);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -30,215 +12,84 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text-light);
-            background: var(--dark-bg);
-            overflow-x: hidden;
-        }
-
-        /* Header Styles */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 20, 25, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-family: 'Montserrat', monospace;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--gold);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-            
-        .logo-image {   
-            height: 150px;
-            width: auto;
-            max-width: 400px;
-            object-fit: contain;
-            filter: brightness(1.1);
-            transition: all 0.3s ease;
-        }
-
-          .logo:hover .logo-image {
-            filter: brightness(1.3);
-        }
-        .logo::before {
-            font-size: 2rem;
-            animation: pulse 2s infinite;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-green);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-green);
-        }
-
-        /* Main Content */
-        .main {
-            margin-top: 80px;
-            padding: 4rem 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            line-height: 1.6;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 20px;
         }
 
-        .page-header {
+        .header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 40px;
         }
 
-        .page-title {
-            font-family: 'Montserrat', monospace;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #ffffff 0%, #4caf50 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .header h1 {
+            font-size: 2.5rem;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            margin-bottom: 10px;
         }
 
-        .page-subtitle {
+        .header p {
             font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 600px;
-            margin: 0 auto;
+            color: #ccc;
         }
 
-        /* Filters */
-        .filters {
+        .filter-section {
             display: flex;
             justify-content: center;
+            margin-bottom: 30px;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 10px;
         }
 
         .filter-btn {
-            padding: 0.75rem 1.5rem;
-            background: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-gray);
-            border-radius: 30px;
-            font-weight: 500;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid #00ff88;
+            color: #00ff88;
+            padding: 10px 20px;
+            border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-weight: bold;
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
-            border-color: var(--accent-green);
-            color: var(--accent-green);
-            background: rgba(76, 175, 80, 0.1);
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #00ff88;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
         }
 
-        /* Search */
-        .search-container {
-            max-width: 400px;
-            margin: 0 auto 3rem;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 1rem 1.5rem 1rem 3rem;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            color: var(--text-light);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: var(--accent-green);
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1.2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-gray);
-            font-size: 1.2rem;
-        }
-
-        /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
         .product-card {
-            background: var(--gradient-card);
+            background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: all 0.4s ease;
-            position: relative;
             cursor: pointer;
+            border: 1px solid #333;
+            position: relative;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-green);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+            border-color: #00ff88;
         }
 
         .product-image {
@@ -256,7 +107,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(45, 90, 61, 0.3), rgba(26, 35, 50, 0.3));
+            background: linear-gradient(45deg, rgba(0, 255, 136, 0.1), transparent);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -267,67 +118,60 @@
 
         .product-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--accent-green);
-            color: var(--text-light);
-            padding: 0.25rem 0.75rem;
+            top: 15px;
+            right: 15px;
+            background: #00ff88;
+            color: #000;
+            padding: 5px 12px;
             border-radius: 15px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: bold;
             text-transform: uppercase;
         }
 
         .product-content {
-            padding: 1.5rem;
+            padding: 25px;
         }
 
         .product-category {
-            color: var(--accent-green);
+            color: #00ff88;
             font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .product-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--text-light);
-            line-height: 1.3;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #fff;
+            font-weight: bold;
         }
 
         .product-description {
-            color: var(--text-gray);
-            margin-bottom: 1rem;
+            color: #bbb;
+            margin-bottom: 15px;
             font-size: 0.95rem;
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
 
         .product-features {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .product-features li {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            margin-bottom: 0.25rem;
-            padding-left: 1rem;
+            color: #ddd;
+            margin-bottom: 5px;
+            padding-left: 20px;
             position: relative;
+            font-size: 0.9rem;
         }
 
         .product-features li::before {
-            content: "✓";
+            content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-green);
+            color: #00ff88;
             font-weight: bold;
         }
 
@@ -335,276 +179,38 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
         }
 
         .product-price {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--gold);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
         }
 
         .view-details-btn {
-            background: transparent;
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: bold;
             transition: all 0.3s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
         .view-details-btn:hover {
-            background: var(--accent-green);
-            color: var(--text-light);
-            transform: translateX(3px);
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
         }
 
-        /* Product Detail Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            backdrop-filter: blur(10px);
-        }
-
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            background: var(--gradient-card);
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-header {
-            padding: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .modal-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-light);
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            color: var(--text-gray);
-            font-size: 2rem;
-            cursor: pointer;
-            padding: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background: var(--border-color);
-            color: var(--text-light);
-        }
-
-        .modal-body {
-            padding: 2rem;
-        }
-
-        .modal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .modal-gallery {
-            space-y: 1rem;
-        }
-
-        .main-image {
-            width: 100%;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            margin-bottom: 1rem;
-        }
-
-        .thumbnail-gallery {
-            display: flex;
-            gap: 0.5rem;
-            overflow-x: auto;
-        }
-
-        .thumbnail {
-            width: 80px;
-            height: 60px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail:hover,
-        .thumbnail.active {
-            opacity: 1;
-            border-color: var(--accent-green);
-        }
-
-        .modal-info h3 {
-            color: var(--text-light);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .modal-description {
-            color: var(--text-gray);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-        }
-
-        .modal-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .modal-features li {
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .modal-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        .specifications {
-            background: var(--dark-bg);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .spec-item:last-child {
-            border-bottom: none;
-        }
-
-        .spec-label {
-            color: var(--text-gray);
-            font-weight: 500;
-        }
-
-        .spec-value {
-            color: var(--text-light);
-            font-weight: 600;
-        }
-
-        .modal-price {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .product-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .tag {
-            background: rgba(76, 175, 80, 0.2);
-            color: var(--accent-green);
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .contact-btn {
-            width: 100%;
-            background: var(--gradient-primary);
-            color: var(--text-light);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        /* Loading & Error States */
-        .loading {
-            text-align: center;
-            padding: 4rem 0;
-            color: var(--text-gray);
-        }
-
-        .error {
-            text-align: center;
-            padding: 4rem 0;
-            color: #ef4444;
-        }
-
-        .no-products {
-            text-align: center;
-            padding: 4rem 0;
-            color: var(--text-gray);
-        }
-
-        /* Animations */
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
         }
 
         @keyframes fadeIn {
@@ -612,727 +218,1111 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .fade-in {
-            animation: fadeIn 0.5s ease-out;
+        .no-products {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nav-container {
-                padding: 0 1.5rem;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-                gap: 1.5rem;
-            }
-            
-            .modal-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+        .no-products h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-count {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #00ff88;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Modal Stilleri */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 2px solid #00ff88;
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #00ff88;
+        }
+
+        .modal-header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            color: #00ff88;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-category {
+            color: #888;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .modal-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .modal-main-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            border: 2px solid #333;
+        }
+
+        .modal-info h3 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .modal-description {
+            color: #ddd;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .modal-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .modal-features li {
+            color: #ddd;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .modal-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .modal-specs {
+            background: rgba(0, 255, 136, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .modal-specs h4 {
+            color: #00ff88;
+            margin-bottom: 15px;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #333;
+        }
+
+        .spec-label {
+            color: #aaa;
+            font-weight: bold;
+        }
+
+        .spec-value {
+            color: #fff;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #333;
+        }
+
+        .modal-price {
+            font-size: 2.5rem;
+            color: #00ff88;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
         }
 
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
             .products-grid {
                 grid-template-columns: 1fr;
             }
             
-            .filters {
-                gap: 0.5rem;
-            }
-            
-            .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .modal-content {
-                margin: 1rem;
-                max-height: calc(100vh - 2rem);
-            }
-            
-            .modal-header,
             .modal-body {
-                padding: 1.5rem;
+                grid-template-columns: 1fr;
             }
-        }
-
-        @media (max-width: 480px) {
-            .page-title {
+            
+            .header h1 {
                 font-size: 2rem;
             }
             
-            .product-card {
-                margin: 0 0.5rem;
+            .filter-section {
+                flex-direction: column;
+                align-items: center;
             }
-            
-            .modal-content {
-                margin: 0.5rem;
-            }
-        }
-
-        /* Utility Classes */
-        .hidden {
-            display: none !important;
-        }
-
-        .text-success {
-            color: var(--accent-green);
-        }
-
-        .text-error {
-            color: #ef4444;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Selection */
-        ::selection {
-            background: var(--accent-green);
-            color: var(--text-light);
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">
-                <img src="/resimler/logo.png" alt="Başaran Askeri Ürünleri Logo" class="logo-image">
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html#hakkimizda" class="nav-link">Ana Sayfa</a></li>
-                <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
-                <li><a href="#" class="nav-link" style="color: var(--accent-green);">Ürünler</a></li>
-                <li><a href="index.html#iletisim" class="nav-link">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <div class="container">
-            <!-- Page Header -->
-            <div class="page-header">
-                <h1 class="page-title">ÜRÜNLERİMİZ</h1>
-                <p class="page-subtitle">Güvenlik güçlerimizin ihtiyaçlarına yönelik en yüksek kalitede askeri ekipmanlar</p>
-            </div>
-
-            <!-- Search -->
-            <div class="search-container">
-                <div class="search-icon">🔍</div>
-                <input type="text" class="search-input" id="searchInput" placeholder="Ürün ara...">
-            </div>
-
-            <!-- Filters -->
-            <div class="filters" id="categoryFilters">
-                <button class="filter-btn active" data-category="all">Tümü</button>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="products-grid" id="productsGrid">
-                <div class="loading">Ürünler yükleniyor...</div>
-            </div>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ TACTİK EKİPMAN KATALOĞU</h1>
+            <p>Profesyonel güvenlik ekipmanları ve taktik malzemeler</p>
         </div>
-    </main>
 
-    <!-- Product Detail Modal -->
-    <div class="modal" id="productModal">
+        <div class="filter-section">
+    <button class="filter-btn active" data-category="all">Tümü</button>
+    <button class="filter-btn" data-category="kara-kuvvetleri">Kara Kuvvetleri</button>
+    <button class="filter-btn" data-category="hava-kuvvetleri">Hava Kuvvetleri</button>
+    <button class="filter-btn" data-category="jandarma">Jandarma</button>
+    <button class="filter-btn" data-category="kara-havacilik">Kara Havacılık</button>
+    <button class="filter-btn" data-category="personel-sinif-isaretleri">Personel Sınıf İşaretleri</button>
+    <button class="filter-btn" data-category="yeni-askere-gidenler">Yeni Askere Gidenler İçin</button>
+</div>
+
+        <div class="product-count" id="productCount"></div>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Ürünler JavaScript tarafından dinamik olarak yüklenecek -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
         <div class="modal-content">
+            <span class="close">&times;</span>
             <div class="modal-header">
                 <h2 class="modal-title" id="modalTitle"></h2>
-                <button class="close-btn" id="closeModal">&times;</button>
+                <p class="modal-category" id="modalCategory"></p>
             </div>
             <div class="modal-body">
-                <div class="modal-grid">
-                    <div class="modal-gallery">
-                        <div class="main-image" id="mainImage"></div>
-                        <div class="thumbnail-gallery" id="thumbnailGallery"></div>
-                    </div>
-                    <div class="modal-info">
-                        <div class="modal-price" id="modalPrice"></div>
-                        <div class="product-tags" id="modalTags"></div>
-                        <h3>Ürün Açıklaması</h3>
-                        <p class="modal-description" id="modalDescription"></p>
-                        <h3>Özellikler</h3>
-                        <ul class="modal-features" id="modalFeatures"></ul>
-                        <h3>Teknik Özellikler</h3>
-                        <div class="specifications" id="modalSpecifications"></div>
-                        <button class="contact-btn" onclick="window.location.href='index.html#iletisim'">
-                            İletişime Geç
-                        </button>
+                <div class="modal-gallery">
+                    <div class="modal-main-image" id="modalMainImage"></div>
+                </div>
+                <div class="modal-info">
+                    <h3>Açıklama</h3>
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <h3>Özellikler</h3>
+                    <ul class="modal-features" id="modalFeatures"></ul>
+                    
+                    <div class="modal-specs" id="modalSpecs">
+                        <h4>Teknik Özellikler</h4>
+                        <div id="specsContainer"></div>
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-price" id="modalPrice"></div>
             </div>
         </div>
     </div>
 
     <script>
-        // Global variables
+        // JSON verisi - Düzeltilmiş hali
+        const productData = {
+          "categories": [
+    {
+        "id": "kara-kuvvetleri",
+        "name": "Kara Kuvvetleri",
+        "description": "Kara Kuvvetleri personeli için özel ekipmanlar",
+        "icon": "🪖"
+    },
+    {
+        "id": "hava-kuvvetleri", 
+        "name": "Hava Kuvvetleri",
+        "description": "Hava Kuvvetleri personeli için teknik ekipmanlar",
+        "icon": "✈️"
+    },
+    {
+        "id": "jandarma",
+        "name": "Jandarma",
+        "description": "Jandarma teşkilatı için güvenlik ekipmanları",
+        "icon": "👮"
+    },
+    {
+        "id": "kara-havacilik",
+        "name": "Kara Havacılık",
+        "description": "Kara Havacılık Komutanlığı ekipmanları",
+        "icon": "🚁"
+    },
+    {
+        "id": "personel-sinif-isaretleri",
+        "name": "Personel Sınıf İşaretleri",
+        "description": "Rütbe ve sınıf işaretleri",
+        "icon": "🎖️"
+    },
+    {
+        "id": "yeni-askere-gidenler",
+        "name": "Yeni Askere Gidenler İçin (Bedelli, Er)",
+        "description": "Temel askerlik malzemeleri ve ekipmanları",
+        "icon": "🎒"
+    }
+],
+            "products": [
+                {
+                    "id": "001",
+                    "name": "ÜRÜN 1",
+                    "category": "kara-kuvvetleri",
+                    "currency": "TL",
+                    "image": "https://drive.google.com/file/d/1XKzz01IUAeJ6P2Q1MsVxDoSwDp4uqNho/view?usp=sharing",
+                    "gallery": [
+                        "https://drive.google.com/file/d/1kfptnzlYS12bSnDkuulvVMiZijTtW9Ac/view?usp=sharing",
+                        "https://drive.google.com/file/d/11WZbh9a0A3-jGwvRH2OUxhMY0miXsuPF/view?usp=sharing",
+                        "https://drive.google.com/file/d/1bvAoqh5DHsuUzbM_LIGxasAVXLykRHlw/view?usp=sharing"
+                    ],
+                    "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
+                    "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
+                    "features": [
+                        "Balistik koruma sınıfı IIIA",
+                        "MOLLE sistemi uyumlu",
+                        "Su geçirmez Cordura kumaş",
+                        "Nefes alabilir mesh astar",
+                        "Ayarlanabilir omuz ve bel kayışları",
+                        "Çabuk açılır güvenlik tokası",
+                        "Reflektör şeritler (opsiyonel)"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Cordura 1000D, Kevlar",
+                        "Ağırlık": "1.2 kg",
+                        "Boyutlar": "S, M, L, XL, XXL",
+                        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
+                        "Garanti": "2 yıl",
+                        "Sertifika": "NATO STANAG 2920"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["yeni", "popüler", "nato-standart"]
+                },
+                {
+                    "id": "002", 
+                    "name": "Compact Taktik Yelek Model B",
+                    "category": "tactical-vests",
+                    "price": "1.950",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Hafif ve kompakt tasarımlı günlük operasyon yelekleri",
+                    "description": "Compact Model B, günlük devriye ve rutin güvenlik görevleri için optimize edilmiş hafif taktik yelektir. Ergonomik tasarımı ile uzun süreli kullanımda maksimum konfor sağlar.",
+                    "features": [
+                        "Hafif kompozit koruma",
+                        "Ergonomik kesim",
+                        "Hızlı takma-çıkarma sistemi",
+                        "4 adet universal cep",
+                        "Radyo holster bölmesi",
+                        "Gece görüş uyumlu"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Ripstop Naylon, Kompozit Plaka",
+                        "Ağırlık": "0.8 kg",
+                        "Boyutlar": "XS, S, M, L, XL",
+                        "Renk Seçenekleri": "Siyah, Lacivert, Gri",
+                        "Garanti": "18 ay",
+                        "Sertifika": "TSE EN"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["hafif", "kompakt"]
+                },
+                {
+                    "id": "003",
+                    "name": "Tactical Pro Desert Boot",
+                    "category": "hava-kuvvetleri",
+                    "price": "1.250",
+                    "currency": "TL", 
+                    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop",
+                        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Çöl koşullarında üstün performans gösteren taktik bot",
+                    "description": "Tactical Pro Desert Boot, sıcak iklim koşulları ve kumlu araziler için özel olarak tasarlanmıştır. Nefes alabilir yapısı ve üstün kavrama gücü ile zorlu operasyonlarda güvenilir performans sunar.",
+                    "features": [
+                        "Su geçirmez Gore-Tex membran",
+                        "Vibram kauçuk taban",
+                        "Hızlı bağlama sistemi",
+                        "Anti-bakteriyel astar",
+                        "Darbe emici topuk",
+                        "Kaymaz taban deseni",
+                        "8 inç yükseklik"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Süet Deri, Gore-Tex",
+                        "Taban": "Vibram Kauçuk",
+                        "Numaralar": "38-47",
+                        "Renk": "Çöl Bej",
+                        "Ağırlık": "650g (42 numara)",
+                        "Garanti": "1 yıl"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["gore-tex", "vibram", "çöl"]
+                },
+                {
+                    "id": "004",
+                    "name": "Urban Combat Boot",
+                    "category": "boots",
+                    "price": "980",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop",
+                        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Şehir içi operasyonlar için tasarlanmış siyah bot",
+                    "description": "Urban Combat Boot, şehir içi güvenlik operasyonları ve kapalı alan görevleri için optimize edilmiş modern bir bot tasarımıdır.",
+                    "features": [
+                        "Su dirençli deri",
+                        "Ses emici taban",
+                        "Çabuk kuruma özelliği",
+                        "Yan fermuarlı sistem",
+                        "Nefes alabilir mesh",
+                        "6 inç kompakt tasarım"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Tam Deri, Mesh",
+                        "Taban": "Kauçuk Kompozit",
+                        "Numaralar": "39-46",
+                        "Renk": "Siyah",
+                        "Ağırlık": "520g (42 numara)",
+                        "Garanti": "1 yıl"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["şehir", "sessiz", "kompakt"]
+                },
+                {
+                    "id": "005",
+                    "name": "Multi-Cam BDU Set",
+                    "category": "yeni-askere-gidenler",
+                    "price": "750",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Çok amaçlı kamuflaj desenli askeri üniforma seti",
+                    "description": "Multi-Cam BDU Set, farklı coğrafi bölgelerde etkili kamuflaj sağlayan, dayanıklı ve fonksiyonel üniforma setidir.",
+                    "features": [
+                        "Ripstop kumaş teknolojisi",
+                        "Multi-Cam kamuflaj deseni",
+                        "8 fonksiyonel cep",
+                        "Alev geciktirici özellik",
+                        "Rip-stop yırtılma direnci",
+                        "Kolay bakım ve yıkama"
+                    ],
+                    "specifications": {
+                        "Malzeme": "65% Pamuk, 35% Polyester",
+                        "Boyutlar": "XS-3XL",
+                        "Renk": "Multi-Cam",
+                        "Ağırlık": "1.1 kg (set)",
+                        "Garanti": "6 ay",
+                        "Bakım": "30°C yıkama"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["multi-cam", "ripstop", "alev-geciktirici"]
+                },
+                {
+                    "id": "006",
+                    "name": "Kevlar Kask Sistemi",
+                    "category": "protective-gear",
+                    "price": "3.200",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "IIIA seviye balistik koruma sağlayan kask sistemi",
+                    "description": "Kevlar Kask Sistemi, yüksek tehdit seviyelerinde maksimum kafa koruması sağlayan ileri teknoloji ürünüdür.",
+                    "features": [
+                        "IIIA balistik koruma",
+                        "Modüler aksesuar rayları",
+                        "Ayarlanabilir iç sistem",
+                        "Gece görüş mount",
+                        "Ses iletişim uyumlu",
+                        "Anti-fragman astar"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Kevlar, Carbon Fiber",
+                        "Ağırlık": "1.4 kg",
+                        "Boyutlar": "S, M, L",
+                        "Renk": "Siyah, Haki",
+                        "Garanti": "3 yıl",
+                        "Sertifika": "NIJ Level IIIA"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["kevlar", "balistik", "modüler"]
+                },
+                {
+                    "id": "007",
+                    "name": "Taktik Sırt Çantası 45L",
+                    "category": "personel-sinif-isaretleri",
+                    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "45 litre kapasiteli modüler taktik sırt çantası",
+                    "description": "Uzun süreli operasyonlar için tasarlanmış, dayanıklı ve ergonomik taktik sırt çantası.",
+                    "features": [
+                        "45L ana hacim + 15L genişletme",
+                        "MOLLE panel sistemi",
+                        "Hidrasyon sistemi uyumlu",
+                        "Çok bölmeli organizasyon",
+                        "Su geçirmez ziplok",
+                        "Reflektör detaylar"
+                    ],
+                    "specifications": {
+                        "Kapasite": "45L (+15L genişletme)",
+                        "Malzeme": "Cordura 1000D",
+                        "Ağırlık": "2.1 kg",
+                        "Boyutlar": "55x35x25 cm",
+                        "Renk": "Siyah, Haki, Multi-cam",
+                        "Garanti": "2 yıl"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["45L", "molle", "hidrasyon"]
+                },
+                {
+                    "id": "008",
+                    "name": "Taktik Eldiven Seti",
+                    "category": "accessories",
+                    "price": "185",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Kesim dirençli taktik eldiven seti",
+                    "description": "Yüksek dexterity ve koruma sağlayan profesyonel taktik eldiven seti.",
+                    "features": [
+                        "Kesim dirençli Level 5",
+                        "Dokunmatik ekran uyumlu",
+                        "Nefes alabilir kumaş",
+                        "Kaymaz avuç içi",
+                        "Ayarlanabilir bilek",
+                        "Makine yıkama"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Sentetik Deri, Spandex",
+                        "Boyutlar": "S, M, L, XL",
+                        "Renk": "Siyah, Haki",
+                        "Koruma": "ANSI Level 5",
+                        "Garanti": "6 ay",
+                        "Bakım": "Makine yıkama 30°C"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["kesim-dirençli", "dokunmatik", "level-5"]
+                },
+                {
+                    "id": "009",
+                    "name": "Modüler Plate Carrier Yelek",
+                    "category": "tactical-vests",
+                    "price": "3.450",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Ağır operasyonlar için Level IV plate carrier",
+                    "description": "Modüler Plate Carrier, yüksek tehdit seviyelerinde maksimum koruma sağlayan profesyonel plate carrier sistemidir.",
+                    "features": [
+                        "Level IV seramik plaka uyumlu",
+                        "Tamamen modüler MOLLE sistem",
+                        "Hızlı açılır QRS sistem",
+                        "Omuz yastıkları dahil",
+                        "Yan koruma plakaları",
+                        "Drag handle sistemi"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Cordura 1000D, 6061 Alüminyum",
+                        "Ağırlık": "2.1 kg (plaka hariç)",
+                        "Boyutlar": "S, M, L, XL",
+                        "Renk": "Siyah, Multicam, Ranger Green",
+                        "Garanti": "3 yıl",
+                        "Sertifika": "NIJ Certified"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["level-4", "modüler", "ağır-görev"]
+                },
+                {
+                    "id": "010",
+                    "name": "Alpine Mountain Boot",
+                    "category": "boots",
+                    "price": "1.680",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Yüksek irtifa ve soğuk iklim botu",
+                    "description": "Alpine Mountain Boot, ekstrem soğuk ve zorlu dağlık araziler için tasarlanmış özel operasyon botudur.",
+                    "features": [
+                        "Thinsulate 400g yalıtım",
+                        "Su geçirmez full leather",
+                        "Crampon uyumlu taban",
+                        "Gusset dil sistemi",
+                        "Reinforced toe cap",
+                        "10 inç yüksek kesim"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Full Grain Leather, Thinsulate",
+                        "Taban": "Vibram Arctic Grip",
+                        "Sıcaklık": "-40°C'ye kadar",
+                        "Numaralar": "39-47",
+                        "Renk": "Kahverengi, Siyah",
+                        "Garanti": "18 ay"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["soğuk-iklim", "yüksek-irtifa", "thinsulate"]
+                },
+                {
+                    "id": "011",
+                    "name": "Jungle Combat Boot",
+                    "category": "boots",
+                    "price": "850",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Tropik iklim için hızlı kuruma özellikli bot",
+                    "description": "Jungle Combat Boot, yüksek nemli tropik ortamlarda maksimum konfor ve dayanıklılık sağlar.",
+                    "features": [
+                        "Hızlı kuruma mesh panelleri",
+                        "Drainage sistemli taban",
+                        "Anti-fungal astar",
+                        "Panama sole teknolojisi",
+                        "Çabuk bağlama sistemi",
+                        "8.5 inç yükseklik"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Cordura, Mesh, Deri",
+                        "Taban": "Panama Sole",
+                        "Numaralar": "38-46",
+                        "Renk": "Sage Green, Coyote",
+                        "Ağırlık": "480g (42 numara)",
+                        "Garanti": "1 yıl"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["tropik", "hızlı-kuruma", "mesh"]
+                },
+                {
+                    "id": "012",
+                    "name": "Woodland Kamuflaj BDU",
+                    "category": "uniforms",
+                    "price": "620",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Klasik woodland kamuflaj üniforma seti",
+                    "description": "Woodland Kamuflaj BDU, orman ve yeşil arazilerde mükemmel kamuflaj sağlayan klasik askeri üniforma setidir.",
+                    "features": [
+                        "Woodland kamuflaj deseni",
+                        "Cotton-Poly karışım kumaş",
+                        "6 büyük cep + 4 yardımcı cep",
+                        "Reinforced diz ve dirsek",
+                        "Button fly pantolon",
+                        "Fade resistant renk"
+                    ],
+                    "specifications": {
+                        "Malzeme": "50% Pamuk, 50% Polyester",
+                        "Boyutlar": "S-3XL",
+                        "Renk": "Woodland Camo",
+                        "Ağırlık": "0.9 kg (set)",
+                        "Garanti": "6 ay",
+                        "Bakım": "40°C yıkama"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["woodland", "klasik", "orman"]
+                },
+                {
+                    "id": "013",
+                    "name": "Urban Grey BDU",
+                    "category": "uniforms",
+                    "price": "695",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Şehir içi operasyonlar için gri kamuflaj",
+                    "description": "Urban Grey BDU, şehir içi operasyonlar ve özel güvenlik görevleri için tasarlanmış modern kamuflaj üniforma setidir.",
+                    "features": [
+                        "Urban grey dijital kamuflaj",
+                        "Ripstop reinforcement",
+                        "Velcro patch alanları",
+                        "Articulated knee design",
+                        "Internal knee pad pockets",
+                        "Adjustable cuff tabs"
+                    ],
+                    "specifications": {
+                        "Malzeme": "65% Polyester, 35% Cotton",
+                        "Boyutlar": "XS-2XL",
+                        "Renk": "Urban Grey Digital",
+                        "Ağırlık": "1.0 kg (set)",
+                        "Garanti": "8 ay",
+                        "Özellik": "IR Signature Reduction"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["urban", "dijital", "gri"]
+                },
+                {
+                    "id": "014",
+                    "name": "Balistik Gözlük Sistemi",
+                    "category": "personel-sinif-isaretleri",
+                    "price": "450",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Military grade balistik koruma gözlüğü",
+                    "description": "Balistik Gözlük Sistemi, fragman ve impact koruması sağlayan profesyonel güvenlik gözlüğüdür.",
+                    "features": [
+                        "ANSI Z87.1+ sertifikalı",
+                        "Değiştirilebilir lens sistemi",
+                        "Anti-fog coating",
+                        "UV400 koruma",
+                        "Ayarlanabilir elastic strap",
+                        "3 farklı lens (clear, smoke, yellow)"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Polycarbonate, TPU",
+                        "Lens": "Shatterproof Polycarbonate",
+                        "Koruma": "ANSI Z87.1+, MIL-PRF-32432",
+                        "Renk": "Siyah, Tan, OD Green",
+                        "Ağırlık": "65g",
+                        "Garanti": "2 yıl"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["balistik", "ansi", "uv-koruma"]
+                },
+                {
+                    "id": "015",
+                    "name": "Taktik Diz Koruyucu Set",
+                    "category": "protective-gear",
+                    "price": "320",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Heavy duty diz ve dirsek koruyucu seti",
+                    "description": "Taktik Koruyucu Set, zorlu operasyonlarda diz ve dirsekleri maksimum şekilde koruyan profesyonel ekipman setidir.",
+                    "features": [
+                        "Hard shell polycarbonate",
+                        "Gel padding sistem",
+                        "Adjustable velcro straps",
+                        "Sweat resistant neoprene",
+                        "Non-slip inner grip",
+                        "Machine washable"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Polycarbonate, Neoprene, EVA",
+                        "Boyutlar": "One Size (ayarlanabilir)",
+                        "Renk": "Siyah, Multicam",
+                        "Ağırlık": "450g (set)",
+                        "Garanti": "18 ay",
+                        "Set": "2x Diz + 2x Dirsek koruyucu"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["hard-shell", "gel-padding", "set"]
+                },
+                {
+                    "id": "016",
+                    "name": "Modüler Kemer Sistemi",
+                    "category": "accessories",
+                    "price": "275",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "MOLLE uyumlu modüler taktik kemer",
+                    "description": "Modüler Kemer Sistemi, ekipman taşıma kapasitesini artıran ve MOLLE sistemi ile tam uyumlu taktik kemerdir.",
+                    "features": [
+                        "MOLLE webbing sistemi",
+                        "Cobra buckle güvenlik tokası",
+                        "Padded liner comfort",
+                        "Quick release sistem",
+                        "Modüler pouch uyumlu",
+                        "Heavy duty construction"
+                    ],
+                    "specifications": {
+                        "Malzeme": "Cordura 1000D, Nylon Webbing",
+                        "Genişlik": "5 cm",
+                        "Boyutlar": "S(70-90cm), M(85-105cm), L(100-120cm)",
+                        "Renk": "Siyah, Coyote, Multicam",
+                        "Yük Kapasitesi": "15 kg",
+                        "Garanti": "2 yıl"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["molle", "cobra-buckle", "modüler"]
+                },
+                {
+                    "id": "017",
+                    "name": "Taktik Fener Sistemi",
+                    "category": "accessories",
+                    "price": "380",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "1200 lumen LED taktik fener + headlamp",
+                    "description": "Taktik Fener Sistemi, yüksek performanslı LED teknolojisi ile maksimum aydınlatma sağlayan çok amaçlı fener setidir.",
+                    "features": [
+                        "1200 lumen CREE LED",
+                        "5 farklı mod (high/med/low/strobe/sos)",
+                        "Su geçirmez IPX8",
+                        "Shock resistant aluminum body",
+                        "Rechargeable 18650 battery",
+                        "Headlamp adapter dahil"
+                    ],
+                    "specifications": {
+                        "LED": "CREE XM-L2",
+                        "Lumen": "1200 (max)",
+                        "Batarya": "18650 Li-ion (dahil)",
+                        "Çalışma Süresi": "2-150 saat (moda göre)",
+                        "Su Direnci": "IPX8",
+                        "Ağırlık": "195g"
+                    },
+                    "inStock": true,
+                    "featured": true,
+                    "tags": ["1200-lumen", "ipx8", "cree-led"]
+                },
+                {
+                    "id": "018",
+                    "name": "Hydration Pack 3L",
+                    "category": "accessories",
+                    "price": "190",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "3 litre kapasiteli hidrasyon sistemi",
+                    "description": "Hydration Pack, uzun süreli operasyonlarda kesintisiz su ikmali sağlayan profesyonel hidrasyon sistemidir.",
+                    "features": [
+                        "3L BPA-free reservoir",
+                        "Insulated drinking tube",
+                        "Quick-connect system",
+                        "Large opening for easy fill",
+                        "Leak-proof valve",
+                        "Antimicrobial treatment"
+                    ],
+                    "specifications": {
+                        "Kapasite": "3 Litre",
+                        "Malzeme": "TPU (BPA-Free)",
+                        "Hose Uzunluğu": "100 cm",
+                        "Renk": "Clear, Coyote, Black",
+                        "Ağırlık": "280g (boş)",
+                        "Garanti": "18 ay"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["3L", "bpa-free", "antimicrobial"]
+                },
+                {
+                    "id": "019",
+                    "name": "Balacava Mask Seti",
+                    "category": "protective-gear",
+                    "price": "95",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Multi-use balacava maske seti (3 adet)",
+                    "description": "Balacava Mask Seti, farklı hava koşullarında yüz ve baş koruması sağlayan çok amaçlı maske setidir.",
+                    "features": [
+                        "3 farklı model (full, half, neck gaiter)",
+                        "Moisture wicking fabric",
+                        "4-way stretch material",
+                        "Flatlock seam construction",
+                        "UV koruma",
+                        "Machine washable"
+                    ],
+                    "specifications": {
+                        "Malzeme": "90% Polyester, 10% Spandex",
+                        "Boyut": "One Size (streç)",
+                        "Renk": "Siyah, Coyote, OD Green",
+                        "UV Koruma": "UPF 50+",
+                        "Set": "3 farklı model",
+                        "Garanti": "6 ay"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["3-adet", "uv-koruma", "moisture-wicking"]
+                },
+                {
+                    "id": "020",
+                    "name": "Taktik Çorap Seti",
+                    "category": "uniforms",
+                    "price": "145",
+                    "currency": "TL",
+                    "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+                    "gallery": [
+                        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    ],
+                    "shortDescription": "Merino wool karışım taktik çorap seti (6 çift)",
+                    "description": "Taktik Çorap Seti, uzun süreli kullanımda maksimum konfor ve dayanıklılık sağlayan yüksek kaliteli çorap setidir.",
+                    "features": [
+                        "Merino wool karışımı",
+                        "Cushioned heel ve toe",
+                        "Moisture wicking teknoloji",
+                        "Odor resistant treatment",
+                        "Seamless toe construction",
+                        "6 çift farklı kalınlık"
+                    ],
+                    "specifications": {
+                        "Malzeme": "40% Merino Wool, 35% Polyester, 20% Nylon, 5% Spandex",
+                        "Boyutlar": "39-41, 42-44, 45-47",
+                        "Renk": "Siyah, Coyote, OD Green",
+                        "Set": "6 çift (2 ince, 2 orta, 2 kalın)",
+                        "Garanti": "1 yıl",
+                        "Özellik": "Antimicrobial"
+                    },
+                    "inStock": true,
+                    "featured": false,
+                    "tags": ["merino-wool", "6-çift", "antimicrobial"]
+                }
+            ]
+        };
+
+        // Global değişkenler
+        let currentFilter = 'all';
         let allProducts = [];
-        let allCategories = [];
-        let filteredProducts = [];
-        let currentCategory = 'all';
 
-        // DOM elements
-        const productsGrid = document.getElementById('productsGrid');
-        const categoryFilters = document.getElementById('categoryFilters');
-        const searchInput = document.getElementById('searchInput');
-        const productModal = document.getElementById('productModal');
-        const closeModal = document.getElementById('closeModal');
+        // Sayfa yüklendiğinde çalışacak fonksiyon
+        document.addEventListener('DOMContentLoaded', function() {
+            allProducts = [...productData.products]; // Ürünleri kopyala
+            loadProducts();
+            setupEventListeners();
+        });
 
-        // Modal elements
-        const modalTitle = document.getElementById('modalTitle');
-        const modalPrice = document.getElementById('modalPrice');
-        const modalDescription = document.getElementById('modalDescription');
-        const modalFeatures = document.getElementById('modalFeatures');
-        const modalSpecifications = document.getElementById('modalSpecifications');
-        const modalTags = document.getElementById('modalTags');
-        const mainImage = document.getElementById('mainImage');
-        const thumbnailGallery = document.getElementById('thumbnailGallery');
+        // Event listener'ları kurma
+        function setupEventListeners() {
+            // Filtre butonları
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Aktif butonu güncelle
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filtreyi uygula
+                    currentFilter = this.dataset.category;
+                    loadProducts();
+                });
+            });
 
-        // Load products data
-        async function loadProducts() {
-            try {
-                // Mock JSON data - In real app, this would be fetch('./products.json')
-                const data = {
-  "categories": [
-    {
-      "id": "tactical-vests",
-      "name": "Taktik Yelekler",
-      "description": "Modüler ve güvenli taktik yelek sistemleri",
-      "icon": "🦺"
-    },
-    {
-      "id": "boots",
-      "name": "Operasyonel Botlar", 
-      "description": "Dayanıklı ve konforlu askeri botlar",
-      "icon": "🥾"
-    },
-    {
-      "id": "uniforms",
-      "name": "Askeri Üniformalar",
-      "description": "Fonksiyonel ve dayanıklı üniformalar",
-      "icon": "👔"
-    },
-    {
-      "id": "protective-gear",
-      "name": "Koruyucu Ekipmanlar",
-      "description": "Kişisel güvenlik ekipmanları",
-      "icon": "🛡️"
-    },
-    {
-      "id": "accessories",
-      "name": "Aksesuarlar",
-      "description": "Taktik aksesuarlar ve ekipmanlar",
-      "icon": "🎒"
-    }
-  ],
-  "products": [
-    {
-      "id": "tv-001",
-      "name": "Elite Taktik Yelek Model A",
-      "category": "tactical-vests",
-      "price": "2.850",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "Balistik koruma sınıfı IIIA özellikli modüler taktik yelek",
-      "description": "Elite Taktik Yelek Model A, modern güvenlik güçlerinin ihtiyaçlarına yönelik tasarlanmış yüksek performanslı bir koruma sistemidir. MOLLE sistemi ile tam uyumlu olan bu yelek, farklı görev tiplerine göre özelleştirilebilir.",
-      "features": [
-        "Balistik koruma sınıfı IIIA",
-        "MOLLE sistemi uyumlu",
-        "Su geçirmez Cordura kumaş",
-        "Nefes alabilir mesh astar",
-        "Ayarlanabilir omuz ve bel kayışları",
-        "Çabuk açılır güvenlik tokası",
-        "Reflektör şeritler (opsiyonel)"
-      ],
-      "specifications": {
-        "Malzeme": "Cordura 1000D, Kevlar",
-        "Ağırlık": "1.2 kg",
-        "Boyutlar": "S, M, L, XL, XXL",
-        "Renk Seçenekleri": "Siyah, Haki, Kamuflaj",
-        "Garanti": "2 yıl",
-        "Sertifika": "NATO STANAG 2920"
-      },
-      "inStock": true,
-      "featured": true,
-      "tags": ["yeni", "popüler", "nato-standart"]
-    },
-    {
-      "id": "tv-002", 
-      "name": "Compact Taktik Yelek Model B",
-      "category": "tactical-vests",
-      "price": "1.950",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "Hafif ve kompakt tasarımlı günlük operasyon yelekleri",
-      "description": "Compact Model B, günlük devriye ve rutin güvenlik görevleri için optimize edilmiş hafif taktik yelektir. Ergonomik tasarımı ile uzun süreli kullanımda maksimum konfor sağlar.",
-      "features": [
-        "Hafif kompozit koruma",
-        "Ergonomik kesim",
-        "Hızlı takma-çıkarma sistemi",
-        "4 adet universal cep",
-        "Radyo holster bölmesi",
-        "Gece görüş uyumlu"
-      ],
-      "specifications": {
-        "Malzeme": "Ripstop Naylon, Kompozit Plaka",
-        "Ağırlık": "0.8 kg",
-        "Boyutlar": "XS, S, M, L, XL",
-        "Renk Seçenekleri": "Siyah, Lacivert, Gri",
-        "Garanti": "18 ay",
-        "Sertifika": "TSE EN"
-      },
-      "inStock": true,
-      "featured": false,
-      "tags": ["hafif", "kompakt"]
-    },
-    {
-      "id": "bot-001",
-      "name": "Tactical Pro Desert Boot",
-      "category": "boots",
-      "price": "1.250",
-      "currency": "TL", 
-      "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "Çöl koşullarında üstün performans gösteren taktik bot",
-      "description": "Tactical Pro Desert Boot, sıcak iklim koşulları ve kumlu araziler için özel olarak tasarlanmıştır. Nefes alabilir yapısı ve üstün kavrama gücü ile zorlu operasyonlarda güvenilir performans sunar.",
-      "features": [
-        "Su geçirmez Gore-Tex membran",
-        "Vibram kauçuk taban",
-        "Hızlı bağlama sistemi",
-        "Anti-bakteriyel astar",
-        "Darbe emici topuk",
-        "Kaymaz taban deseni",
-        "8 inç yükseklik"
-      ],
-      "specifications": {
-        "Malzeme": "Süet Deri, Gore-Tex",
-        "Taban": "Vibram Kauçuk",
-        "Numaralar": "38-47",
-        "Renk": "Çöl Bej",
-        "Ağırlık": "650g (42 numara)",
-        "Garanti": "1 yıl"
-      },
-      "inStock": true,
-      "featured": true,
-      "tags": ["gore-tex", "vibram", "çöl"]
-    },
-    {
-      "id": "bot-002",
-      "name": "Urban Combat Boot",
-      "category": "boots",
-      "price": "980",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5d?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "Şehir içi operasyonlar için tasarlanmış siyah bot",
-      "description": "Urban Combat Boot, şehir içi güvenlik operasyonları ve kapalı alan görevleri için optimize edilmiş modern bir bot tasarımıdır.",
-      "features": [
-        "Su dirençli deri",
-        "Ses emici taban",
-        "Çabuk kuruma özelliği",
-        "Yan fermuarlı sistem",
-        "Nefes alabilir mesh",
-        "6 inç kompakt tasarım"
-      ],
-      "specifications": {
-        "Malzeme": "Tam Deri, Mesh",
-        "Taban": "Kauçuk Kompozit",
-        "Numaralar": "39-46",
-        "Renk": "Siyah",
-        "Ağırlık": "520g (42 numara)",
-        "Garanti": "1 yıl"
-      },
-      "inStock": true,
-      "featured": false,
-      "tags": ["şehir", "sessiz", "kompakt"]
-    },
-    {
-      "id": "uni-001",
-      "name": "Multi-Cam BDU Set",
-      "category": "uniforms",
-      "price": "750",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "Çok amaçlı kamuflaj desenli askeri üniforma seti",
-      "description": "Multi-Cam BDU Set, farklı coğrafi bölgelerde etkili kamuflaj sağlayan, dayanıklı ve fonksiyonel üniforma setidir.",
-      "features": [
-        "Ripstop kumaş teknolojisi",
-        "Multi-Cam kamuflaj deseni",
-        "8 fonksiyonel cep",
-        "Alev geciktirici özellik",
-        "Rip-stop yırtılma direnci",
-        "Kolay bakım ve yıkama"
-      ],
-      "specifications": {
-        "Malzeme": "65% Pamuk, 35% Polyester",
-        "Boyutlar": "XS-3XL",
-        "Renk": "Multi-Cam",
-        "Ağırlık": "1.1 kg (set)",
-        "Garanti": "6 ay",
-        "Bakım": "30°C yıkama"
-      },
-      "inStock": true,
-      "featured": true,
-      "tags": ["multi-cam", "ripstop", "alev-geciktirici"]
-    },
-    {
-      "id": "pro-001",
-      "name": "Kevlar Kask Sistemi",
-      "category": "protective-gear",
-      "price": "3.200",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "IIIA seviye balistik koruma sağlayan kask sistemi",
-      "description": "Kevlar Kask Sistemi, yüksek tehdit seviyelerinde maksimum kafa koruması sağlayan ileri teknoloji ürünüdür.",
-      "features": [
-        "IIIA balistik koruma",
-        "Modüler aksesuar rayları",
-        "Ayarlanabilir iç sistem",
-        "Gece görüş mount",
-        "Ses iletişim uyumlu",
-        "Anti-fragman astar"
-      ],
-      "specifications": {
-        "Malzeme": "Kevlar, Carbon Fiber",
-        "Ağırlık": "1.4 kg",
-        "Boyutlar": "S, M, L",
-        "Renk": "Siyah, Haki",
-        "Garanti": "3 yıl",
-        "Sertifika": "NIJ Level IIIA"
-      },
-      "inStock": true,
-      "featured": true,
-      "tags": ["kevlar", "balistik", "modüler"]
-    },
-    {
-      "id": "acc-001",
-      "name": "Taktik Sırt Çantası 45L",
-      "category": "accessories",
-      "price": "650",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "45 litre kapasiteli modüler taktik sırt çantası",
-      "description": "Uzun süreli operasyonlar için tasarlanmış, dayanıklı ve ergonomik taktik sırt çantası.",
-      "features": [
-        "45L ana hacim + 15L genişletme",
-        "MOLLE panel sistemi",
-        "Hidrasyon sistemi uyumlu",
-        "Çok bölmeli organizasyon",
-        "Su geçirmez ziplok",
-        "Reflektör detaylar"
-      ],
-      "specifications": {
-        "Kapasite": "45L (+15L genişletme)",
-        "Malzeme": "Cordura 1000D",
-        "Ağırlık": "2.1 kg",
-        "Boyutlar": "55x35x25 cm",
-        "Renk": "Siyah, Haki, Multi-cam",
-        "Garanti": "2 yıl"
-      },
-      "inStock": true,
-      "featured": false,
-      "tags": ["45L", "molle", "hidrasyon"]
-    },
-    {
-      "id": "acc-002",
-      "name": "Taktik Eldiven Seti",
-      "category": "accessories",
-      "price": "185",
-      "currency": "TL",
-      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      "gallery": [
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
-      ],
-      "shortDescription": "Kesim dirençli taktik eldiven seti",
-      "description": "Yüksek dexterity ve koruma sağlayan profesyonel taktik eldiven seti.",
-      "features": [
-        "Kesim dirençli Level 5",
-        "Dokunmatik ekran uyumlu",
-        "Nefes alabilir kumaş",
-        "Kaymaz avuç içi",
-        "Ayarlanabilir bilek",
-        "Makine yıkama"
-      ],
-      "specifications": {
-        "Malzeme": "Sentetik Deri, Spandex",
-        "Boyutlar": "S, M, L, XL",
-        "Renk": "Siyah, Haki",
-        "Koruma": "ANSI Level 5",
-        "Garanti": "6 ay",
-        "Bakım": "Makine yıkama 30°C"
-      },
-      "inStock": true,
-      "featured": false,
-      "tags": ["kesim-dirençli", "dokunmatik", "level-5"]
-    }
-  ]
-};
-
-                allProducts = data.products;
-                allCategories = data.categories;
-                filteredProducts = [...allProducts];
-                
-                renderCategories();
-                renderProducts();
-            } catch (error) {
-                console.error('Error loading products:', error);
-                productsGrid.innerHTML = '<div class="error">Ürünler yüklenirken hata oluştu.</div>';
-            }
-        }
-
-        // Render category filters
-        function renderCategories() {
-            const categoryButtons = allCategories.map(category => 
-                `<button class="filter-btn" data-category="${category.id}">
-                    ${category.icon} ${category.name}
-                </button>`
-            ).join('');
+            // Modal kapatma
+            const modal = document.getElementById('productModal');
+            const closeBtn = document.querySelector('.close');
             
-            categoryFilters.innerHTML = `
-                <button class="filter-btn active" data-category="all">Tümü</button>
-                ${categoryButtons}
-            `;
+            closeBtn.addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
         }
 
-        // Render products
-        function renderProducts() {
+        // Ürünleri yükleme fonksiyonu
+        function loadProducts() {
+            const productsGrid = document.getElementById('productsGrid');
+            const productCount = document.getElementById('productCount');
+            
+            // Filtreleme
+            let filteredProducts = allProducts;
+            if (currentFilter !== 'all') {
+                filteredProducts = allProducts.filter(product => product.category === currentFilter);
+            }
+
+            // Ürün sayısını güncelle
+            productCount.textContent = `${filteredProducts.length} ürün gösteriliyor`;
+
+            // Ürünleri render et
             if (filteredProducts.length === 0) {
-                productsGrid.innerHTML = '<div class="no-products">Aradığınız kriterlere uygun ürün bulunamadı.</div>';
+                productsGrid.innerHTML = `
+                    <div class="no-products">
+                        <h3>Ürün bulunamadı</h3>
+                        <p>Bu kategoride henüz ürün bulunmamaktadır.</p>
+                    </div>
+                `;
                 return;
             }
 
-            const productsHTML = filteredProducts.map(product => {
-                const category = allCategories.find(cat => cat.id === product.category);
-                const badgeText = product.featured ? 'ÖNERİLEN' : (product.tags.includes('yeni') ? 'YENİ' : '');
-                
-                return `
-                    <div class="product-card fade-in" onclick="openProductModal('${product.id}')">
-                        <div class="product-image" style="background-image: url('${product.image}')">
-                            ${badgeText ? `<div class="product-badge">${badgeText}</div>` : ''}
-                        </div>
-                        <div class="product-content">
-                            <div class="product-category">${category ? category.icon + ' ' + category.name : ''}</div>
-                            <h3 class="product-title">${product.name}</h3>
-                            <p class="product-description">${product.shortDescription}</p>
-                            <ul class="product-features">
-                                ${product.features.slice(0, 3).map(feature => `<li>${feature}</li>`).join('')}
-                            </ul>
-                            <div class="product-footer">
-                                <div class="product-price">${product.price} ${product.currency}</div>
-                                <a href="#" class="view-details-btn" onclick="event.stopPropagation(); openProductModal('${product.id}')">
-                                    Detaylar <span>→</span>
-                                </a>
-                            </div>
+            productsGrid.innerHTML = filteredProducts.map(product => createProductCard(product)).join('');
+        }
+
+        // Ürün kartı oluşturma fonksiyonu
+        function createProductCard(product) {
+            const category = productData.categories.find(cat => cat.id === product.category);
+            
+            // Badge belirleme
+            let badgeText = '';
+            if (product.featured) badgeText = 'ÖNE ÇIKAN';
+            else if (product.tags && product.tags.includes('yeni')) badgeText = 'YENİ';
+            else if (product.tags && product.tags.includes('popüler')) badgeText = 'POPÜLER';
+
+            return `
+                <div class="product-card fade-in" onclick="openProductModal('${product.id}')">
+                    <div class="product-image" style="background-image: url('${product.image}')">
+                        ${badgeText ? `<div class="product-badge">${badgeText}</div>` : ''}
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">${category ? category.icon + ' ' + category.name : ''}</div>
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.shortDescription}</p>
+                        <ul class="product-features">
+                            ${product.features.slice(0, 3).map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
+                        <div class="product-footer">
+                            <div class="product-price">${product.price} ${product.currency}</div>
+                            <a href="#" class="view-details-btn" onclick="event.stopPropagation(); openProductModal('${product.id}')">
+                                Detaylar <span>→</span>
+                            </a>
                         </div>
                     </div>
-                `;
-            }).join('');
-
-            productsGrid.innerHTML = productsHTML;
+                </div>
+            `;
         }
 
-        // Filter products by category
-        function filterByCategory(categoryId) {
-            currentCategory = categoryId;
-            
-            if (categoryId === 'all') {
-                filteredProducts = [...allProducts];
-            } else {
-                filteredProducts = allProducts.filter(product => product.category === categoryId);
-            }
-            
-            // Apply search filter if active
-            const searchTerm = searchInput.value.toLowerCase();
-            if (searchTerm) {
-                filteredProducts = filteredProducts.filter(product =>
-                    product.name.toLowerCase().includes(searchTerm) ||
-                    product.shortDescription.toLowerCase().includes(searchTerm) ||
-                    product.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-                );
-            }
-            
-            renderProducts();
-        }
-
-        // Search products
-        function searchProducts() {
-            const searchTerm = searchInput.value.toLowerCase();
-            
-            if (currentCategory === 'all') {
-                filteredProducts = [...allProducts];
-            } else {
-                filteredProducts = allProducts.filter(product => product.category === currentCategory);
-            }
-            
-            if (searchTerm) {
-                filteredProducts = filteredProducts.filter(product =>
-                    product.name.toLowerCase().includes(searchTerm) ||
-                    product.shortDescription.toLowerCase().includes(searchTerm) ||
-                    product.description.toLowerCase().includes(searchTerm) ||
-                    product.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-                );
-            }
-            
-            renderProducts();
-        }
-
-        // Open product modal
+        // Modal açma fonksiyonu
         function openProductModal(productId) {
             const product = allProducts.find(p => p.id === productId);
             if (!product) return;
 
-            const category = allCategories.find(cat => cat.id === product.category);
-            
-            // Set basic info
-            modalTitle.textContent = product.name;
-            modalPrice.textContent = `${product.price} ${product.currency}`;
-            modalDescription.textContent = product.description;
-            
-            // Set features
-            modalFeatures.innerHTML = product.features.map(feature => 
-                `<li>${feature}</li>`
-            ).join('');
-            
-            // Set specifications
-            modalSpecifications.innerHTML = Object.entries(product.specifications).map(([key, value]) =>
-                `<div class="spec-item">
-                    <span class="spec-label">${key}:</span>
-                    <span class="spec-value">${value}</span>
-                </div>`
-            ).join('');
-            
-            // Set tags
-            modalTags.innerHTML = product.tags.map(tag => 
-                `<span class="tag">${tag}</span>`
-            ).join('');
-            
-            // Set images
-            if (product.gallery && product.gallery.length > 0) {
-                mainImage.style.backgroundImage = `url('${product.gallery[0]}')`;
-                
-                if (product.gallery.length > 1) {
-                    thumbnailGallery.innerHTML = product.gallery.map((img, index) =>
-                        `<div class="thumbnail ${index === 0 ? 'active' : ''}" 
-                              style="background-image: url('${img}')"
-                              onclick="changeMainImage('${img}', this)"></div>`
-                    ).join('');
-                } else {
-                    thumbnailGallery.innerHTML = '';
-                }
-            } else {
-                mainImage.style.backgroundImage = `url('${product.image}')`;
-                thumbnailGallery.innerHTML = '';
-            }
-            
-            // Show modal
-            productModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            const category = productData.categories.find(cat => cat.id === product.category);
+            const modal = document.getElementById('productModal');
+
+            // Modal içeriğini doldur
+            document.getElementById('modalTitle').textContent = product.name;
+            document.getElementById('modalCategory').textContent = category ? category.icon + ' ' + category.name : '';
+            document.getElementById('modalMainImage').style.backgroundImage = `url('${product.image}')`;
+            document.getElementById('modalDescription').textContent = product.description;
+            document.getElementById('modalPrice').textContent = `${product.price} ${product.currency}`;
+
+            // Özellikleri listele
+            const featuresContainer = document.getElementById('modalFeatures');
+            featuresContainer.innerHTML = product.features.map(feature => `<li>${feature}</li>`).join('');
+
+            // Teknik özellikleri listele
+            const specsContainer = document.getElementById('specsContainer');
+            specsContainer.innerHTML = Object.entries(product.specifications)
+                .map(([key, value]) => `
+                    <div class="spec-item">
+                        <span class="spec-label">${key}:</span>
+                        <span class="spec-value">${value}</span>
+                    </div>
+                `).join('');
+
+            // Modal'ı göster
+            modal.style.display = 'block';
         }
 
-        // Change main image in modal
-        function changeMainImage(imageUrl, thumbnailElement) {
-            mainImage.style.backgroundImage = `url('${imageUrl}')`;
-            
-            // Update active thumbnail
-            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
-            thumbnailElement.classList.add('active');
-        }
-
-        // Close modal
-        function closeProductModal() {
-            productModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Event listeners
-        document.addEventListener('DOMContentLoaded', function() {
+        // Ürün ekleme fonksiyonu (Test için)
+        function addNewProduct(newProduct) {
+            allProducts.push(newProduct);
             loadProducts();
-            
-            // Category filter clicks
-            categoryFilters.addEventListener('click', function(e) {
-                if (e.target.classList.contains('filter-btn')) {
-                    // Update active filter
-                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                    e.target.classList.add('active');
-                    
-                    // Filter products
-                    const category = e.target.dataset.category;
-                    filterByCategory(category);
-                }
-            });
-            
-            // Search input
-            searchInput.addEventListener('input', searchProducts);
-            
-            // Modal close events
-            closeModal.addEventListener('click', closeProductModal);
-            
-            productModal.addEventListener('click', function(e) {
-                if (e.target === productModal) {
-                    closeProductModal();
-                }
-            });
-            
-            // ESC key to close modal
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && productModal.classList.contains('active')) {
-                    closeProductModal();
-                }
-            });
-        });
+        }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        // Ürün silme fonksiyonu (Test için)
+        function removeProduct(productId) {
+            allProducts = allProducts.filter(p => p.id !== productId);
+            loadProducts();
+        }
+
+        // Test fonksiyonu - Konsola yazarak kullanabilirsiniz
+        function testAddProduct() {
+            const newProduct = {
+                "id": "test-001",
+                "name": "Test Ürünü",
+                "category": "accessories",
+                "price": "299",
+                "currency": "TL",
+                "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop",
+                "gallery": ["https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop"],
+                "shortDescription": "Test amaçlı eklenen ürün",
+                "description": "Bu ürün test amaçlı eklendi ve dinamik olarak gösteriliyor.",
+                "features": ["Test özellik 1", "Test özellik 2", "Test özellik 3"],
+                "specifications": {
+                    "Malzeme": "Test Malzeme",
+                    "Renk": "Test Renk",
+                    "Garanti": "1 yıl"
+                },
+                "inStock": true,
+                "featured": true,
+                "tags": ["test", "yeni"]
+            };
+            addNewProduct(newProduct);
+        }
     </script>
 </body>
 </html>
