@@ -291,19 +291,7 @@
     .modal-info { padding: 24px; }
     .modal-image-container img { min-height: 250px; }
   }
-/* ---------- Modal Resim Slider Tuşları ---------- */
-  .modal-image-container { position: relative; }
-  .slider-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    background: rgba(29, 32, 24, 0.7); color: #fff;
-    border: none; width: 40px; height: 40px; border-radius: 50%;
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 20px; z-index: 10; transition: background 0.2s;
-  }
-  .slider-btn:hover { background: var(--brass); }
-  .slider-prev { left: 16px; }
-  .slider-next { right: 16px; }
-
+  
 </style>
 </head>
 <body>
@@ -400,11 +388,8 @@
     <div class="modal-content">
       <button id="closeModal" class="modal-close" onclick="closeModal()">&times;</button>
       
-     <div class="modal-image-container">
+      <div class="modal-image-container">
         <img id="modalImg" src="" alt="Ürün Görseli">
-        <!-- Slider Ok Tuşları -->
-        <button id="prevBtn" class="slider-btn slider-prev" onclick="changeImage(-1)" style="display:none;">&#10094;</button>
-        <button id="nextBtn" class="slider-btn slider-next" onclick="changeImage(1)" style="display:none;">&#10095;</button>
       </div>
       
       <div class="modal-info">
@@ -577,29 +562,18 @@
   });
 
   // ---------- MODAL (Açılır Pencere) FONKSİYONLARI ----------
-  let currentModalImages = [];
-  let currentImageIndex = 0;
-
   function openModal(code) {
     const urun = PRODUCTS.find(p => p.code === code);
     if(!urun) return;
 
-    // JSON'da birden fazla resim (images) varsa onu al, yoksa eski tek resmi (image_url) kullan
-    if (urun.images && urun.images.length > 0) {
-      currentModalImages = urun.images;
-    } else {
-      currentModalImages = [urun.image_url];
-    }
-    
-    currentImageIndex = 0;
-    updateModalImageDisplay(); // İlk resmi ve butonları ayarla
-    
+    document.getElementById('modalImg').src = urun.image_url;
     document.getElementById('modalImg').alt = urun.name;
     document.getElementById('modalCat').innerText = urun.category;
     document.getElementById('modalTitle').innerText = urun.name;
     document.getElementById('modalDesc').innerText = urun.description;
     document.getElementById('modalPrice').innerText = urun.price + " TL";
 
+    // Satın Al linkini ayarla (JSON'dan gelirse onu kullan, yoksa Hepsiburada mağazana yolla)
     const buyBtn = document.getElementById('modalBuyBtn');
     if (urun.buy_link) {
       buyBtn.href = urun.buy_link;
@@ -607,39 +581,15 @@
       buyBtn.href = "https://www.hepsiburada.com/magaza/basaran-asker";
     }
 
+    // Pencereyi göster
     document.getElementById('productModal').style.display = 'flex';
-  }
-
-  // Resim değişimini ve butonların görünürlüğünü ayarlayan fonksiyon
-  function updateModalImageDisplay() {
-    document.getElementById('modalImg').src = currentModalImages[currentImageIndex];
-    
-    // 1'den fazla resim varsa ok tuşlarını göster
-    if (currentModalImages.length > 1) {
-      document.getElementById('prevBtn').style.display = 'flex';
-      document.getElementById('nextBtn').style.display = 'flex';
-    } else {
-      document.getElementById('prevBtn').style.display = 'none';
-      document.getElementById('nextBtn').style.display = 'none';
-    }
-  }
-
-  // Ok tuşlarına basılınca çalışan fonksiyon
-  function changeImage(direction) {
-    currentImageIndex += direction;
-    // Sona gelince başa dön, baştayken geriye basılırsa sona git
-    if (currentImageIndex >= currentModalImages.length) {
-      currentImageIndex = 0;
-    } else if (currentImageIndex < 0) {
-      currentImageIndex = currentModalImages.length - 1;
-    }
-    updateModalImageDisplay();
   }
 
   function closeModal() {
     document.getElementById('productModal').style.display = 'none';
   }
 
+  // Dışarı tıklanınca pencereyi kapatma
   window.onclick = function(event) {
     const modal = document.getElementById('productModal');
     if (event.target === modal) {
