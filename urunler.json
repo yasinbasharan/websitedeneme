@@ -6,10 +6,13 @@
     "name": "Yaka İsimlik",
     "price": "250",
     "featured_on_homepage": true,
-    "image_url": "https://i.hizliresim.com/ffl3b0v.png",
+    "images": [
+      "https://i.hizliresim.com/ffl3b0v.png",
+      "https://i.hizliresim.com/ffl3b0v.png",
+      "https://i.hizliresim.com/ffl3b0v.png"
+    ],
     "description": "Su itici kumaş, çok amaçlı modüler taktik yelek.",
     "buy_link": "https://www.hepsiburada.com/soyisimlik-yeni-kamuflaj-ulastirma-sinifi-nakisli-2-adet-kara-kuvvetleri-pm-HBC0000DPNEKO"
-    
   },
   {
     "id": 2,

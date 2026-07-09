@@ -283,13 +283,26 @@
     display: flex; align-items: center; justify-content: center; transition: 0.2s;
   }
   .modal-close:hover { background: var(--olive); color: #fff; }
-  .modal-image-container img { width: 100%; height: 100%; object-fit: cover; min-height: 350px; }
+  .modal-image-container { position: relative; width: 100%; height: 100%; min-height: 350px; }
+  .modal-image-container img { width: 100%; height: 100%; object-fit: cover; }
   .modal-info { padding: 40px 32px 40px 0; display: flex; flex-direction: column; justify-content: center; }
   
+  /* ---------- Modal Resim Slider Tuşları ---------- */
+  .slider-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(29, 32, 24, 0.7); color: #fff;
+    border: none; width: 40px; height: 40px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 20px; z-index: 10; transition: background 0.2s;
+  }
+  .slider-btn:hover { background: var(--brass); }
+  .slider-prev { left: 16px; }
+  .slider-next { right: 16px; }
+
   @media (max-width: 768px) {
     .modal-content { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
     .modal-info { padding: 24px; }
-    .modal-image-container img { min-height: 250px; }
+    .modal-image-container { min-height: 250px; }
   }
   
 </style>
@@ -390,6 +403,9 @@
       
       <div class="modal-image-container">
         <img id="modalImg" src="" alt="Ürün Görseli">
+        <!-- Slider Ok Tuşları -->
+        <button id="prevBtn" class="slider-btn slider-prev" onclick="changeImage(-1)" style="display:none;">&#10094;</button>
+        <button id="nextBtn" class="slider-btn slider-next" onclick="changeImage(1)" style="display:none;">&#10095;</button>
       </div>
       
       <div class="modal-info">
@@ -524,13 +540,16 @@
     }
     emptyEl.classList.remove('show');
 
-    // DİKKAT: Ürün kartına onclick özelliği ve imleç stili eklendi
-    gridEl.innerHTML = list.map(p => `
+    // DİKKAT: Ürün vitrininde (grid) kapak resmini seçen akıllı kod eklendi
+    gridEl.innerHTML = list.map(p => {
+      const mainImage = (p.images && p.images.length > 0) ? p.images[0] : p.image_url;
+      
+      return `
       <div class="prod-card" onclick="openModal('${p.code}')" style="cursor: pointer; transition: transform 0.2s;">
         <div class="prod-visual">
           <span class="tag mono">${p.code}</span>
           <span class="cat-label">${p.category}</span>
-          <img src="${p.image_url}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;">
+          <img src="${mainImage}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="prod-body">
           <h3>${p.name}</h3>
@@ -541,7 +560,8 @@
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
 
     const cards = gridEl.querySelectorAll('.prod-card');
     if('IntersectionObserver' in window){
@@ -562,18 +582,28 @@
   });
 
   // ---------- MODAL (Açılır Pencere) FONKSİYONLARI ----------
+  let currentModalImages = [];
+  let currentImageIndex = 0;
+
   function openModal(code) {
     const urun = PRODUCTS.find(p => p.code === code);
     if(!urun) return;
 
-    document.getElementById('modalImg').src = urun.image_url;
-    document.getElementById('modalImg').alt = urun.name;
+    // Resimleri hafızaya al
+    if (urun.images && urun.images.length > 0) {
+      currentModalImages = urun.images;
+    } else {
+      currentModalImages = [urun.image_url];
+    }
+    
+    currentImageIndex = 0;
+    updateModalImageDisplay(); // İlk resmi ve butonları ayarla
+
     document.getElementById('modalCat').innerText = urun.category;
     document.getElementById('modalTitle').innerText = urun.name;
     document.getElementById('modalDesc').innerText = urun.description;
     document.getElementById('modalPrice').innerText = urun.price + " TL";
 
-    // Satın Al linkini ayarla (JSON'dan gelirse onu kullan, yoksa Hepsiburada mağazana yolla)
     const buyBtn = document.getElementById('modalBuyBtn');
     if (urun.buy_link) {
       buyBtn.href = urun.buy_link;
@@ -581,8 +611,36 @@
       buyBtn.href = "https://www.hepsiburada.com/magaza/basaran-asker";
     }
 
-    // Pencereyi göster
     document.getElementById('productModal').style.display = 'flex';
+  }
+
+  // Resim değişimini ve butonların görünürlüğünü ayarlayan fonksiyon
+  function updateModalImageDisplay() {
+    const imgEl = document.getElementById('modalImg');
+    imgEl.src = currentModalImages[currentImageIndex];
+    
+    // 1'den fazla resim varsa ok tuşlarını göster
+    if (currentModalImages.length > 1) {
+      document.getElementById('prevBtn').style.display = 'flex';
+      document.getElementById('nextBtn').style.display = 'flex';
+    } else {
+      document.getElementById('prevBtn').style.display = 'none';
+      document.getElementById('nextBtn').style.display = 'none';
+    }
+  }
+
+  // Ok tuşlarına basılınca çalışan fonksiyon
+  function changeImage(step) {
+    currentImageIndex += step;
+    
+    // Sona gelince başa dön, baştayken geriye basılırsa sona git
+    if (currentImageIndex >= currentModalImages.length) {
+      currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+      currentImageIndex = currentModalImages.length - 1;
+    }
+    
+    updateModalImageDisplay();
   }
 
   function closeModal() {
