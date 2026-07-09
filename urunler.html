@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ürün Kataloğu | Başaran Asker</title>
+<meta name="description" content="Başaran Asker ürün kataloğu — koruyucu ekipman, taktik giyim, ayakkabı, çanta, kamp ve aksesuar kategorilerinde 50'nin üzerinde kurumsal ürün.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAFAF7;
+    --bg-alt: #F1EFE7;
+    --surface: #FFFFFF;
+    --ink: #1D2018;
+    --ink-soft: #5B5F52;
+    --ink-faint: #93968A;
+    --olive: #333F2B;
+    --olive-deep: #212A1B;
+    --stone: #8B8574;
+    --brass: #A6803D;
+    --brass-soft: #C9A467;
+    --line: #E3E0D5;
+    --line-strong: #CFCBBB;
+    --radius: 2px;
+    --shadow: 0 1px 2px rgba(29,32,24,0.04), 0 8px 24px rgba(29,32,24,0.05);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--olive-deep);
+    line-height: 1.15;
+  }
+
+  .mono{ font-family: 'JetBrains Mono', monospace; letter-spacing: 0.03em; }
+
+  a{ color: inherit; text-decoration: none; }
+  img,svg{ display:block; max-width:100%; }
+  ul{ list-style:none; }
+  button{ font-family: inherit; cursor:pointer; }
+
+  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 16px;
+  }
+  .eyebrow::before{ content:""; width: 22px; height:1px; background: var(--brass); display:inline-block; }
+
+  .skip-link{ position:absolute; left:-999px; top:0; background: var(--olive); color:#fff; padding:10px 16px; z-index:999; }
+  .skip-link:focus{ left: 16px; top:16px; }
+  :focus-visible{ outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  /* ---------- header ---------- */
+  header{
+    position: fixed; top:0; left:0; right:0; z-index: 500;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content: space-between; height: 76px; }
+  .logo{
+    font-family:'Oswald', sans-serif; font-weight:700; font-size: 20px;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    display:flex; align-items:center; gap:10px; color: var(--olive-deep);
+  }
+  .logo .mark{ width: 30px; height: 30px; flex-shrink:0; }
+  .nav-links{ display:flex; align-items:center; gap: 36px; }
+  .nav-links a{
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500;
+    color: var(--ink-soft); position: relative; padding: 6px 0;
+  }
+  .nav-links a:hover, .nav-links a.active{ color: var(--olive-deep); }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background: var(--brass);
+    transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after{ transform: scaleX(1); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding: 12px 22px;
+    font-size: 13px; font-weight:600; text-transform: uppercase; letter-spacing: 0.08em;
+    border-radius: var(--radius); border: 1px solid transparent; transition: all .2s ease; white-space: nowrap;
+  }
+  .btn-primary{ background: var(--olive); color: #fff; }
+  .btn-primary:hover{ background: var(--olive-deep); }
+  .btn-ghost{ border-color: var(--line-strong); color: var(--ink); background: transparent; }
+  .btn-ghost:hover{ border-color: var(--olive); color: var(--olive-deep); }
+  .btn-brass{ background: var(--brass); color: #fff; }
+  .btn-brass:hover{ background: #8f6c30; }
+
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; padding: 8px; }
+  .hamburger span{ width: 22px; height:2px; background: var(--olive-deep); display:block; }
+
+  /* ---------- page header ---------- */
+  .page-head{
+    position: relative;
+    padding: 176px 0 64px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .page-head-grid{ position:absolute; inset:0; z-index:0; opacity:.5; }
+  .page-head .inner{ position:relative; z-index:1; max-width: 640px; }
+  .page-head h1{ font-size: clamp(34px, 4.4vw, 50px); margin-bottom: 18px; }
+  .page-head p{ color: var(--ink-soft); font-size: 16.5px; }
+
+  /* ---------- tag chip ---------- */
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em;
+    color: var(--olive); background: var(--bg-alt); border: 1px solid var(--line-strong);
+    padding: 4px 10px 4px 8px; border-radius: 1px;
+  }
+  .tag::before{ content:""; width:6px; height:6px; background: var(--brass); border-radius: 50%; display:inline-block; }
+
+  section{ padding: 64px 0 96px; }
+
+  /* ---------- filter bar ---------- */
+  .catalog-toolbar{
+    display:flex; flex-wrap:wrap; gap: 24px; align-items:center; justify-content: space-between;
+    padding-bottom: 32px; margin-bottom: 40px; border-bottom: 1px solid var(--line);
+  }
+  .filter-pills{ display:flex; flex-wrap:wrap; gap: 10px; }
+  .pill{
+    font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing:0.03em;
+    padding: 9px 16px; border: 1px solid var(--line-strong); background: var(--surface);
+    color: var(--ink-soft); border-radius: 999px; transition: all .18s ease;
+  }
+  .pill:hover{ border-color: var(--olive); color: var(--olive-deep); }
+  .pill.active{ background: var(--olive); border-color: var(--olive); color: #fff; }
+  .pill .count{ opacity:.65; margin-left:4px; }
+
+  .search-box{
+    position: relative;
+    min-width: 240px;
+  }
+  .search-box input{
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    padding: 10px 14px 10px 38px;
+    font-family: inherit; font-size: 14px; color: var(--ink);
+    border-radius: var(--radius);
+  }
+  .search-box input:focus{ outline:none; border-color: var(--olive); }
+  .search-box svg{
+    position:absolute; left:12px; top:50%; transform: translateY(-50%);
+    width:16px; height:16px; color: var(--ink-faint); pointer-events:none;
+  }
+
+  .results-meta{
+    font-size: 13px; color: var(--ink-faint); margin-bottom: 28px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .results-meta strong{ color: var(--olive-deep); }
+
+  /* ---------- product grid ---------- */
+  .prod-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .prod-card{
+    background: var(--surface); border: 1px solid var(--line); overflow:hidden;
+    opacity:0; transform: translateY(14px);
+  }
+  .prod-card.in{ opacity:1; transform:none; transition: opacity .4s ease, transform .4s ease; }
+  .prod-visual{
+    height: 180px; background: var(--bg-alt); display:flex; align-items:center; justify-content:center;
+    position:relative; border-bottom: 1px solid var(--line);
+  }
+  .prod-visual svg{ width: 72px; height:72px; color: var(--stone); }
+  .prod-visual .tag{ position:absolute; top: 14px; left:14px; }
+  .prod-visual .cat-label{
+    position:absolute; top:14px; right:14px;
+    font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-faint); background: var(--surface); border:1px solid var(--line);
+    padding: 3px 8px;
+  }
+  .prod-body{ padding: 20px 22px 24px; }
+  .prod-body h3{ font-size: 15.5px; margin-bottom: 8px; text-transform:none; letter-spacing:0; font-weight:600; }
+  .prod-body p{ font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+  .prod-specs{
+    display:flex; gap: 12px; flex-wrap:wrap;
+    font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--ink-faint);
+    border-top: 1px dashed var(--line-strong); padding-top: 12px;
+  }
+
+  .empty-state{
+    text-align:center; padding: 80px 20px; color: var(--ink-faint);
+    border: 1px dashed var(--line-strong); display:none;
+  }
+  .empty-state.show{ display:block; }
+  .empty-state h3{ color: var(--ink); font-size: 18px; margin-bottom: 8px; }
+
+  /* ---------- CTA strip ---------- */
+  .cta-strip{
+    background: var(--olive-deep); color:#fff; padding: 56px 0; margin-top: 32px;
+  }
+  .cta-strip .wrap{ display:flex; align-items:center; justify-content:space-between; gap: 24px; flex-wrap:wrap; }
+  .cta-strip h2{ color:#fff; font-size: clamp(22px,2.8vw,30px); margin-bottom:6px; }
+  .cta-strip p{ color:#C7CBBC; font-size: 14.5px; }
+
+  /* ---------- footer ---------- */
+  footer{ background: var(--olive-deep); color: #C7CBBC; padding: 64px 0 28px; }
+  .footer-grid{
+    display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+    padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo{
+    font-family:'Oswald',sans-serif; font-weight:700; font-size: 19px; text-transform: uppercase;
+    color: #fff; display:flex; align-items:center; gap:10px; margin-bottom: 16px;
+  }
+  .footer-logo .mark{ width:26px; height:26px; }
+  footer p.desc{ font-size: 13.5px; max-width: 260px; color: #A9AD9C; }
+  footer h4{ color: #fff; font-size: 12px; letter-spacing: 0.08em; margin-bottom: 18px; }
+  footer ul{ display:flex; flex-direction:column; gap: 11px; }
+  footer ul a{ font-size: 13.5px; color: #A9AD9C; }
+  footer ul a:hover{ color: #fff; }
+  .footer-bottom{
+    display:flex; justify-content: space-between; padding-top: 24px; font-size: 12.5px;
+    color: #82866F; flex-wrap: wrap; gap: 10px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .nav-links{ display:none; }
+    .hamburger{ display:flex; }
+    .prod-grid{ grid-template-columns: repeat(2,1fr); }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+    .catalog-toolbar{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (max-width: 600px){
+    .wrap{ padding: 0 20px; }
+    .page-head{ padding-top: 140px; }
+    .prod-grid{ grid-template-columns: 1fr; }
+    .nav-cta .btn-ghost{ display:none; }
+    .footer-grid{ grid-template-columns: 1fr; }
+    .search-box{ width:100%; }
+    .cta-strip .wrap{ flex-direction:column; align-items:flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2 L28 7 V16 C28 23 22.5 28.3 16 30 C9.5 28.3 4 23 4 16 V7 Z" stroke="#333F2B" stroke-width="2" fill="none"/>
+        <path d="M16 9 V21 M10.5 15 H21.5" stroke="#A6803D" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+      Başaran Asker
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="urunler.html" class="active">Ürünler</a>
+      <a href="index.html#kurumsal">Kurumsal</a>
+      <a href="index.html#sertifikalar">Sertifikalar</a>
+      <a href="index.html#iletisim">İletişim</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+902121234567" class="btn btn-ghost">0212 123 45 67</a>
+      <a href="index.html#iletisim" class="btn btn-primary">Teklif Al</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobileMenu" style="display:none; border-top:1px solid var(--line); background:var(--bg);">
+    <div class="wrap" style="display:flex; flex-direction:column; padding:20px 32px; gap:16px;">
+      <a href="urunler.html">Ürünler</a>
+      <a href="index.html#kurumsal">Kurumsal</a>
+      <a href="index.html#sertifikalar">Sertifikalar</a>
+      <a href="index.html#iletisim">İletişim</a>
+      <a href="tel:+902121234567" class="btn btn-ghost" style="width:fit-content;">0212 123 45 67</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+
+  <div class="page-head">
+    <svg class="page-head-grid" viewBox="0 0 1180 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="grid2" width="58" height="58" patternUnits="userSpaceOnUse">
+          <path d="M 58 0 L 0 0 0 58" fill="none" stroke="#E3E0D5" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="1180" height="360" fill="url(#grid2)"/>
+    </svg>
+    <div class="wrap inner">
+      <p class="eyebrow">Ürün Kataloğu</p>
+      <h1>Tam envanter, tek sayfada.</h1>
+      <p>Altı kategori altında toplanan 50 üründen istediğinizi filtreleyin, teknik detaylarını inceleyin ve kurumsal teklif talebinizi iletin.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+
+      <div class="catalog-toolbar">
+        <div class="filter-pills" id="filterPills"></div>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21 L16.5 16.5"/></svg>
+          <input type="text" id="searchInput" placeholder="Ürün ara..." aria-label="Ürün ara">
+        </div>
+      </div>
+
+      <p class="results-meta" id="resultsMeta"></p>
+
+      <div class="prod-grid" id="prodGrid"></div>
+
+      <div class="empty-state" id="emptyState">
+        <h3>Sonuç bulunamadı</h3>
+        <p>Farklı bir anahtar kelime veya kategori deneyin.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <div class="wrap">
+      <div>
+        <h2>Aradığınızı bulamadınız mı?</h2>
+        <p>Kurumsal ihtiyacınıza özel ürün ve numune talebinizi iletin, ekibimiz sizinle iletişime geçsin.</p>
+      </div>
+      <a href="index.html#iletisim" class="btn btn-brass">Kurumsal Teklif İste</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2 L28 7 V16 C28 23 22.5 28.3 16 30 C9.5 28.3 4 23 4 16 V7 Z" stroke="#EFEEE6" stroke-width="2" fill="none"/>
+            <path d="M16 9 V21 M10.5 15 H21.5" stroke="#C9A467" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          Başaran Asker
+        </div>
+        <p class="desc">Savunma, güvenlik ve saha operasyonları için kurumsal teçhizat tedariki. 2009’dan bu yana sahada.</p>
+      </div>
+      <div>
+        <h4>ÜRÜNLER</h4>
+        <ul>
+          <li><a href="urunler.html">Koruyucu Ekipman</a></li>
+          <li><a href="urunler.html">Taktik Giyim</a></li>
+          <li><a href="urunler.html">Çanta &amp; Taşıma</a></li>
+          <li><a href="urunler.html">Kamp &amp; Saha</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>KURUMSAL</h4>
+        <ul>
+          <li><a href="index.html#kurumsal">Hakkımızda</a></li>
+          <li><a href="index.html#sertifikalar">Sertifikalar</a></li>
+          <li><a href="index.html#iletisim">Kurumsal Satış</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İLETİŞİM</h4>
+        <ul>
+          <li><a href="tel:+902121234567">0212 123 45 67</a></li>
+          <li><a href="mailto:kurumsal@basaranasker.com">kurumsal@basaranasker.com</a></li>
+          <li><a href="index.html#iletisim">Organize Sanayi Bölgesi, İstanbul</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Başaran Asker. Tüm hakları saklıdır.</span>
+      <span>Bu site tanıtım amaçlıdır. Fiyat ve ürün bilgileri kurumsal teklif ile paylaşılır.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- mobile menu ----------
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.style.display === 'block';
+    mobileMenu.style.display = open ? 'none' : 'block';
+    hamburger.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a=>{
+    a.addEventListener('click', ()=>{ mobileMenu.style.display='none'; hamburger.setAttribute('aria-expanded','false'); });
+  });
+
+  // ---------- icons per category ----------
+  const ICONS = {
+    "Koruyucu Ekipman": '<path d="M24 6 L36 10 V22 C36 30 31 36 24 40 C17 36 12 30 12 22 V10 Z"/><path d="M18 20 L24 26 L32 16"/>',
+    "Taktik Giyim": '<path d="M16 8 L24 5 L32 8 L32 14 L38 18 V40 H10 V18 L16 14 Z"/><path d="M24 5 V16"/><path d="M18 24 H30 M18 30 H30"/>',
+    "Ayakkabı & Bot": '<path d="M10 20 Q10 10 24 10 Q38 10 38 20 V32 Q38 40 24 40 Q10 40 10 32 Z"/><path d="M16 20 H32 M16 26 H32"/>',
+    "Çanta & Taşıma": '<rect x="12" y="14" width="24" height="28" rx="2"/><path d="M18 14 V10 Q18 6 24 6 Q30 6 30 10 V14"/><path d="M12 24 H36"/>',
+    "Kamp & Saha": '<path d="M6 38 L24 10 L42 38 Z"/><path d="M24 10 V38 M16 24 H24"/>',
+    "Aksesuar & Teçhizat": '<circle cx="24" cy="24" r="16"/><path d="M24 24 L30 16 L26 24 L20 30 Z" fill="currentColor" stroke="none"/><path d="M24 8 V12 M24 36 V40 M8 24 H12 M36 24 H40"/>'
+  };
+
+  // ---------- product data (50 items) ----------
+  const PRODUCTS = [
+    // Koruyucu Ekipman
+    {code:"BA-101", cat:"Koruyucu Ekipman", name:"Modüler Plakalı Yelek", desc:"Ayarlanabilir omuz ve yan kayış sistemine sahip çok noktalı taşıma kapasiteli koruyucu yelek.", specs:["STD: MIL-SPEC","REN: S–XXL"]},
+    {code:"BA-102", cat:"Koruyucu Ekipman", name:"Balistik Kask", desc:"Hafif kabuk yapısı ve ayarlanabilir iç askı sistemiyle uzun süreli kullanım konforu sağlar.", specs:["AĞIRLIK: 1.4 KG","REN: M–XL"]},
+    {code:"BA-103", cat:"Koruyucu Ekipman", name:"Taktik Diz Koruyucu Seti", desc:"Esnek menteşe yapısı sayesinde hareket kabiliyetini kısıtlamadan darbe koruması sunar.", specs:["MALZEME: EVA KÖPÜK","ÇİFT: 2 ADET"]},
+    {code:"BA-104", cat:"Koruyucu Ekipman", name:"Taktik Dirseklik Seti", desc:"Terlemeyi azaltan iç yüzeyle birlikte tam gün kullanıma uygun koruma ekipmanı.", specs:["MALZEME: EVA KÖPÜK","ÇİFT: 2 ADET"]},
+    {code:"BA-105", cat:"Koruyucu Ekipman", name:"Yüz Koruma Maskesi", desc:"Ayarlanabilir kayış sistemiyle farklı yüz yapılarına uyum sağlayan koruyucu ekipman.", specs:["MALZEME: POLİMER","REN: TEK BEDEN"]},
+    {code:"BA-106", cat:"Koruyucu Ekipman", name:"Taktik Eldiven – Kışlık", desc:"İçi astarlı yapısıyla soğuk hava koşullarında el hareketliliğini koruyan eldiven serisi.", specs:["REN: S–XL","DOKUNMATİK: EVET"]},
+    {code:"BA-107", cat:"Koruyucu Ekipman", name:"Taktik Eldiven – Yazlık", desc:"Nefes alabilen kumaş yapısı ile sıcak hava koşullarında kavrama gücünü artırır.", specs:["REN: S–XL","DOKUNMATİK: EVET"]},
+    {code:"BA-108", cat:"Koruyucu Ekipman", name:"Balistik Gözlük", desc:"Değiştirilebilir camlarıyla farklı ışık koşullarına uyum sağlayan koruyucu gözlük.", specs:["CAM: 3 SEÇENEK","UV: 100%"]},
+    {code:"BA-109", cat:"Koruyucu Ekipman", name:"Sırt Plaka Cebi", desc:"Standart ölçü balistik plakalarla uyumlu, hızlı takma-çıkarma özellikli taşıma cebi.", specs:["UYUM: STD PLAKA","MALZEME: 1000D"]},
+
+    // Taktik Giyim
+    {code:"BA-110", cat:"Taktik Giyim", name:"Katmanlı Saha Ceketi", desc:"Rüzgar ve su geçirmez dış katman ile değiştirilebilir astar sistemi bir arada.", specs:["REN: S–3XL","MEVSİM: 4"]},
+    {code:"BA-111", cat:"Taktik Giyim", name:"Rüzgar Geçirmez Yağmurluk", desc:"Katlanabilir yapısıyla çanta içinde taşınabilen hafif yağmur koruması sağlar.", specs:["AĞIRLIK: 320 G","REN: S–XXL"]},
+    {code:"BA-112", cat:"Taktik Giyim", name:"Taktik Pantolon", desc:"Takviyeli diz bölgesi ve çok gözlü cep düzeniyle saha kullanımına uygun pantolon.", specs:["KUMAŞ: RIPSTOP","BEL: 30–44"]},
+    {code:"BA-113", cat:"Taktik Giyim", name:"Termal İç Giyim Seti", desc:"Nem emici kumaş yapısıyla soğuk koşullarda vücut sıcaklığını dengeler.", specs:["REN: S–XXL","SET: ÜST+ALT"]},
+    {code:"BA-114", cat:"Taktik Giyim", name:"Taktik Tişört", desc:"Hızlı kuruyan kumaş yapısı ile yoğun fiziksel aktivitede konfor sağlar.", specs:["KUMAŞ: %100 POLYESTER","REN: 4 SEÇENEK"]},
+    {code:"BA-115", cat:"Taktik Giyim", name:"Kışlık Softshell Mont", desc:"Rüzgar kesici membran ve polar astarla soğuk hava operasyonları için tasarlandı.", specs:["REN: S–3XL","SU GEÇİRMEZLİK: 5000MM"]},
+    {code:"BA-116", cat:"Taktik Giyim", name:"Taktik Şort", desc:"Hafif kumaşı ve çok gözlü cep yapısıyla sıcak iklim operasyonlarına uygundur.", specs:["KUMAŞ: RIPSTOP","BEL: 30–44"]},
+    {code:"BA-117", cat:"Taktik Giyim", name:"Kamuflaj Bone", desc:"Nem emici iç yüzeyiyle uzun süreli saha kullanımında konfor sunan başlık.", specs:["REN: 3 DESEN","TEK BEDEN"]},
+    {code:"BA-118", cat:"Taktik Giyim", name:"Taktik Sweatshirt", desc:"Kalın örgü yapısıyla geçiş mevsimlerinde katman giyim için uygun üst giyim.", specs:["REN: S–XXL","KUMAŞ: %80 PAMUK"]},
+
+    // Ayakkabı & Bot
+    {code:"BA-119", cat:"Ayakkabı & Bot", name:"Saha Botu – Uzun Konç", desc:"Su iticili dış yüzey ve darbe emici taban ile uzun mesafe saha kullanımı için üretildi.", specs:["TABAN: KAUÇUK","NO: 38–46"]},
+    {code:"BA-120", cat:"Ayakkabı & Bot", name:"Saha Botu – Kısa Konç", desc:"Hafif gövde yapısı sayesinde çeviklik gerektiren görevlerde tercih edilir.", specs:["TABAN: KAUÇUK","NO: 38–46"]},
+    {code:"BA-121", cat:"Ayakkabı & Bot", name:"Su Geçirmez Yürüyüş Botu", desc:"Membranlı yapısıyla ıslak zeminlerde ayak kuruluğunu koruyan bot serisi.", specs:["MEMBRAN: EVET","NO: 38–46"]},
+    {code:"BA-122", cat:"Ayakkabı & Bot", name:"Hafif Taktik Ayakkabı", desc:"Esnek taban yapısı ile şehir içi ve kısa mesafe operasyonlar için tasarlandı.", specs:["AĞIRLIK: 480 G","NO: 38–46"]},
+    {code:"BA-123", cat:"Ayakkabı & Bot", name:"Çöl Tipi Bot", desc:"Nefes alabilen kumaş panelleriyle sıcak ve kuru iklimlerde kullanım için üretildi.", specs:["TABAN: EVA+KAUÇUK","NO: 38–46"]},
+    {code:"BA-124", cat:"Ayakkabı & Bot", name:"Kışlık İzolasyonlu Bot", desc:"Termal astar yapısıyla düşük sıcaklıklarda ayak sıcaklığını korur.", specs:["İZOLASYON: 200G THINSULATE","NO: 38–46"]},
+    {code:"BA-125", cat:"Ayakkabı & Bot", name:"Taktik Sandalet", desc:"Ayarlanabilir kayış sistemiyle sıcak hava ve kamp kullanımına uygun sandalet.", specs:["TABAN: EVA","NO: 38–46"]},
+    {code:"BA-126", cat:"Ayakkabı & Bot", name:"Bot İçi Termal Tabanlık", desc:"Nem emici yapısıyla tüm bot modelleriyle uyumlu değiştirilebilir tabanlık.", specs:["MALZEME: MEMORY FOAM","NO: 38–46"]},
+
+    // Çanta & Taşıma
+    {code:"BA-127", cat:"Çanta & Taşıma", name:"45L Modüler Sırt Çantası", desc:"MOLLE uyumlu dış yüzey ve bölmeli iç düzenle uzun operasyonlar için taşıma çözümü.", specs:["HACİM: 45L","KUMAŞ: 1000D"]},
+    {code:"BA-128", cat:"Çanta & Taşıma", name:"25L Günlük Operasyon Çantası", desc:"Kompakt yapısıyla günübirlik görevler için hafif ve pratik taşıma imkânı sunar.", specs:["HACİM: 25L","KUMAŞ: 600D"]},
+    {code:"BA-129", cat:"Çanta & Taşıma", name:"Taktik Bel Çantası", desc:"Hızlı erişim gerektiren küçük ekipmanlar için kemer üzerine takılabilir çanta.", specs:["HACİM: 4L","MOLLE: EVET"]},
+    {code:"BA-130", cat:"Çanta & Taşıma", name:"Uzun Ekipman Taşıma Çantası", desc:"Uzun gövdeli saha ekipmanlarının güvenli taşınması için takviyeli iç yapı sunar.", specs:["UZUNLUK: 120 CM","KUMAŞ: 1000D"]},
+    {code:"BA-131", cat:"Çanta & Taşıma", name:"Sırt Çantası Yağmur Kılıfı", desc:"Katlanabilir yapısıyla tüm sırt çantası modelleriyle uyumlu su koruma kılıfı.", specs:["UYUM: 30–60L","AĞIRLIK: 90 G"]},
+    {code:"BA-132", cat:"Çanta & Taşıma", name:"MOLLE Yardımcı Çanta", desc:"Ana çantaya modüler olarak eklenebilen ek depolama ve organizasyon çözümü.", specs:["HACİM: 3L","BAĞLANTI: MOLLE"]},
+    {code:"BA-133", cat:"Çanta & Taşıma", name:"Su Taşıma Sistemi (Hidrasyon)", desc:"Sırt çantası içine entegre edilebilen 2.5 litre kapasiteli sıvı taşıma sistemi.", specs:["HACİM: 2.5L","HORTUM: EVET"]},
+    {code:"BA-134", cat:"Çanta & Taşıma", name:"Malzeme Taşıma Sandığı", desc:"Sert kabuklu yapısı ile hassas ekipmanların güvenli nakliyesi için tasarlandı.", specs:["MALZEME: POLİPROPİLEN","SU GEÇİRMEZ: EVET"]},
+
+    // Kamp & Saha
+    {code:"BA-135", cat:"Kamp & Saha", name:"Saha Tipi Komuta Çadırı", desc:"Hızlı kurulum iskeleti ve takviyeli tabanla değişken hava koşullarına uygun barınma.", specs:["KAPASİTE: 6 KİŞİ","KURULUM: 12 DK"]},
+    {code:"BA-136", cat:"Kamp & Saha", name:"Tekli Kamp Çadırı", desc:"Hafif taşınabilir yapısıyla tek kişilik saha konaklaması için tasarlandı.", specs:["AĞIRLIK: 1.8 KG","KURULUM: 5 DK"]},
+    {code:"BA-137", cat:"Kamp & Saha", name:"Uyku Tulumu – 4 Mevsim", desc:"Katmanlı dolgu yapısıyla geniş sıcaklık aralığında konforlu kullanım sağlar.", specs:["SICAKLIK: -10°C","AĞIRLIK: 1.6 KG"]},
+    {code:"BA-138", cat:"Kamp & Saha", name:"İzolasyonlu Kamp Matı", desc:"Şişme yapısıyla zeminden gelen soğuğu keserek uyku konforunu artırır.", specs:["KALINLIK: 5 CM","KATLANMIŞ: 25X15CM"]},
+    {code:"BA-139", cat:"Kamp & Saha", name:"Katlanır Saha Sedyesi", desc:"Hafif alüminyum iskeletiyle acil taşıma ve ilk müdahale operasyonlarında kullanılır.", specs:["TAŞIMA KAPASİTESİ: 150 KG","KATLANMIŞ: 90X20CM"]},
+    {code:"BA-140", cat:"Kamp & Saha", name:"Taşınabilir Saha Feneri", desc:"Şarj edilebilir pil yapısıyla uzun süreli saha aydınlatması sağlayan fener.", specs:["ÇALIŞMA SÜRESİ: 12 SAAT","IP: IP65"]},
+    {code:"BA-141", cat:"Kamp & Saha", name:"Saha Mutfak Seti", desc:"Kompakt yapısıyla taşınabilir pişirme ve yemek hazırlama ekipmanı seti.", specs:["PARÇA: 8 ADET","MALZEME: PASLANMAZ ÇELİK"]},
+    {code:"BA-142", cat:"Kamp & Saha", name:"Kompakt Ocak Sistemi", desc:"Katlanabilir gövdesiyle çanta içinde kolayca taşınabilen saha ocağı.", specs:["YAKIT: GAZ KARTUŞU","AĞIRLIK: 340 G"]},
+
+    // Aksesuar & Teçhizat
+    {code:"BA-143", cat:"Aksesuar & Teçhizat", name:"Taktik Kemer & Aksesuar Seti", desc:"Hızlı takım-çıkarım tokası ve modüler ataşman noktalarına sahip taşıma kemeri.", specs:["UZUNLUK: AYARLANABİLİR","REN: 3 SEÇENEK"]},
+    {code:"BA-144", cat:"Aksesuar & Teçhizat", name:"Çok Amaçlı Alet Seti", desc:"Tek gövdede birden fazla fonksiyon barındıran kompakt saha aleti.", specs:["FONKSİYON: 12","KILIF: DAHİL"]},
+    {code:"BA-145", cat:"Aksesuar & Teçhizat", name:"Taktik El Feneri", desc:"Yüksek parlaklık modu ve dayanıklı gövdesiyle zorlu koşullarda güvenilir aydınlatma sunar.", specs:["PARLAKLIK: 1000 LM","PİL: ŞARJLI"]},
+    {code:"BA-146", cat:"Aksesuar & Teçhizat", name:"Pusula – Saha Tipi", desc:"Sıvı dolgulu iğne yapısıyla hassas yön tayini sağlayan klasik saha pusulası.", specs:["MALZEME: ALÜMİNYUM","AYNALI: EVET"]},
+    {code:"BA-147", cat:"Aksesuar & Teçhizat", name:"Dürbün – Taktik Seri", desc:"Sisliye dayanıklı lens kaplamasıyla uzun mesafe gözlem imkânı sunar.", specs:["BÜYÜTME: 10X42","SU GEÇİRMEZ: EVET"]},
+    {code:"BA-148", cat:"Aksesuar & Teçhizat", name:"İlk Yardım Çantası", desc:"Bölmeli iç düzeniyle temel saha müdahale malzemelerini bir arada tutar.", specs:["PARÇA: 32 ADET","TAŞIMA: MOLLE UYUMLU"]},
+    {code:"BA-149", cat:"Aksesuar & Teçhizat", name:"Taktik Saat", desc:"Darbeye dayanıklı kasa yapısı ve gece görüş özelliğiyle saha kullanımına uygundur.", specs:["SU GEÇİRMEZLİK: 100M","IŞIK: EVET"]},
+    {code:"BA-150", cat:"Aksesuar & Teçhizat", name:"Kol Bandı Seti", desc:"Hızlı tanımlama ve birlik ayrımı için değiştirilebilir kol bandı seti.", specs:["ADET: 4","BAĞLANTI: CIRT BANT"]}
+  ];
+
+  const CATEGORIES = ["Koruyucu Ekipman","Taktik Giyim","Ayakkabı & Bot","Çanta & Taşıma","Kamp & Saha","Aksesuar & Teçhizat"];
+
+  let activeCategory = "Tümü";
+  let searchTerm = "";
+
+  // ---------- render filter pills ----------
+  const filterPillsEl = document.getElementById('filterPills');
+  function countFor(cat){
+    return cat === "Tümü" ? PRODUCTS.length : PRODUCTS.filter(p=>p.cat===cat).length;
+  }
+  function renderPills(){
+    const all = ["Tümü", ...CATEGORIES];
+    filterPillsEl.innerHTML = all.map(cat => `
+      <button class="pill ${cat===activeCategory ? 'active':''}" data-cat="${cat}">
+        ${cat} <span class="count">(${countFor(cat)})</span>
+      </button>
+    `).join('');
+    filterPillsEl.querySelectorAll('.pill').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        activeCategory = btn.getAttribute('data-cat');
+        renderPills();
+        renderGrid();
+      });
+    });
+  }
+
+  // ---------- render product grid ----------
+  const gridEl = document.getElementById('prodGrid');
+  const metaEl = document.getElementById('resultsMeta');
+  const emptyEl = document.getElementById('emptyState');
+
+  function renderGrid(){
+    let list = PRODUCTS;
+    if(activeCategory !== "Tümü"){ list = list.filter(p => p.cat === activeCategory); }
+    if(searchTerm.trim()){
+      const q = searchTerm.trim().toLocaleLowerCase('tr');
+      list = list.filter(p => p.name.toLocaleLowerCase('tr').includes(q) || p.desc.toLocaleLowerCase('tr').includes(q) || p.code.toLowerCase().includes(q));
+    }
+
+    metaEl.innerHTML = `<strong>${list.length}</strong> / ${PRODUCTS.length} ürün gösteriliyor`;
+
+    if(list.length === 0){
+      gridEl.innerHTML = '';
+      emptyEl.classList.add('show');
+      return;
+    }
+    emptyEl.classList.remove('show');
+
+    gridEl.innerHTML = list.map(p => `
+      <div class="prod-card">
+        <div class="prod-visual">
+          <span class="tag mono">${p.code}</span>
+          <span class="cat-label">${p.cat}</span>
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4">${ICONS[p.cat]}</svg>
+        </div>
+        <div class="prod-body">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="prod-specs">${p.specs.map(s=>`<span>${s}</span>`).join('')}</div>
+        </div>
+      </div>
+    `).join('');
+
+    // reveal animation
+    const cards = gridEl.querySelectorAll('.prod-card');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(c=>io.observe(c));
+    } else {
+      cards.forEach(c=>c.classList.add('in'));
+    }
+  }
+
+  document.getElementById('searchInput').addEventListener('input', (e)=>{
+    searchTerm = e.target.value;
+    renderGrid();
+  });
+
+  renderPills();
+  renderGrid();
+</script>
+
+</body>
+</html>
