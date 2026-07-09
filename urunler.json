@@ -1,0 +1,866 @@
+{
+  "site": "Başaran Asker",
+  "source_files": [
+    "index.html",
+    "urunler.html"
+  ],
+  "notes": [
+    "Product codes did NOT match between index.html (featured section) and urunler.html (full catalog) for the same items in the original HTML. This file uses the urunler.html codes as canonical and records the mismatched homepage code in 'homepage_code_mismatch' so index.html can be corrected to use the same code.",
+    "Currently both pages render an inline SVG placeholder icon inside .prod-visual instead of a photo. Once photo files are added at the paths below, .prod-visual svg should be replaced with an <img src=... alt=...> using object-fit: cover.",
+    "Filenames are derived from the canonical product code (e.g. BA-101.jpg). Keep this convention so the same image file can be referenced from both index.html and urunler.html without duplication."
+  ],
+  "image_directory": "images/products/",
+  "categories": [
+    {
+      "id": "koruyucu-ekipman",
+      "name": "Koruyucu Ekipman",
+      "code_prefix": "BA-01",
+      "icon_svg_present": true
+    },
+    {
+      "id": "taktik-giyim",
+      "name": "Taktik Giyim",
+      "code_prefix": "BA-02",
+      "icon_svg_present": true
+    },
+    {
+      "id": "ayakkabi-bot",
+      "name": "Ayakkabı & Bot",
+      "code_prefix": "BA-03",
+      "icon_svg_present": true
+    },
+    {
+      "id": "canta-tasima",
+      "name": "Çanta & Taşıma",
+      "code_prefix": "BA-04",
+      "icon_svg_present": true
+    },
+    {
+      "id": "kamp-saha",
+      "name": "Kamp & Saha",
+      "code_prefix": "BA-05",
+      "icon_svg_present": true
+    },
+    {
+      "id": "aksesuar-techizat",
+      "name": "Aksesuar & Teçhizat",
+      "code_prefix": "BA-06",
+      "icon_svg_present": true
+    }
+  ],
+  "products": [
+    {
+      "code": "BA-101",
+      "category": "Koruyucu Ekipman",
+      "name": "Modüler Plakalı Yelek",
+      "slug": "moduler-plakali-yelek",
+      "featured_on_homepage": true,
+      "homepage_code_mismatch": "BA-118",
+      "image": {
+        "filename": "BA-101.jpg",
+        "path": "images/products/BA-101.jpg",
+        "alt_tr": "Modüler Plakalı Yelek – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-102",
+      "category": "Koruyucu Ekipman",
+      "name": "Balistik Kask",
+      "slug": "balistik-kask",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-102.jpg",
+        "path": "images/products/BA-102.jpg",
+        "alt_tr": "Balistik Kask – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-103",
+      "category": "Koruyucu Ekipman",
+      "name": "Taktik Diz Koruyucu Seti",
+      "slug": "taktik-diz-koruyucu-seti",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-103.jpg",
+        "path": "images/products/BA-103.jpg",
+        "alt_tr": "Taktik Diz Koruyucu Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-104",
+      "category": "Koruyucu Ekipman",
+      "name": "Taktik Dirseklik Seti",
+      "slug": "taktik-dirseklik-seti",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-104.jpg",
+        "path": "images/products/BA-104.jpg",
+        "alt_tr": "Taktik Dirseklik Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-105",
+      "category": "Koruyucu Ekipman",
+      "name": "Yüz Koruma Maskesi",
+      "slug": "yuz-koruma-maskesi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-105.jpg",
+        "path": "images/products/BA-105.jpg",
+        "alt_tr": "Yüz Koruma Maskesi – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-106",
+      "category": "Koruyucu Ekipman",
+      "name": "Taktik Eldiven – Kışlık",
+      "slug": "taktik-eldiven-kislik",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-106.jpg",
+        "path": "images/products/BA-106.jpg",
+        "alt_tr": "Taktik Eldiven – Kışlık – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-107",
+      "category": "Koruyucu Ekipman",
+      "name": "Taktik Eldiven – Yazlık",
+      "slug": "taktik-eldiven-yazlik",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-107.jpg",
+        "path": "images/products/BA-107.jpg",
+        "alt_tr": "Taktik Eldiven – Yazlık – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-108",
+      "category": "Koruyucu Ekipman",
+      "name": "Balistik Gözlük",
+      "slug": "balistik-gozluk",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-108.jpg",
+        "path": "images/products/BA-108.jpg",
+        "alt_tr": "Balistik Gözlük – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-109",
+      "category": "Koruyucu Ekipman",
+      "name": "Sırt Plaka Cebi",
+      "slug": "sirt-plaka-cebi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-109.jpg",
+        "path": "images/products/BA-109.jpg",
+        "alt_tr": "Sırt Plaka Cebi – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-110",
+      "category": "Taktik Giyim",
+      "name": "Katmanlı Saha Ceketi",
+      "slug": "katmanli-saha-ceketi",
+      "featured_on_homepage": true,
+      "homepage_code_mismatch": "BA-097",
+      "image": {
+        "filename": "BA-110.jpg",
+        "path": "images/products/BA-110.jpg",
+        "alt_tr": "Katmanlı Saha Ceketi – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-111",
+      "category": "Taktik Giyim",
+      "name": "Rüzgar Geçirmez Yağmurluk",
+      "slug": "ruzgar-gecirmez-yagmurluk",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-111.jpg",
+        "path": "images/products/BA-111.jpg",
+        "alt_tr": "Rüzgar Geçirmez Yağmurluk – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-112",
+      "category": "Taktik Giyim",
+      "name": "Taktik Pantolon",
+      "slug": "taktik-pantolon",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-112.jpg",
+        "path": "images/products/BA-112.jpg",
+        "alt_tr": "Taktik Pantolon – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-113",
+      "category": "Taktik Giyim",
+      "name": "Termal İç Giyim Seti",
+      "slug": "termal-ic-giyim-seti",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-113.jpg",
+        "path": "images/products/BA-113.jpg",
+        "alt_tr": "Termal İç Giyim Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-114",
+      "category": "Taktik Giyim",
+      "name": "Taktik Tişört",
+      "slug": "taktik-tisort",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-114.jpg",
+        "path": "images/products/BA-114.jpg",
+        "alt_tr": "Taktik Tişört – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-115",
+      "category": "Taktik Giyim",
+      "name": "Kışlık Softshell Mont",
+      "slug": "kislik-softshell-mont",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-115.jpg",
+        "path": "images/products/BA-115.jpg",
+        "alt_tr": "Kışlık Softshell Mont – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-116",
+      "category": "Taktik Giyim",
+      "name": "Taktik Şort",
+      "slug": "taktik-sort",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-116.jpg",
+        "path": "images/products/BA-116.jpg",
+        "alt_tr": "Taktik Şort – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-117",
+      "category": "Taktik Giyim",
+      "name": "Kamuflaj Bone",
+      "slug": "kamuflaj-bone",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-117.jpg",
+        "path": "images/products/BA-117.jpg",
+        "alt_tr": "Kamuflaj Bone – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-118",
+      "category": "Taktik Giyim",
+      "name": "Taktik Sweatshirt",
+      "slug": "taktik-sweatshirt",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-118.jpg",
+        "path": "images/products/BA-118.jpg",
+        "alt_tr": "Taktik Sweatshirt – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-119",
+      "category": "Ayakkabı & Bot",
+      "name": "Saha Botu – Uzun Konç",
+      "slug": "saha-botu-uzun-konc",
+      "featured_on_homepage": true,
+      "homepage_code_mismatch": "BA-224",
+      "image": {
+        "filename": "BA-119.jpg",
+        "path": "images/products/BA-119.jpg",
+        "alt_tr": "Saha Botu – Uzun Konç – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-120",
+      "category": "Ayakkabı & Bot",
+      "name": "Saha Botu – Kısa Konç",
+      "slug": "saha-botu-kisa-konc",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-120.jpg",
+        "path": "images/products/BA-120.jpg",
+        "alt_tr": "Saha Botu – Kısa Konç – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-121",
+      "category": "Ayakkabı & Bot",
+      "name": "Su Geçirmez Yürüyüş Botu",
+      "slug": "su-gecirmez-yuruyus-botu",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-121.jpg",
+        "path": "images/products/BA-121.jpg",
+        "alt_tr": "Su Geçirmez Yürüyüş Botu – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-122",
+      "category": "Ayakkabı & Bot",
+      "name": "Hafif Taktik Ayakkabı",
+      "slug": "hafif-taktik-ayakkabi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-122.jpg",
+        "path": "images/products/BA-122.jpg",
+        "alt_tr": "Hafif Taktik Ayakkabı – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-123",
+      "category": "Ayakkabı & Bot",
+      "name": "Çöl Tipi Bot",
+      "slug": "col-tipi-bot",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-123.jpg",
+        "path": "images/products/BA-123.jpg",
+        "alt_tr": "Çöl Tipi Bot – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-124",
+      "category": "Ayakkabı & Bot",
+      "name": "Kışlık İzolasyonlu Bot",
+      "slug": "kislik-izolasyonlu-bot",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-124.jpg",
+        "path": "images/products/BA-124.jpg",
+        "alt_tr": "Kışlık İzolasyonlu Bot – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-125",
+      "category": "Ayakkabı & Bot",
+      "name": "Taktik Sandalet",
+      "slug": "taktik-sandalet",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-125.jpg",
+        "path": "images/products/BA-125.jpg",
+        "alt_tr": "Taktik Sandalet – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-126",
+      "category": "Ayakkabı & Bot",
+      "name": "Bot İçi Termal Tabanlık",
+      "slug": "bot-ici-termal-tabanlik",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-126.jpg",
+        "path": "images/products/BA-126.jpg",
+        "alt_tr": "Bot İçi Termal Tabanlık – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-127",
+      "category": "Çanta & Taşıma",
+      "name": "45L Modüler Sırt Çantası",
+      "slug": "45l-moduler-sirt-cantasi",
+      "featured_on_homepage": true,
+      "homepage_code_mismatch": "BA-341",
+      "image": {
+        "filename": "BA-127.jpg",
+        "path": "images/products/BA-127.jpg",
+        "alt_tr": "45L Modüler Sırt Çantası – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-128",
+      "category": "Çanta & Taşıma",
+      "name": "25L Günlük Operasyon Çantası",
+      "slug": "25l-gunluk-operasyon-cantasi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-128.jpg",
+        "path": "images/products/BA-128.jpg",
+        "alt_tr": "25L Günlük Operasyon Çantası – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-129",
+      "category": "Çanta & Taşıma",
+      "name": "Taktik Bel Çantası",
+      "slug": "taktik-bel-cantasi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-129.jpg",
+        "path": "images/products/BA-129.jpg",
+        "alt_tr": "Taktik Bel Çantası – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-130",
+      "category": "Çanta & Taşıma",
+      "name": "Uzun Ekipman Taşıma Çantası",
+      "slug": "uzun-ekipman-tasima-cantasi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-130.jpg",
+        "path": "images/products/BA-130.jpg",
+        "alt_tr": "Uzun Ekipman Taşıma Çantası – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-131",
+      "category": "Çanta & Taşıma",
+      "name": "Sırt Çantası Yağmur Kılıfı",
+      "slug": "sirt-cantasi-yagmur-kilifi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-131.jpg",
+        "path": "images/products/BA-131.jpg",
+        "alt_tr": "Sırt Çantası Yağmur Kılıfı – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-132",
+      "category": "Çanta & Taşıma",
+      "name": "MOLLE Yardımcı Çanta",
+      "slug": "molle-yardimci-canta",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-132.jpg",
+        "path": "images/products/BA-132.jpg",
+        "alt_tr": "MOLLE Yardımcı Çanta – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-133",
+      "category": "Çanta & Taşıma",
+      "name": "Su Taşıma Sistemi (Hidrasyon)",
+      "slug": "su-tasima-sistemi-hidrasyon",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-133.jpg",
+        "path": "images/products/BA-133.jpg",
+        "alt_tr": "Su Taşıma Sistemi (Hidrasyon) – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-134",
+      "category": "Çanta & Taşıma",
+      "name": "Malzeme Taşıma Sandığı",
+      "slug": "malzeme-tasima-sandigi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-134.jpg",
+        "path": "images/products/BA-134.jpg",
+        "alt_tr": "Malzeme Taşıma Sandığı – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-135",
+      "category": "Kamp & Saha",
+      "name": "Saha Tipi Komuta Çadırı",
+      "slug": "saha-tipi-komuta-cadiri",
+      "featured_on_homepage": true,
+      "homepage_code_mismatch": "BA-402",
+      "image": {
+        "filename": "BA-135.jpg",
+        "path": "images/products/BA-135.jpg",
+        "alt_tr": "Saha Tipi Komuta Çadırı – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-136",
+      "category": "Kamp & Saha",
+      "name": "Tekli Kamp Çadırı",
+      "slug": "tekli-kamp-cadiri",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-136.jpg",
+        "path": "images/products/BA-136.jpg",
+        "alt_tr": "Tekli Kamp Çadırı – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-137",
+      "category": "Kamp & Saha",
+      "name": "Uyku Tulumu – 4 Mevsim",
+      "slug": "uyku-tulumu-4-mevsim",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-137.jpg",
+        "path": "images/products/BA-137.jpg",
+        "alt_tr": "Uyku Tulumu – 4 Mevsim – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-138",
+      "category": "Kamp & Saha",
+      "name": "İzolasyonlu Kamp Matı",
+      "slug": "izolasyonlu-kamp-mati",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-138.jpg",
+        "path": "images/products/BA-138.jpg",
+        "alt_tr": "İzolasyonlu Kamp Matı – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-139",
+      "category": "Kamp & Saha",
+      "name": "Katlanır Saha Sedyesi",
+      "slug": "katlanir-saha-sedyesi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-139.jpg",
+        "path": "images/products/BA-139.jpg",
+        "alt_tr": "Katlanır Saha Sedyesi – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-140",
+      "category": "Kamp & Saha",
+      "name": "Taşınabilir Saha Feneri",
+      "slug": "tasinabilir-saha-feneri",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-140.jpg",
+        "path": "images/products/BA-140.jpg",
+        "alt_tr": "Taşınabilir Saha Feneri – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-141",
+      "category": "Kamp & Saha",
+      "name": "Saha Mutfak Seti",
+      "slug": "saha-mutfak-seti",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-141.jpg",
+        "path": "images/products/BA-141.jpg",
+        "alt_tr": "Saha Mutfak Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-142",
+      "category": "Kamp & Saha",
+      "name": "Kompakt Ocak Sistemi",
+      "slug": "kompakt-ocak-sistemi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-142.jpg",
+        "path": "images/products/BA-142.jpg",
+        "alt_tr": "Kompakt Ocak Sistemi – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-143",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Taktik Kemer & Aksesuar Seti",
+      "slug": "taktik-kemer-aksesuar-seti",
+      "featured_on_homepage": true,
+      "homepage_code_mismatch": "BA-556",
+      "image": {
+        "filename": "BA-143.jpg",
+        "path": "images/products/BA-143.jpg",
+        "alt_tr": "Taktik Kemer & Aksesuar Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-144",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Çok Amaçlı Alet Seti",
+      "slug": "cok-amacli-alet-seti",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-144.jpg",
+        "path": "images/products/BA-144.jpg",
+        "alt_tr": "Çok Amaçlı Alet Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-145",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Taktik El Feneri",
+      "slug": "taktik-el-feneri",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-145.jpg",
+        "path": "images/products/BA-145.jpg",
+        "alt_tr": "Taktik El Feneri – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-146",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Pusula – Saha Tipi",
+      "slug": "pusula-saha-tipi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-146.jpg",
+        "path": "images/products/BA-146.jpg",
+        "alt_tr": "Pusula – Saha Tipi – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-147",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Dürbün – Taktik Seri",
+      "slug": "durbun-taktik-seri",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-147.jpg",
+        "path": "images/products/BA-147.jpg",
+        "alt_tr": "Dürbün – Taktik Seri – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-148",
+      "category": "Aksesuar & Teçhizat",
+      "name": "İlk Yardım Çantası",
+      "slug": "ilk-yardim-cantasi",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-148.jpg",
+        "path": "images/products/BA-148.jpg",
+        "alt_tr": "İlk Yardım Çantası – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-149",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Taktik Saat",
+      "slug": "taktik-saat",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-149.jpg",
+        "path": "images/products/BA-149.jpg",
+        "alt_tr": "Taktik Saat – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    },
+    {
+      "code": "BA-150",
+      "category": "Aksesuar & Teçhizat",
+      "name": "Kol Bandı Seti",
+      "slug": "kol-bandi-seti",
+      "featured_on_homepage": false,
+      "homepage_code_mismatch": null,
+      "image": {
+        "filename": "BA-150.jpg",
+        "path": "images/products/BA-150.jpg",
+        "alt_tr": "Kol Bandı Seti – Başaran Asker",
+        "recommended_size_px": "800x600",
+        "aspect_ratio": "4:3",
+        "notes": "Displayed inside .prod-visual (fixed height 180-200px, object-fit: cover recommended once <img> replaces the placeholder SVG icon)."
+      }
+    }
+  ],
+  "other_images": [
+    {
+      "id": "hero-emblem",
+      "description": "Decorative hero SVG emblem on index.html (currently vector, no photo needed unless replacing with photography).",
+      "path": null
+    },
+    {
+      "id": "og-share-image",
+      "description": "Optional social sharing image for both pages (not currently set via og:image meta tag).",
+      "path": "images/og-share.jpg",
+      "recommended_size_px": "1200x630"
+    }
+  ]
+}
