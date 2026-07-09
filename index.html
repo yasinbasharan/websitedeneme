@@ -1,976 +1,1042 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Başaran Askeri Ürünleri - Güvenlikte Lider</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-dark: #1a2332;
-            --primary-green: #2d5a3d;
-            --accent-green: #4caf50;
-            --gold: #ffd700;
-            --dark-bg: #0f1419;
-            --card-bg: #1e2936;
-            --text-light: #ffffff;
-            --text-gray: #94a3b8;
-            --text-dark: #334155;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --gradient-primary: linear-gradient(135deg, #2d5a3d 0%, #1a2332 100%);
-            --gradient-card: linear-gradient(145deg, #1e2936 0%, #243447 100%);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text-light);
-            background: var(--dark-bg);
-            overflow-x: hidden;
-        }
-
-        /* Header Styles */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15, 20, 25, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled {
-            background: rgba(15, 20, 25, 0.98);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-image {   
-            height: 150px;
-            width: auto;
-            max-width: 400px;
-            object-fit: contain;
-            filter: brightness(1.1);
-            transition: all 0.3s ease;
-        }
-
-        .logo:hover .logo-image {
-            filter: brightness(1.3);
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', monospace;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--gold);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-green);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-green);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-light);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(15, 20, 25, 0.7), rgba(10, 198, 255, 0.499)), 
-                        url('/resimler/containerresim.png') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(77, 175, 80, 0.1) 0%, transparent 70%);
-            animation: pulse-bg 4s ease-in-out infinite;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 2rem;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-family: 'Montserrat', monospace;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #0095ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--text-white);
-            margin-bottom: 2.5rem;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--gradient-primary);
-            color: var(--text-light);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.4s ease;
-            box-shadow: var(--shadow-lg);
-            border: 2px solid transparent;
-            animation: slideInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-green);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--text-gray);
-            animation: bounce 2s infinite;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 0;
-            background: var(--primary-dark);
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            font-family: 'Montserrat', monospace;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .about-card {
-            background: var(--gradient-card);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .about-card:hover::before {
-            left: 100%;
-        }
-
-        .about-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--accent-green);
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-green);
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .card-text {
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 8rem 0;
-            background: var(--dark-bg);
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 4rem;
-        }
-
-        .product-card {
-            background: var(--gradient-card);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .product-image {
-            height: 250px;
-            background: linear-gradient(45deg, var(--primary-green), var(--primary-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--text-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .product-card:hover .product-image::before {
-            opacity: 1;
-        }
-
-        .product-content {
-            padding: 2rem;
-        }
-
-        .product-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-light);
-        }
-
-        .product-description {
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .product-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .product-features li {
-            color: var(--text-gray);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .product-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-
-        .learn-more-btn {
-            background: transparent;
-            border: 2px solid var(--accent-green);
-            color: var(--accent-green);
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .learn-more-btn:hover {
-            background: var(--accent-green);
-            color: var(--text-light);
-            transform: translateX(5px);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 0;
-            background: var(--primary-dark);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-
-        .contact-info {
-            space-y: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent-green);
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-card);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .contact-form {
-            background: var(--gradient-card);
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1rem;
-            background: var(--dark-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            color: var(--text-light);
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--accent-green);
-            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--gradient-primary);
-            color: var(--text-light);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--dark-bg);
-            padding: 3rem 0 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-content {
-            text-align: center;
-            color: var(--text-gray);
-        }
-
-        .footer-logo {
-            font-family: 'Montserrat', monospace;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        /* Animations */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        @keyframes pulse-bg {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.3; }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nav-container {
-                padding: 0 1.5rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .hero {
-                height: 90vh;
-            }
-            
-            .hero-content {
-                padding: 0 1rem;
-            }
-            
-            .about, .products, .contact {
-                padding: 4rem 0;
-            }
-            
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .about-grid, .products-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .contact-form {
-                padding: 1.5rem;
-            }
-
-            .logo-image {
-                height: 40px;
-            }
-
-            .logo-text {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                height: 70px;
-                padding: 0 1rem;
-            }
-            
-            .logo-image {
-                height: 35px;
-            }
-
-            .logo-text {
-                font-size: 1.1rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .about-card, .product-card {
-                margin: 0 0.5rem;
-            }
-        }
-
-        /* Utility Classes */
-        .hidden {
-            display: none;
-        }
-
-        .text-success {
-            color: var(--accent-green);
-        }
-
-        .text-error {
-            color: #ef4444;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Selection */
-        ::selection {
-            background: var(--accent-green);
-            color: var(--text-light);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Başaran Asker | Kurumsal Teçhizat ve Ekipman Tedarikçisi</title>
+<meta name="description" content="Başaran Asker — teçhizat, giyim ve saha ekipmanlarında kurumsal tedarik. Sahada güvenilir, envanterde eksiksiz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAFAF7;
+    --bg-alt: #F1EFE7;
+    --surface: #FFFFFF;
+    --ink: #1D2018;
+    --ink-soft: #5B5F52;
+    --ink-faint: #93968A;
+    --olive: #333F2B;
+    --olive-deep: #212A1B;
+    --stone: #8B8574;
+    --brass: #A6803D;
+    --brass-soft: #C9A467;
+    --line: #E3E0D5;
+    --line-strong: #CFCBBB;
+    --radius: 2px;
+    --shadow: 0 1px 2px rgba(29,32,24,0.04), 0 8px 24px rgba(29,32,24,0.05);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--olive-deep);
+    line-height: 1.15;
+  }
+
+  .mono{
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.03em;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+  img,svg{ display:block; max-width:100%; }
+  ul{ list-style:none; }
+  button{ font-family: inherit; cursor:pointer; }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom: 16px;
+  }
+  .eyebrow::before{
+    content:"";
+    width: 22px; height:1px;
+    background: var(--brass);
+    display:inline-block;
+  }
+
+  /* ---------- visually-hidden focus-safe skip ---------- */
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background: var(--olive); color:#fff; padding:10px 16px; z-index:999;
+  }
+  .skip-link:focus{ left: 16px; top:16px; }
+
+  :focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 500;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    height: 76px;
+  }
+  .logo{
+    font-family:'Oswald', sans-serif;
+    font-weight:700;
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color: var(--olive-deep);
+  }
+  .logo .mark{
+    width: 30px; height: 30px;
+    flex-shrink:0;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap: 36px;
+  }
+  .nav-links a{
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    color: var(--ink-soft);
+    position: relative;
+    padding: 6px 0;
+  }
+  .nav-links a:hover{ color: var(--olive-deep); }
+  .nav-links a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0;
+    height:1px; background: var(--brass);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .nav-links a:hover::after{ transform: scaleX(1); }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 12px 22px;
+    font-size: 13px;
+    font-weight:600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    transition: all .2s ease;
+    white-space: nowrap;
+  }
+  .btn-primary{
+    background: var(--olive);
+    color: #fff;
+  }
+  .btn-primary:hover{ background: var(--olive-deep); }
+  .btn-ghost{
+    border-color: var(--line-strong);
+    color: var(--ink);
+    background: transparent;
+  }
+  .btn-ghost:hover{ border-color: var(--olive); color: var(--olive-deep); }
+  .btn-brass{
+    background: var(--brass);
+    color: #fff;
+  }
+  .btn-brass:hover{ background: #8f6c30; }
+
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none; border:none;
+    padding: 8px;
+  }
+  .hamburger span{
+    width: 22px; height:2px; background: var(--olive-deep); display:block;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position: relative;
+    padding: 176px 0 96px;
+    overflow: hidden;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    opacity: 0.5;
+  }
+  .hero-inner{
+    position: relative;
+    z-index: 1;
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size: clamp(38px, 5vw, 60px);
+    margin-bottom: 24px;
+  }
+  .hero h1 em{
+    font-style: normal;
+    color: var(--brass);
+  }
+  .hero p.lede{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 36px;
+  }
+  .hero-actions{
+    display:flex;
+    gap: 14px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  .hero-meta{
+    display:flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-meta div{
+    border-left: 2px solid var(--brass);
+    padding-left: 12px;
+  }
+  .hero-meta .num{
+    font-family:'Oswald',sans-serif;
+    font-size: 26px;
+    color: var(--olive-deep);
+    font-weight:600;
+  }
+  .hero-meta .label{
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-emblem{
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* ---------- tag chip (signature element) ---------- */
+  .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--olive);
+    background: var(--bg-alt);
+    border: 1px solid var(--line-strong);
+    padding: 4px 10px 4px 8px;
+    border-radius: 1px;
+  }
+  .tag::before{
+    content:"";
+    width:6px; height:6px;
+    background: var(--brass);
+    border-radius: 50%;
+    display:inline-block;
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding: 96px 0; }
+  .section-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .section-head h2{ font-size: clamp(28px, 3.4vw, 40px); }
+  .section-head p{
+    max-width: 380px;
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  .alt{ background: var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+
+  /* ---------- stats strip ---------- */
+  .stats{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .stats div{
+    background: var(--surface);
+    padding: 36px 28px;
+  }
+  .stats .num{
+    font-family:'Oswald', sans-serif;
+    font-size: 38px;
+    color: var(--olive-deep);
+    font-weight: 600;
+  }
+  .stats .num span{ color: var(--brass); }
+  .stats .label{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- category grid ---------- */
+  .cat-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .cat-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 32px 28px;
+    transition: border-color .2s ease, transform .2s ease;
+    position:relative;
+    opacity:0;
+    transform: translateY(16px);
+  }
+  .cat-card.in{ opacity:1; transform:none; transition: opacity .5s ease, transform .5s ease; }
+  .cat-card:hover{ border-color: var(--olive); transform: translateY(-4px); }
+  .cat-icon{
+    width: 46px; height:46px;
+    color: var(--olive);
+    margin-bottom: 22px;
+  }
+  .cat-card h3{
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  .cat-card p{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+
+  /* ---------- product showcase ---------- */
+  .prod-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .prod-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    overflow:hidden;
+    opacity:0;
+    transform: translateY(16px);
+  }
+  .prod-card.in{ opacity:1; transform:none; transition: opacity .5s ease, transform .5s ease; }
+  .prod-visual{
+    height: 200px;
+    background: var(--bg-alt);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    border-bottom: 1px solid var(--line);
+  }
+  .prod-visual svg{ width: 84px; height:84px; color: var(--stone); }
+  .prod-visual .tag{
+    position:absolute;
+    top: 14px; left:14px;
+  }
+  .prod-body{ padding: 22px 24px 26px; }
+  .prod-body h3{ font-size: 16px; margin-bottom: 8px; }
+  .prod-body p{ font-size: 13.5px; color: var(--ink-soft); margin-bottom: 14px; }
+  .prod-specs{
+    display:flex;
+    gap: 14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 12px;
+  }
+
+  /* ---------- kurumsal / trust section ---------- */
+  .split{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items:center;
+  }
+  .split h2{ font-size: clamp(28px,3.4vw,38px); margin-bottom: 22px; }
+  .split p.lede{ color: var(--ink-soft); font-size: 16px; margin-bottom: 28px; max-width: 440px; }
+  .cert-list{ display:flex; flex-direction:column; gap: 16px; }
+  .cert-list li{
+    display:flex;
+    align-items:flex-start;
+    gap: 14px;
+    font-size: 14.5px;
+    color: var(--ink);
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .cert-list li:last-child{ border-bottom:none; }
+  .cert-list svg{ width:20px; height:20px; color: var(--brass); flex-shrink:0; margin-top:2px; }
+  .cert-list strong{ display:block; font-family:'Oswald',sans-serif; font-weight:500; text-transform: none; letter-spacing:0; color: var(--olive-deep); font-size: 15px; }
+
+  .institution-panel{
+    background: var(--olive-deep);
+    color: #EFEEE6;
+    padding: 44px;
+    position: relative;
+    overflow:hidden;
+  }
+  .institution-panel h3{
+    color:#fff;
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  .institution-panel p{
+    color: #C7CBBC;
+    font-size: 14.5px;
+    margin-bottom: 28px;
+    max-width: 380px;
+  }
+  .institution-panel .tag{
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.18);
+    color: #EFEEE6;
+  }
+  .institution-panel .tag::before{ background: var(--brass-soft); }
+
+  /* ---------- CTA / contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+  }
+  .contact-info h2{ font-size: clamp(26px,3vw,34px); margin-bottom: 18px; }
+  .contact-info p{ color: var(--ink-soft); margin-bottom: 32px; max-width: 380px; }
+  .contact-detail{ display:flex; gap:14px; margin-bottom: 22px; }
+  .contact-detail svg{ width:20px; height:20px; color: var(--brass); flex-shrink:0; margin-top:2px; }
+  .contact-detail strong{ display:block; font-size: 13px; text-transform: uppercase; letter-spacing:0.05em; color: var(--ink-faint); margin-bottom: 2px; }
+  .contact-detail span{ font-size: 15px; color: var(--ink); }
+
+  form{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 40px;
+  }
+  .form-row{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .field{ display:flex; flex-direction:column; gap:7px; }
+  .field.full{ grid-column: 1 / -1; }
+  label{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  input, select, textarea{
+    border: 1px solid var(--line-strong);
+    background: var(--bg);
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 14.5px;
+    color: var(--ink);
+    border-radius: var(--radius);
+  }
+  input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-color: var(--olive);
+  }
+  textarea{ resize: vertical; min-height: 100px; }
+  .form-foot{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 8px;
+    flex-wrap:wrap;
+    gap: 12px;
+  }
+  .form-note{ font-size: 12.5px; color: var(--ink-faint); }
+  .form-status{ font-size: 13px; color: var(--olive); font-weight:500; min-height: 18px; }
+
+  /* ---------- footer ---------- */
+  footer{
+    background: var(--olive-deep);
+    color: #C7CBBC;
+    padding: 64px 0 28px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size: 19px;
+    text-transform: uppercase;
+    color: #fff;
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 16px;
+  }
+  .footer-logo .mark{ width:26px; height:26px; }
+  footer p.desc{ font-size: 13.5px; max-width: 260px; color: #A9AD9C; }
+  footer h4{
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+  }
+  footer ul{ display:flex; flex-direction:column; gap: 11px; }
+  footer ul a{ font-size: 13.5px; color: #A9AD9C; }
+  footer ul a:hover{ color: #fff; }
+  .footer-bottom{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    font-size: 12.5px;
+    color: #82866F;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .nav-links{ display:none; }
+    .hamburger{ display:flex; }
+    .hero-inner{ grid-template-columns: 1fr; }
+    .hero-emblem{ max-width: 280px; }
+    .stats{ grid-template-columns: repeat(2,1fr); }
+    .cat-grid, .prod-grid{ grid-template-columns: repeat(2,1fr); }
+    .split{ grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid{ grid-template-columns: 1fr; }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px){
+    .wrap{ padding: 0 20px; }
+    .hero{ padding-top: 140px; }
+    .cat-grid, .prod-grid{ grid-template-columns: 1fr; }
+    .stats{ grid-template-columns: 1fr; }
+    .form-row{ grid-template-columns: 1fr; }
+    .nav-cta .btn-ghost{ display:none; }
+    .footer-grid{ grid-template-columns: 1fr; }
+    .hero-meta{ gap: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    html{ scroll-behavior: auto; }
+  }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">
-                <img src="/resimler/logo.png" alt="Başaran Askeri Ürünleri Logo" class="logo-image">
-            </a>
-            <ul class="nav-menu">
-                <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
-                <li><a href="products_page.html" class="nav-link">Ürünler</a></li>
-                <li><a href="#iletisim" class="nav-link">İletişim</a></li>
-            </ul>
-            <div class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">UYGUN FİYATLI KALİTELİ ASKERİ ÜRÜNLER</h1>
-            <p class="hero-subtitle">En yüksek kalitede askeri ekipmanlar, ürün, malzemeleriyle Türkiye'deki güvenlik güçlerini destekliyoruz</p>
-            <a href="products_page.html" class="cta-button">
-                <span>Ürünlerimizi Keşfedin</span>
-                <span>→</span>
-            </a>
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2 L28 7 V16 C28 23 22.5 28.3 16 30 C9.5 28.3 4 23 4 16 V7 Z" stroke="#333F2B" stroke-width="2" fill="none"/>
+        <path d="M16 9 V21 M10.5 15 H21.5" stroke="#A6803D" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+      Başaran Asker
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="urunler.html">Ürünler</a>
+      <a href="#kurumsal">Kurumsal</a>
+      <a href="#sertifikalar">Sertifikalar</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+902121234567" class="btn btn-ghost">0212 123 45 67</a>
+      <a href="#iletisim" class="btn btn-primary">Teklif Al</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobileMenu" style="display:none; border-top:1px solid var(--line); background:var(--bg);">
+    <div class="wrap" style="display:flex; flex-direction:column; padding:20px 32px; gap:16px;">
+      <a href="urunler.html">Ürünler</a>
+      <a href="#kurumsal">Kurumsal</a>
+      <a href="#sertifikalar">Sertifikalar</a>
+      <a href="#iletisim">İletişim</a>
+      <a href="tel:+902121234567" class="btn btn-ghost" style="width:fit-content;">0212 123 45 67</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-top:176px;">
+    <svg class="hero-grid-bg" viewBox="0 0 1180 620" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="grid" width="58" height="58" patternUnits="userSpaceOnUse">
+          <path d="M 58 0 L 0 0 0 58" fill="none" stroke="#E3E0D5" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="1180" height="620" fill="url(#grid)"/>
+      <circle cx="980" cy="140" r="3" fill="#A6803D"/>
+      <circle cx="980" cy="140" r="34" fill="none" stroke="#A6803D" stroke-width="1" opacity="0.5"/>
+      <circle cx="980" cy="140" r="64" fill="none" stroke="#A6803D" stroke-width="1" opacity="0.25"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <div>
+        <p class="eyebrow">Kurumsal Teçhizat Tedarikçisi</p>
+        <h1>Sahada güvenilir,<br>envanterde <em>eksiksiz</em> ekipman.</h1>
+        <p class="lede">Başaran Asker; savunma, güvenlik ve saha operasyonları için giyim, koruyucu ekipman ve taşıma sistemlerini tek bir kurumsal tedarik hattında bir araya getirir.</p>
+        <div class="hero-actions">
+          <a href="urunler.html" class="btn btn-primary">Ürün Kataloğunu İncele</a>
+          <a href="#iletisim" class="btn btn-ghost">Kurumsal Teklif İste</a>
         </div>
-        <div class="scroll-indicator">
-            <span>↓</span>
+        <div class="hero-meta">
+          <div>
+            <div class="num">17<span style="color:var(--brass)">+</span></div>
+            <div class="label">Yıllık Tecrübe</div>
+          </div>
+          <div>
+            <div class="num">600<span style="color:var(--brass)">+</span></div>
+            <div class="label">Envanter Kalemi</div>
+          </div>
+          <div>
+            <div class="num">22</div>
+            <div class="label">Ülkeye Sevkiyat</div>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="hero-emblem" aria-hidden="true">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="210" cy="210" r="205" fill="none" stroke="#CFCBBB" stroke-width="1"/>
+          <circle cx="210" cy="210" r="160" fill="none" stroke="#CFCBBB" stroke-width="1"/>
+          <path d="M210 30 L360 100 V210 C360 300 292 360 210 388 C128 360 60 300 60 210 V100 Z" fill="#FFFFFF" stroke="#333F2B" stroke-width="2"/>
+          <path d="M210 70 L325 122 V210 C325 282 273 332 210 355 C147 332 95 282 95 210 V122 Z" fill="none" stroke="#A6803D" stroke-width="1.5"/>
+          <path d="M210 120 V300 M140 210 H280" stroke="#333F2B" stroke-width="2"/>
+          <circle cx="210" cy="210" r="14" fill="#A6803D"/>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="hakkimizda" class="about">
-        <div class="container">
-            <h2 class="section-title">HAKKIMIZDA</h2>
-            <p class="section-subtitle">Güvenlik güçlerimizin ihtiyaçlarına yönelik en gelişmiş teknolojilerle üretilmiş çözümler sunuyoruz</p>
-            
-            <div class="about-grid">
-                <div class="about-card">
-                    <div class="card-icon">🛡️</div>
-                    <h3 class="card-title">Üstün Kalite</h3>
-                    <p class="card-text">Tüm ürünlerimiz en sıkı kalite kontrol süreçlerinden geçer ve uluslararası standartlarda üretilir. Sahada test edilmiş, güvenilir çözümler sunuyoruz.</p>
-                </div>
-                
-                <div class="about-card">
-                    <div class="card-icon">🔬</div>
-                    <h3 class="card-title">İnovasyon</h3>
-                    <p class="card-text">Ar-Ge departmanımız sürekli olarak yeni teknolojiler geliştirir. Modern savaş koşullarına uygun, gelecek odaklı ürünler tasarlıyoruz.</p>
-                </div>
-                
-                <div class="about-card">
-                    <div class="card-icon">🎯</div>
-                    <h3 class="card-title">Güvenilirlik</h3>
-                    <p class="card-text">25 yıllık tecrübemizle güvenlik güçlerimizin yanındayız. Kritik anlarda hayat kurtaran çözümlerimizle güven veriyoruz.</p>
-                </div>
-            </div>
+  <!-- STATS -->
+  <div class="wrap" style="margin-top:-1px;">
+    <div class="stats">
+      <div>
+        <div class="num">600<span>+</span></div>
+        <div class="label">Ürün Çeşidi</div>
+      </div>
+      <div>
+        <div class="num">17<span>+</span></div>
+        <div class="label">Yıl Sektör Tecrübesi</div>
+      </div>
+      <div>
+        <div class="num">22</div>
+        <div class="label">İhracat Ülkesi</div>
+      </div>
+      <div>
+        <div class="num">48<span> sa</span></div>
+        <div class="label">Kurumsal Teklif Süresi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section id="urunler">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Ürün Grupları</p>
+          <h2>Envanterimiz altı<br>ana kategoride toplanır.</h2>
         </div>
-    </section>
+        <p>Her kategori, kurum ve saha ihtiyacına göre özelleştirilebilir alt ürün gruplarıyla desteklenir.</p>
+      </div>
 
-    <!-- Products Section -->
-    <section id="urunler" class="products">
-        <div class="container">
-            <h2 class="section-title">ÜRÜNLERİMİZ</h2>
-            <p class="section-subtitle">Operasyonel ihtiyaçlara yönelik geniş ürün yelpazemizle tam destek sağlıyoruz</p>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">🦺</div>
-                    <div class="product-content">
-                        <h3 class="product-title">Taktik Yelekler</h3>
-                        <p class="product-description">Modüler yapısı ile farklı görev tiplerine uyarlanabilen, ergonomik tasarımıyla konfor sağlayan taktik yelekler.</p>
-                        <ul class="product-features">
-                            <li>Balistik koruma sınıfı IIIA</li>
-                            <li>MOLLE sistemi uyumlu</li>
-                            <li>Su geçirmez malzeme</li>
-                            <li>Nefes alabilir kumaş</li>
-                        </ul>
-                        <a href="#" class="learn-more-btn">Detayları Gör</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">🥾</div>
-                    <div class="product-content">
-                        <h3 class="product-title">Operasyonel Botlar</h3>
-                        <p class="product-description">Zorlu arazi koşullarında maksimum dayanıklılık ve konfor sağlayan, her türlü iklim koşuluna uygun botlar.</p>
-                        <ul class="product-features">
-                            <li>Su geçirmez Gore-Tex</li>
-                            <li>Darbe emici taban</li>
-                            <li>Çabuk kuruma özelliği</li>
-                            <li>Kaymaz taban teknolojisi</li>
-                        </ul>
-                        <a href="#" class="learn-more-btn">Detayları Gör</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">👔</div>
-                    <div class="product-content">
-                        <h3 class="product-title">Askeri Üniformalar</h3>
-                        <p class="product-description">Farklı görev alanları için özel tasarlanmış, dayanıklı ve fonksiyonel askeri üniformalar.</p>
-                        <ul class="product-features">
-                            <li>Ripstop kumaş teknolojisi</li>
-                            <li>Kamuflaj desenleri</li>
-                            <li>Çok cepli pratik tasarım</li>
-                            <li>Alev geciktirici özellik</li>
-                        </ul>
-                        <a href="#" class="learn-more-btn">Detayları Gör</a>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">🛡️</div>
-                    <div class="product-content">
-                        <h3 class="product-title">Koruyucu Ekipmanlar</h3>
-                        <p class="product-description">Kişisel güvenlik için gerekli tüm koruyucu ekipmanlar ve balistik koruma sistemleri.</p>
-                        <ul class="product-features">
-                            <li>Kask ve vizör sistemleri</li>
-                            <li>Balistik kalkanlar</li>
-                            <li>Diz ve dirsek koruyucuları</li>
-                            <li>NBC koruma ekipmanları</li>
-                        </ul>
-                        <a href="#" class="learn-more-btn">Detayları Gör</a>
-                    </div>
-                </div>
-            </div>
+      <div class="cat-grid" id="catGrid">
+
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M24 6 L36 10 V22 C36 30 31 36 24 40 C17 36 12 30 12 22 V10 Z"/><path d="M18 20 L24 26 L32 16"/></svg>
+          <span class="tag mono">BA-01</span>
+          <h3>Koruyucu Ekipman</h3>
+          <p>Kişisel koruma standartlarına uygun yelek, kask ve destek ekipmanları.</p>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="iletisim" class="contact">
-        <div class="container">
-            <h2 class="section-title">İLETİŞİM</h2>
-            <p class="section-subtitle">Güvenlik çözümlerimiz hakkında detaylı bilgi almak için bizimle iletişime geçin</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <h4>Adres</h4>
-                            <p>Dokuz Eylül, Ulaştırma Cd. No:69/A, 35410 <br>Gaziemir/İzmir</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <h4>Telefon</h4>
-                            <p>+90 535 728 0081<br>+90 232 258 0016</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div>
-                            <h4>E-posta</h4>
-                            <p>basaranaskeripazari@hotmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div>
-                            <h4>Çalışma Saatleri</h4>
-                            <p>Pazartesi - Cuma: 08:00 - 20:00<br>Cumartesi: 08:00 - 19:30</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Ad Soyad *</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">E-posta *</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone" class="form-label">Telefon</label>
-                        <input type="tel" id="phone" name="phone" class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Konu</label>
-                        <input type="text" id="subject" name="subject" class="form-input">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Mesaj *</label>
-                        <textarea id="message" name="message" class="form-input form-textarea" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Mesaj Gönder</button>
-                </form>
-            </div>
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8 L24 5 L32 8 L32 14 L38 18 V40 H10 V18 L16 14 Z"/><path d="M24 5 V16" /><path d="M18 24 H30 M18 30 H30"/></svg>
+          <span class="tag mono">BA-02</span>
+          <h3>Taktik Giyim</h3>
+          <p>Saha koşullarına dayanıklı üniforma, ceket ve katmanlı giyim sistemleri.</p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">BAŞARAN ASKERİ ÜRÜNLERİ</div>
-                <p>&copy; 2024 Başaran Askeri Ürünleri. Tüm hakları saklıdır.</p>
-            </div>
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 20 Q10 10 24 10 Q38 10 38 20 V32 Q38 40 24 40 Q10 40 10 32 Z"/><path d="M16 20 H32 M16 26 H32"/></svg>
+          <span class="tag mono">BA-03</span>
+          <h3>Ayakkabı &amp; Bot</h3>
+          <p>Uzun süreli saha kullanımına uygun bot ve ayakkabı serileri.</p>
         </div>
-    </footer>
 
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="12" y="14" width="24" height="28" rx="2"/><path d="M18 14 V10 Q18 6 24 6 Q30 6 30 10 V14"/><path d="M12 24 H36"/></svg>
+          <span class="tag mono">BA-04</span>
+          <h3>Çanta &amp; Taşıma</h3>
+          <p>Sırt çantası, tekli taşıma ve modüler yük taşıma sistemleri.</p>
+        </div>
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.querySelector('.nav-menu');
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 38 L24 10 L42 38 Z"/><path d="M24 10 V38 M16 24 H24"/></svg>
+          <span class="tag mono">BA-05</span>
+          <h3>Kamp &amp; Saha</h3>
+          <p>Barınma, uyku sistemleri ve saha lojistiği için destek ekipmanı.</p>
+        </div>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.classList.toggle('active');
-        });
+        <div class="cat-card">
+          <svg class="cat-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="16"/><path d="M24 24 L30 16 L26 24 L20 30 Z" fill="currentColor" stroke="none"/><path d="M24 8 V12 M24 36 V40 M8 24 H12 M36 24 H40"/></svg>
+          <span class="tag mono">BA-06</span>
+          <h3>Aksesuar &amp; Teçhizat</h3>
+          <p>Kemer, eldiven, kompas ve tamamlayıcı saha aksesuarları.</p>
+        </div>
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Gönderiliyor...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                submitBtn.textContent = 'Mesaj Gönderildi!';
-                submitBtn.classList.add('text-success');
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('text-success');
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
+      </div>
+    </div>
+  </section>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+  <!-- FEATURED PRODUCTS -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Öne Çıkan Kalemler</p>
+          <h2>Kurumların en sık<br>talep ettiği ürünler.</h2>
+        </div>
+        <p>Tüm ürünler için detaylı teknik döküman ve numune talebi kurumsal hattımızdan iletilebilir.</p>
+      </div>
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      <div class="prod-grid" id="prodGrid">
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+        <div class="prod-card">
+          <div class="prod-visual">
+            <span class="tag mono">BA-118</span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M24 6 L36 10 V22 C36 30 31 36 24 40 C17 36 12 30 12 22 V10 Z"/><path d="M18 20 L24 26 L32 16"/></svg>
+          </div>
+          <div class="prod-body">
+            <h3>Modüler Plakalı Yelek</h3>
+            <p>Ayarlanabilir omuz ve yan kayış sistemine sahip, çok noktalı taşıma kapasiteli koruyucu yelek.</p>
+            <div class="prod-specs"><span>STD: MIL-SPEC</span><span>REN: S–XXL</span></div>
+          </div>
+        </div>
 
-        // Observe elements for animation
-        document.querySelectorAll('.about-card, .product-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+        <div class="prod-card">
+          <div class="prod-visual">
+            <span class="tag mono">BA-224</span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 20 Q10 10 24 10 Q38 10 38 20 V32 Q38 40 24 40 Q10 40 10 32 Z"/><path d="M16 20 H32 M16 26 H32"/></svg>
+          </div>
+          <div class="prod-body">
+            <h3>Saha Botu — Uzun Konç</h3>
+            <p>Su iticili dış yüzey ve darbe emici taban ile uzun mesafe saha kullanımı için üretildi.</p>
+            <div class="prod-specs"><span>TABAN: KAUÇUK</span><span>NO: 38–46</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-visual">
+            <span class="tag mono">BA-341</span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="12" y="14" width="24" height="28" rx="2"/><path d="M18 14 V10 Q18 6 24 6 Q30 6 30 10 V14"/><path d="M12 24 H36"/></svg>
+          </div>
+          <div class="prod-body">
+            <h3>45L Modüler Sırt Çantası</h3>
+            <p>MOLLE uyumlu dış yüzey ve bölmeli iç düzenle uzun operasyonlar için taşıma çözümü.</p>
+            <div class="prod-specs"><span>HACİM: 45L</span><span>KUMAŞ: 1000D</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-visual">
+            <span class="tag mono">BA-097</span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M16 8 L24 5 L32 8 L32 14 L38 18 V40 H10 V18 L16 14 Z"/><path d="M18 24 H30 M18 30 H30"/></svg>
+          </div>
+          <div class="prod-body">
+            <h3>Katmanlı Saha Ceketi</h3>
+            <p>Rüzgar ve su geçirmez dış katman ile değiştirilebilir astar sistemi bir arada.</p>
+            <div class="prod-specs"><span>REN: S–3XL</span><span>MEVSİM: 4</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-visual">
+            <span class="tag mono">BA-402</span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 38 L24 10 L42 38 Z"/><path d="M24 10 V38 M16 24 H24"/></svg>
+          </div>
+          <div class="prod-body">
+            <h3>Saha Tipi Komuta Çadırı</h3>
+            <p>Hızlı kurulum iskeleti ve takviyeli tabanla değişken hava koşullarına uygun barınma.</p>
+            <div class="prod-specs"><span>KAPASİTE: 6 KİŞİ</span><span>KURULUM: 12 DK</span></div>
+          </div>
+        </div>
+
+        <div class="prod-card">
+          <div class="prod-visual">
+            <span class="tag mono">BA-556</span>
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="24" cy="24" r="16"/><path d="M24 24 L30 16 L26 24 L20 30 Z" fill="currentColor" stroke="none"/><path d="M24 8 V12 M24 36 V40 M8 24 H12 M36 24 H40"/></svg>
+          </div>
+          <div class="prod-body">
+            <h3>Taktik Kemer &amp; Aksesuar Seti</h3>
+            <p>Hızlı takım-çıkarım tokası ve modüler ataşman noktalarına sahip taşıma kemeri.</p>
+            <div class="prod-specs"><span>UZUNLUK: AYARLANABİLİR</span><span>RENK: 3 SEÇENEK</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top:48px;">
+        <a href="urunler.html" class="btn btn-brass">Tüm Kataloğu Görüntüle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KURUMSAL / CERTIFICATES -->
+  <section id="kurumsal">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Kurumsal Güvence</p>
+        <h2>Tedarik zincirinin<br>her adımı izlenebilir.</h2>
+        <p class="lede">Başaran Asker, kamu kurumları, özel güvenlik firmaları ve saha operasyonu yürüten kuruluşlarla uzun vadeli tedarik ilişkileri kurar. Her sevkiyat parti numarası ile izlenir ve talep halinde teknik doküman sağlanır.</p>
+        <a href="#iletisim" class="btn btn-ghost">Kurumsal Sunuma Ulaş</a>
+      </div>
+      <div class="institution-panel" id="sertifikalar">
+        <span class="tag" style="margin-bottom:20px;">Sertifikalar &amp; Standartlar</span>
+        <h3>Uluslararası standartlarla üretim ve tedarik</h3>
+        <p>Ürün gruplarımız, sektör standartlarına uygunluk açısından düzenli denetimden geçer.</p>
+        <ul class="cert-list" style="border-top:1px solid rgba(255,255,255,0.12); padding-top:20px;">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 L10 18 L20 6"/></svg>
+            <div><strong>ISO 9001</strong>Kalite yönetim sistemi sertifikasyonu</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 L10 18 L20 6"/></svg>
+            <div><strong>ISO 14001</strong>Çevre yönetim sistemi uygunluğu</div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 L10 18 L20 6"/></svg>
+            <div><strong>İhracat Yeterlilik Belgesi</strong>Sınır ötesi kurumsal sevkiyat yetkinliği</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="alt" id="iletisim">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <p class="eyebrow">İletişim</p>
+        <h2>Kurumsal teklif için<br>bize ulaşın.</h2>
+        <p>Talebinizi ilettikten sonra tedarik ekibimiz 48 saat içinde sizinle iletişime geçer.</p>
+
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5 h4 l2 5 -2.5 1.5 a11 11 0 0 0 6 6 l1.5 -2.5 5 2 v4 a2 2 0 0 1 -2 2 A16 16 0 0 1 3 7 a2 2 0 0 1 2 -2 z"/></svg>
+          <div><strong>Telefon</strong><span>0212 123 45 67</span></div>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6 h18 v12 h-18 Z"/><path d="M3 7 l9 6 9 -6"/></svg>
+          <div><strong>E-posta</strong><span>kurumsal@basaranasker.com</span></div>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21 C8 17 4 13.5 4 9.5 A8 8 0 0 1 20 9.5 C20 13.5 16 17 12 21 Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <div><strong>Adres</strong><span>Organize Sanayi Bölgesi, İstanbul</span></div>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7 v5 l3 3"/></svg>
+          <div><strong>Çalışma Saatleri</strong><span>Pazartesi – Cuma, 09:00 – 18:00</span></div>
+        </div>
+      </div>
+
+      <form id="quoteForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="adSoyad">Ad Soyad</label>
+            <input id="adSoyad" name="adSoyad" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="kurum">Kurum / Firma</label>
+            <input id="kurum" name="kurum" type="text" autocomplete="organization">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="telefon" type="tel" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="eposta">E-posta</label>
+            <input id="eposta" name="eposta" type="email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="kategori">İlgilendiğiniz Kategori</label>
+            <select id="kategori" name="kategori">
+              <option>Koruyucu Ekipman</option>
+              <option>Taktik Giyim</option>
+              <option>Ayakkabı &amp; Bot</option>
+              <option>Çanta &amp; Taşıma</option>
+              <option>Kamp &amp; Saha</option>
+              <option>Aksesuar &amp; Teçhizat</option>
+              <option>Diğer / Emin Değilim</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="mesaj">Talep Detayı</label>
+            <textarea id="mesaj" name="mesaj" placeholder="Adet, teslim süresi ve özel gereksinimlerinizi belirtebilirsiniz."></textarea>
+          </div>
+        </div>
+        <div class="form-foot">
+          <span class="form-note">Bilgileriniz yalnızca kurumsal teklif süreci için kullanılır.</span>
+        </div>
+        <div class="form-foot" style="margin-top:16px;">
+          <button type="submit" class="btn btn-primary">Teklif Talebi Gönder</button>
+          <span class="form-status" id="formStatus" role="status"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2 L28 7 V16 C28 23 22.5 28.3 16 30 C9.5 28.3 4 23 4 16 V7 Z" stroke="#EFEEE6" stroke-width="2" fill="none"/>
+            <path d="M16 9 V21 M10.5 15 H21.5" stroke="#C9A467" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          Başaran Asker
+        </div>
+        <p class="desc">Savunma, güvenlik ve saha operasyonları için kurumsal teçhizat tedariki. 2009’dan bu yana sahada.</p>
+      </div>
+      <div>
+        <h4>ÜRÜNLER</h4>
+        <ul>
+          <li><a href="urunler.html">Koruyucu Ekipman</a></li>
+          <li><a href="urunler.html">Taktik Giyim</a></li>
+          <li><a href="urunler.html">Çanta &amp; Taşıma</a></li>
+          <li><a href="urunler.html">Kamp &amp; Saha</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>KURUMSAL</h4>
+        <ul>
+          <li><a href="#kurumsal">Hakkımızda</a></li>
+          <li><a href="#sertifikalar">Sertifikalar</a></li>
+          <li><a href="#iletisim">Kurumsal Satış</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İLETİŞİM</h4>
+        <ul>
+          <li><a href="tel:+902121234567">0212 123 45 67</a></li>
+          <li><a href="mailto:kurumsal@basaranasker.com">kurumsal@basaranasker.com</a></li>
+          <li><a href="#iletisim">Organize Sanayi Bölgesi, İstanbul</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Başaran Asker. Tüm hakları saklıdır.</span>
+      <span>Bu site tanıtım amaçlıdır. Fiyat ve ürün bilgileri kurumsal teklif ile paylaşılır.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.style.display === 'block';
+    mobileMenu.style.display = open ? 'none' : 'block';
+    hamburger.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a=>{
+    a.addEventListener('click', ()=>{ mobileMenu.style.display='none'; hamburger.setAttribute('aria-expanded','false'); });
+  });
+
+  // Scroll reveal for cards
+  const revealTargets = document.querySelectorAll('.cat-card, .prod-card');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    revealTargets.forEach(t=>io.observe(t));
+  } else {
+    revealTargets.forEach(t=>t.classList.add('in'));
+  }
+
+  // Contact form (front-end only demo submission)
+  const form = document.getElementById('quoteForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.textContent = 'Talebiniz alındı. Ekibimiz en kısa sürede dönüş yapacaktır.';
+    form.reset();
+  });
+</script>
+
 </body>
 </html>

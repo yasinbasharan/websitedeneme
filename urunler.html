@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ürün Kataloğu | Başaran Asker</title>
+<meta name="description" content="Başaran Asker ürün kataloğu — koruyucu ekipman, taktik giyim, ayakkabı, çanta, kamp ve aksesuar kategorilerinde 50'nin üzerinde kurumsal ürün.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAFAF7;
+    --bg-alt: #F1EFE7;
+    --surface: #FFFFFF;
+    --ink: #1D2018;
+    --ink-soft: #5B5F52;
+    --ink-faint: #93968A;
+    --olive: #333F2B;
+    --olive-deep: #212A1B;
+    --stone: #8B8574;
+    --brass: #A6803D;
+    --brass-soft: #C9A467;
+    --line: #E3E0D5;
+    --line-strong: #CFCBBB;
+    --radius: 2px;
+    --shadow: 0 1px 2px rgba(29,32,24,0.04), 0 8px 24px rgba(29,32,24,0.05);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--olive-deep);
+    line-height: 1.15;
+  }
+
+  .mono{ font-family: 'JetBrains Mono', monospace; letter-spacing: 0.03em; }
+
+  a{ color: inherit; text-decoration: none; }
+  img,svg{ display:block; max-width:100%; }
+  ul{ list-style:none; }
+  button{ font-family: inherit; cursor:pointer; }
+
+  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:flex; align-items:center; gap:10px;
+    margin-bottom: 16px;
+  }
+  .eyebrow::before{ content:""; width: 22px; height:1px; background: var(--brass); display:inline-block; }
+
+  .skip-link{ position:absolute; left:-999px; top:0; background: var(--olive); color:#fff; padding:10px 16px; z-index:999; }
+  .skip-link:focus{ left: 16px; top:16px; }
+  :focus-visible{ outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  /* ---------- header ---------- */
+  header{
+    position: fixed; top:0; left:0; right:0; z-index: 500;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content: space-between; height: 76px; }
+  .logo{
+    font-family:'Oswald', sans-serif; font-weight:700; font-size: 20px;
+    letter-spacing: 0.03em; text-transform: uppercase;
+    display:flex; align-items:center; gap:10px; color: var(--olive-deep);
+  }
+  .logo .mark{ width: 30px; height: 30px; flex-shrink:0; }
+  .nav-links{ display:flex; align-items:center; gap: 36px; }
+  .nav-links a{
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500;
+    color: var(--ink-soft); position: relative; padding: 6px 0;
+  }
+  .nav-links a:hover, .nav-links a.active{ color: var(--olive-deep); }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background: var(--brass);
+    transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after{ transform: scaleX(1); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding: 12px 22px;
+    font-size: 13px; font-weight:600; text-transform: uppercase; letter-spacing: 0.08em;
+    border-radius: var(--radius); border: 1px solid transparent; transition: all .2s ease; white-space: nowrap;
+  }
+  .btn-primary{ background: var(--olive); color: #fff; }
+  .btn-primary:hover{ background: var(--olive-deep); }
+  .btn-ghost{ border-color: var(--line-strong); color: var(--ink); background: transparent; }
+  .btn-ghost:hover{ border-color: var(--olive); color: var(--olive-deep); }
+  .btn-brass{ background: var(--brass); color: #fff; }
+  .btn-brass:hover{ background: #8f6c30; }
+
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; padding: 8px; }
+  .hamburger span{ width: 22px; height:2px; background: var(--olive-deep); display:block; }
+
+  /* ---------- page header ---------- */
+  .page-head{
+    position: relative;
+    padding: 176px 0 64px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .page-head-grid{ position:absolute; inset:0; z-index:0; opacity:.5; }
+  .page-head .inner{ position:relative; z-index:1; max-width: 640px; }
+  .page-head h1{ font-size: clamp(34px, 4.4vw, 50px); margin-bottom: 18px; }
+  .page-head p{ color: var(--ink-soft); font-size: 16.5px; }
+
+  /* ---------- tag chip ---------- */
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.05em;
+    color: var(--olive); background: var(--bg-alt); border: 1px solid var(--line-strong);
+    padding: 4px 10px 4px 8px; border-radius: 1px;
+  }
+  .tag::before{ content:""; width:6px; height:6px; background: var(--brass); border-radius: 50%; display:inline-block; }
+
+  section{ padding: 64px 0 96px; }
+
+  /* ---------- filter bar ---------- */
+  .catalog-toolbar{
+    display:flex; flex-wrap:wrap; gap: 24px; align-items:center; justify-content: space-between;
+    padding-bottom: 32px; margin-bottom: 40px; border-bottom: 1px solid var(--line);
+  }
+  .filter-pills{ display:flex; flex-wrap:wrap; gap: 10px; }
+  .pill{
+    font-family:'JetBrains Mono', monospace; font-size: 12px; letter-spacing:0.03em;
+    padding: 9px 16px; border: 1px solid var(--line-strong); background: var(--surface);
+    color: var(--ink-soft); border-radius: 999px; transition: all .18s ease;
+  }
+  .pill:hover{ border-color: var(--olive); color: var(--olive-deep); }
+  .pill.active{ background: var(--olive); border-color: var(--olive); color: #fff; }
+  .pill .count{ opacity:.65; margin-left:4px; }
+
+  .search-box{
+    position: relative;
+    min-width: 240px;
+  }
+  .search-box input{
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    padding: 10px 14px 10px 38px;
+    font-family: inherit; font-size: 14px; color: var(--ink);
+    border-radius: var(--radius);
+  }
+  .search-box input:focus{ outline:none; border-color: var(--olive); }
+  .search-box svg{
+    position:absolute; left:12px; top:50%; transform: translateY(-50%);
+    width:16px; height:16px; color: var(--ink-faint); pointer-events:none;
+  }
+
+  .results-meta{
+    font-size: 13px; color: var(--ink-faint); margin-bottom: 28px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .results-meta strong{ color: var(--olive-deep); }
+
+  /* ---------- product grid ---------- */
+  .prod-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .prod-card{
+    background: var(--surface); border: 1px solid var(--line); overflow:hidden;
+    opacity:0; transform: translateY(14px);
+  }
+  .prod-card.in{ opacity:1; transform:none; transition: opacity .4s ease, transform .4s ease; }
+  .prod-visual{
+    height: 180px; background: var(--bg-alt); display:flex; align-items:center; justify-content:center;
+    position:relative; border-bottom: 1px solid var(--line);
+  }
+  
+  .prod-visual .tag{ position:absolute; top: 14px; left:14px; }
+  .prod-visual .cat-label{
+    position:absolute; top:14px; right:14px;
+    font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--ink-faint); background: var(--surface); border:1px solid var(--line);
+    padding: 3px 8px;
+  }
+  .prod-body{ padding: 20px 22px 24px; }
+  .prod-body h3{ font-size: 15.5px; margin-bottom: 8px; text-transform:none; letter-spacing:0; font-weight:600; }
+  .prod-body p{ font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+  .prod-specs{
+    display:flex; gap: 12px; flex-wrap:wrap;
+    font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--ink-faint);
+    border-top: 1px dashed var(--line-strong); padding-top: 12px;
+  }
+
+  .empty-state{
+    text-align:center; padding: 80px 20px; color: var(--ink-faint);
+    border: 1px dashed var(--line-strong); display:none;
+  }
+  .empty-state.show{ display:block; }
+  .empty-state h3{ color: var(--ink); font-size: 18px; margin-bottom: 8px; }
+
+  /* ---------- CTA strip ---------- */
+  .cta-strip{
+    background: var(--olive-deep); color:#fff; padding: 56px 0; margin-top: 32px;
+  }
+  .cta-strip .wrap{ display:flex; align-items:center; justify-content:space-between; gap: 24px; flex-wrap:wrap; }
+  .cta-strip h2{ color:#fff; font-size: clamp(22px,2.8vw,30px); margin-bottom:6px; }
+  .cta-strip p{ color:#C7CBBC; font-size: 14.5px; }
+
+  /* ---------- footer ---------- */
+  footer{ background: var(--olive-deep); color: #C7CBBC; padding: 64px 0 28px; }
+  .footer-grid{
+    display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px;
+    padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo{
+    font-family:'Oswald',sans-serif; font-weight:700; font-size: 19px; text-transform: uppercase;
+    color: #fff; display:flex; align-items:center; gap:10px; margin-bottom: 16px;
+  }
+  .footer-logo .mark{ width:26px; height:26px; }
+  footer p.desc{ font-size: 13.5px; max-width: 260px; color: #A9AD9C; }
+  footer h4{ color: #fff; font-size: 12px; letter-spacing: 0.08em; margin-bottom: 18px; }
+  footer ul{ display:flex; flex-direction:column; gap: 11px; }
+  footer ul a{ font-size: 13.5px; color: #A9AD9C; }
+  footer ul a:hover{ color: #fff; }
+  .footer-bottom{
+    display:flex; justify-content: space-between; padding-top: 24px; font-size: 12.5px;
+    color: #82866F; flex-wrap: wrap; gap: 10px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .nav-links{ display:none; }
+    .hamburger{ display:flex; }
+    .prod-grid{ grid-template-columns: repeat(2,1fr); }
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+    .catalog-toolbar{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (max-width: 600px){
+    .wrap{ padding: 0 20px; }
+    .page-head{ padding-top: 140px; }
+    .prod-grid{ grid-template-columns: 1fr; }
+    .nav-cta .btn-ghost{ display:none; }
+    .footer-grid{ grid-template-columns: 1fr; }
+    .search-box{ width:100%; }
+    .cta-strip .wrap{ flex-direction:column; align-items:flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 2 L28 7 V16 C28 23 22.5 28.3 16 30 C9.5 28.3 4 23 4 16 V7 Z" stroke="#333F2B" stroke-width="2" fill="none"/>
+        <path d="M16 9 V21 M10.5 15 H21.5" stroke="#A6803D" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+      Başaran Asker
+    </a>
+    <nav class="nav-links" aria-label="Ana menü">
+      <a href="urunler.html" class="active">Ürünler</a>
+      <a href="index.html#kurumsal">Kurumsal</a>
+      <a href="index.html#sertifikalar">Sertifikalar</a>
+      <a href="index.html#iletisim">İletişim</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+902121234567" class="btn btn-ghost">0212 123 45 67</a>
+      <a href="index.html#iletisim" class="btn btn-primary">Teklif Al</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobileMenu" style="display:none; border-top:1px solid var(--line); background:var(--bg);">
+    <div class="wrap" style="display:flex; flex-direction:column; padding:20px 32px; gap:16px;">
+      <a href="urunler.html">Ürünler</a>
+      <a href="index.html#kurumsal">Kurumsal</a>
+      <a href="index.html#sertifikalar">Sertifikalar</a>
+      <a href="index.html#iletisim">İletişim</a>
+      <a href="tel:+902121234567" class="btn btn-ghost" style="width:fit-content;">0212 123 45 67</a>
+    </div>
+  </div>
+</header>
+
+<main id="icerik">
+
+  <div class="page-head">
+    <svg class="page-head-grid" viewBox="0 0 1180 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <pattern id="grid2" width="58" height="58" patternUnits="userSpaceOnUse">
+          <path d="M 58 0 L 0 0 0 58" fill="none" stroke="#E3E0D5" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="1180" height="360" fill="url(#grid2)"/>
+    </svg>
+    <div class="wrap inner">
+      <p class="eyebrow">Ürün Kataloğu</p>
+      <h1>Tam envanter, tek sayfada.</h1>
+      <p>Altı kategori altında toplanan 50 üründen istediğinizi filtreleyin, teknik detaylarını inceleyin ve kurumsal teklif talebinizi iletin.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+
+      <div class="catalog-toolbar">
+        <div class="filter-pills" id="filterPills"></div>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21 L16.5 16.5"/></svg>
+          <input type="text" id="searchInput" placeholder="Ürün ara..." aria-label="Ürün ara">
+        </div>
+      </div>
+
+      <p class="results-meta" id="resultsMeta"></p>
+
+      <div class="prod-grid" id="prodGrid"></div>
+
+      <div class="empty-state" id="emptyState">
+        <h3>Sonuç bulunamadı</h3>
+        <p>Farklı bir anahtar kelime veya kategori deneyin.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="cta-strip">
+    <div class="wrap">
+      <div>
+        <h2>Aradığınızı bulamadınız mı?</h2>
+        <p>Kurumsal ihtiyacınıza özel ürün ve numune talebinizi iletin, ekibimiz sizinle iletişime geçsin.</p>
+      </div>
+      <a href="index.html#iletisim" class="btn btn-brass">Kurumsal Teklif İste</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2 L28 7 V16 C28 23 22.5 28.3 16 30 C9.5 28.3 4 23 4 16 V7 Z" stroke="#EFEEE6" stroke-width="2" fill="none"/>
+            <path d="M16 9 V21 M10.5 15 H21.5" stroke="#C9A467" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          Başaran Asker
+        </div>
+        <p class="desc">Savunma, güvenlik ve saha operasyonları için kurumsal teçhizat tedariki. 2009’dan bu yana sahada.</p>
+      </div>
+      <div>
+        <h4>ÜRÜNLER</h4>
+        <ul>
+          <li><a href="urunler.html">Koruyucu Ekipman</a></li>
+          <li><a href="urunler.html">Taktik Giyim</a></li>
+          <li><a href="urunler.html">Çanta &amp; Taşıma</a></li>
+          <li><a href="urunler.html">Kamp &amp; Saha</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>KURUMSAL</h4>
+        <ul>
+          <li><a href="index.html#kurumsal">Hakkımızda</a></li>
+          <li><a href="index.html#sertifikalar">Sertifikalar</a></li>
+          <li><a href="index.html#iletisim">Kurumsal Satış</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İLETİŞİM</h4>
+        <ul>
+          <li><a href="tel:+902121234567">0212 123 45 67</a></li>
+          <li><a href="mailto:kurumsal@basaranasker.com">kurumsal@basaranasker.com</a></li>
+          <li><a href="index.html#iletisim">Organize Sanayi Bölgesi, İstanbul</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Başaran Asker. Tüm hakları saklıdır.</span>
+      <span>Bu site tanıtım amaçlıdır. Fiyat ve ürün bilgileri kurumsal teklif ile paylaşılır.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Mobil Menü ----------
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.style.display === 'block';
+    mobileMenu.style.display = open ? 'none' : 'block';
+    hamburger.setAttribute('aria-expanded', String(!open));
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(a=>{
+    a.addEventListener('click', ()=>{ mobileMenu.style.display='none'; hamburger.setAttribute('aria-expanded','false'); });
+  });
+
+  // ---------- Değişkenler ----------
+  let PRODUCTS = [];
+  const CATEGORIES = ["Koruyucu Ekipman","Taktik Giyim","Ayakkabı & Bot","Çanta & Taşıma","Kamp & Saha","Aksesuar & Teçhizat"];
+  let activeCategory = "Tümü";
+  let searchTerm = "";
+
+  // ---------- Filtre Butonları (Pills) ----------
+  const filterPillsEl = document.getElementById('filterPills');
+  
+  function countFor(cat){
+    // Yeni JSON sistemine göre p.category kullanıldı
+    return cat === "Tümü" ? PRODUCTS.length : PRODUCTS.filter(p => p.category === cat).length;
+  }
+  
+  function renderPills(){
+    const all = ["Tümü", ...CATEGORIES];
+    filterPillsEl.innerHTML = all.map(cat => `
+      <button class="pill ${cat===activeCategory ? 'active':''}" data-cat="${cat}">
+        ${cat} <span class="count">(${countFor(cat)})</span>
+      </button>
+    `).join('');
+    
+    filterPillsEl.querySelectorAll('.pill').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        activeCategory = btn.getAttribute('data-cat');
+        renderPills();
+        renderGrid();
+      });
+    });
+  }
+
+  // ---------- Ürün Grid Sistemi ----------
+  const gridEl = document.getElementById('prodGrid');
+  const metaEl = document.getElementById('resultsMeta');
+  const emptyEl = document.getElementById('emptyState');
+
+  function renderGrid(){
+    let list = PRODUCTS;
+    
+    if(activeCategory !== "Tümü"){ 
+      list = list.filter(p => p.category === activeCategory); 
+    }
+    
+    if(searchTerm.trim()){
+      const q = searchTerm.trim().toLocaleLowerCase('tr');
+      list = list.filter(p => 
+        p.name.toLocaleLowerCase('tr').includes(q) || 
+        p.description.toLocaleLowerCase('tr').includes(q) || 
+        p.code.toLowerCase().includes(q)
+      );
+    }
+
+    metaEl.innerHTML = `<strong>${list.length}</strong> / ${PRODUCTS.length} ürün gösteriliyor`;
+
+    if(list.length === 0){
+      gridEl.innerHTML = '';
+      emptyEl.classList.add('show');
+      return;
+    }
+    emptyEl.classList.remove('show');
+
+    // JSON'dan gelen resim, fiyat ve açıklamalar kartlara basılıyor
+    gridEl.innerHTML = list.map(p => `
+      <div class="prod-card">
+        <div class="prod-visual">
+          <span class="tag mono">${p.code}</span>
+          <span class="cat-label">${p.category}</span>
+          <img src="${p.image_url}" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="prod-body">
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <h4 style="color: var(--brass); margin-top: 12px; font-size: 18px;">${p.price} TL</h4>
+        </div>
+      </div>
+    `).join('');
+
+    const cards = gridEl.querySelectorAll('.prod-card');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+      cards.forEach(c=>io.observe(c));
+    } else {
+      cards.forEach(c=>c.classList.add('in'));
+    }
+  }
+
+  document.getElementById('searchInput').addEventListener('input', (e)=>{
+    searchTerm = e.target.value;
+    renderGrid();
+  });
+
+  // ---------- JSON Dosyasını Okuma (Fetch) ----------
+  fetch('urunler.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("JSON dosyası bulunamadı.");
+      }
+      return response.json();
+    })
+    .then(data => {
+      PRODUCTS = data;
+      renderPills();
+      renderGrid();
+    })
+    .catch(error => {
+      console.error('Hata:', error);
+      gridEl.innerHTML = '<p style="color: red; grid-column: span 3; text-align: center; padding: 20px;">Ürünler yüklenirken bir hata oluştu. JSON dosyanızın aynı klasörde olduğundan emin olun.</p>';
+    });
+</script>
+
+</body>
+</html>

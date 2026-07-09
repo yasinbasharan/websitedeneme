@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "code": "BA-101",
+    "category": "Koruyucu Ekipman",
+    "name": "Modüler Plakalı Yelek",
+    "price": "1450",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-101.jpg",
+    "description": "Su itici kumaş, çok amaçlı modüler taktik yelek."
+  },
+  {
+    "id": 2,
+    "code": "BA-102",
+    "category": "Koruyucu Ekipman",
+    "name": "Balistik Kask",
+    "price": "3200",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-102.jpg",
+    "description": "Hafif ve dayanıklı kompozit balistik kask."
+  },
+  {
+    "id": 3,
+    "code": "BA-103",
+    "category": "Koruyucu Ekipman",
+    "name": "Taktik Diz Koruyucu Seti",
+    "price": "450",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-103.jpg",
+    "description": "Esnek bantlı, darbe emici dizlik seti."
+  },
+  {
+    "id": 4,
+    "code": "BA-104",
+    "category": "Koruyucu Ekipman",
+    "name": "Taktik Dirseklik Seti",
+    "price": "350",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-104.jpg",
+    "description": "Hareket kabiliyetini kısıtlamayan koruyucu dirseklik."
+  },
+  {
+    "id": 5,
+    "code": "BA-105",
+    "category": "Koruyucu Ekipman",
+    "name": "Yüz Koruma Maskesi",
+    "price": "200",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-105.jpg",
+    "description": "Nefes alabilen fileli tam yüz koruma maskesi."
+  },
+  {
+    "id": 6,
+    "code": "BA-106",
+    "category": "Koruyucu Ekipman",
+    "name": "Taktik Eldiven – Kışlık",
+    "price": "650",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-106.jpg",
+    "description": "Soğuk hava şartlarına uygun termal taktik eldiven."
+  },
+  {
+    "id": 7,
+    "code": "BA-107",
+    "category": "Koruyucu Ekipman",
+    "name": "Taktik Eldiven – Yazlık",
+    "price": "550",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-107.jpg",
+    "description": "Terletmez kumaşlı, parmak uçları dokunmatik eldiven."
+  },
+  {
+    "id": 8,
+    "code": "BA-108",
+    "category": "Koruyucu Ekipman",
+    "name": "Balistik Gözlük",
+    "price": "850",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-108.jpg",
+    "description": "Değiştirilebilir lensli, buğu yapmaz balistik gözlük."
+  },
+  {
+    "id": 9,
+    "code": "BA-109",
+    "category": "Koruyucu Ekipman",
+    "name": "Sırt Plaka Cebi",
+    "price": "300",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-109.jpg",
+    "description": "Yeleklere entegre edilebilir yedek plaka cebi."
+  },
+  {
+    "id": 10,
+    "code": "BA-110",
+    "category": "Koruyucu Ekipman",
+    "name": "Taktik Boyunluk",
+    "price": "150",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-110.jpg",
+    "description": "Rüzgar geçirmez polar boyunluk."
+  },
+  {
+    "id": 11,
+    "code": "BA-201",
+    "category": "Taktik Giyim",
+    "name": "Katmanlı Saha Ceketi",
+    "price": "1800",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-201.jpg",
+    "description": "Zorlu hava koşulları için çok katmanlı saha ceketi."
+  },
+  {
+    "id": 12,
+    "code": "BA-202",
+    "category": "Taktik Giyim",
+    "name": "Rüzgar Geçirmez Yağmurluk",
+    "price": "950",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-202.jpg",
+    "description": "Katlanabilir, ultra hafif tam koruma yağmurluk."
+  },
+  {
+    "id": 13,
+    "code": "BA-203",
+    "category": "Taktik Giyim",
+    "name": "Taktik Kargo Pantolon",
+    "price": "850",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-203.jpg",
+    "description": "Yırtılmaz ripstop kumaş, çok cepli operasyon pantolonu."
+  },
+  {
+    "id": 14,
+    "code": "BA-204",
+    "category": "Taktik Giyim",
+    "name": "Termal İç Giyim Seti",
+    "price": "600",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-204.jpg",
+    "description": "Vücut ısısını koruyan, nefes alabilen termal takım."
+  },
+  {
+    "id": 15,
+    "code": "BA-205",
+    "category": "Taktik Giyim",
+    "name": "Taktik Tişört",
+    "price": "350",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-205.jpg",
+    "description": "Hızlı kuruyan, antibakteriyel saha tişörtü."
+  },
+  {
+    "id": 16,
+    "code": "BA-206",
+    "category": "Taktik Giyim",
+    "name": "Kışlık Softshell Mont",
+    "price": "1650",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-206.jpg",
+    "description": "Su kaydırıcı yüzeyli, içi polar softshell mont."
+  },
+  {
+    "id": 17,
+    "code": "BA-207",
+    "category": "Taktik Giyim",
+    "name": "Taktik Şort",
+    "price": "450",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-207.jpg",
+    "description": "Yaz aylarında kullanıma uygun, dayanıklı kargo şort."
+  },
+  {
+    "id": 18,
+    "code": "BA-208",
+    "category": "Taktik Giyim",
+    "name": "Kamuflaj Bone",
+    "price": "150",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-208.jpg",
+    "description": "Ter emici iç astarlı standart kamuflaj bone."
+  },
+  {
+    "id": 19,
+    "code": "BA-209",
+    "category": "Taktik Giyim",
+    "name": "Taktik Sweatshirt",
+    "price": "700",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-209.jpg",
+    "description": "Fermuarlı ceplere sahip rahat kesim sweatshirt."
+  },
+  {
+    "id": 20,
+    "code": "BA-210",
+    "category": "Taktik Giyim",
+    "name": "Uzun Kollu Taktik Gömlek",
+    "price": "800",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-210.jpg",
+    "description": "Göğüs cepli, katlanabilir kollu saha gömleği."
+  },
+  {
+    "id": 21,
+    "code": "BA-301",
+    "category": "Ayakkabı & Bot",
+    "name": "Saha Botu – Uzun Konç",
+    "price": "2400",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-301.jpg",
+    "description": "Bilek destekli, kaymaz tabanlı uzun konç saha botu."
+  },
+  {
+    "id": 22,
+    "code": "BA-302",
+    "category": "Ayakkabı & Bot",
+    "name": "Saha Botu – Kısa Konç",
+    "price": "2200",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-302.jpg",
+    "description": "Günlük kullanıma uygun esnek kısa konç bot."
+  },
+  {
+    "id": 23,
+    "code": "BA-303",
+    "category": "Ayakkabı & Bot",
+    "name": "Su Geçirmez Yürüyüş Botu",
+    "price": "2600",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-303.jpg",
+    "description": "Gore-Tex benzeri membranlı tam su geçirmez bot."
+  },
+  {
+    "id": 24,
+    "code": "BA-304",
+    "category": "Ayakkabı & Bot",
+    "name": "Hafif Taktik Ayakkabı",
+    "price": "1800",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-304.jpg",
+    "description": "Şehir içi ve operasyonel kullanım için ultra hafif ayakkabı."
+  },
+  {
+    "id": 25,
+    "code": "BA-305",
+    "category": "Ayakkabı & Bot",
+    "name": "Çöl Tipi Bot",
+    "price": "2100",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-305.jpg",
+    "description": "Sıcak iklimler için nefes alabilen kum rengi bot."
+  },
+  {
+    "id": 26,
+    "code": "BA-306",
+    "category": "Ayakkabı & Bot",
+    "name": "Kışlık İzolasyonlu Bot",
+    "price": "2800",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-306.jpg",
+    "description": "-20 dereceye kadar yalıtım sağlayan kışlık kar botu."
+  },
+  {
+    "id": 27,
+    "code": "BA-307",
+    "category": "Ayakkabı & Bot",
+    "name": "Taktik Sandalet",
+    "price": "900",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-307.jpg",
+    "description": "Sulu ortamlar ve kamplar için sağlam tabanlı sandalet."
+  },
+  {
+    "id": 28,
+    "code": "BA-308",
+    "category": "Ayakkabı & Bot",
+    "name": "Bot İçi Termal Tabanlık",
+    "price": "250",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-308.jpg",
+    "description": "Ayak yorgunluğunu azaltan ısı yalıtımlı jel tabanlık."
+  },
+  {
+    "id": 29,
+    "code": "BA-309",
+    "category": "Ayakkabı & Bot",
+    "name": "Su Geçirmez Taktik Çorap",
+    "price": "400",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-309.jpg",
+    "description": "Özel membranlı, ayakları tamamen kuru tutan çorap."
+  },
+  {
+    "id": 30,
+    "code": "BA-310",
+    "category": "Ayakkabı & Bot",
+    "name": "Fermuarlı Operasyon Çizmesi",
+    "price": "2900",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-310.jpg",
+    "description": "Hızlı giyilip çıkarılabilen YKK fermuarlı çizme."
+  },
+  {
+    "id": 31,
+    "code": "BA-401",
+    "category": "Çanta & Taşıma",
+    "name": "45L Modüler Sırt Çantası",
+    "price": "1400",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-401.jpg",
+    "description": "Uzun süreli intikaller için geniş hacimli, MOLLE sistemli çanta."
+  },
+  {
+    "id": 32,
+    "code": "BA-402",
+    "category": "Çanta & Taşıma",
+    "name": "25L Günlük Operasyon Çantası",
+    "price": "950",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-402.jpg",
+    "description": "Günlük devriyeler ve şehir içi kullanım için kompakt çanta."
+  },
+  {
+    "id": 33,
+    "code": "BA-403",
+    "category": "Çanta & Taşıma",
+    "name": "Taktik Bel Çantası",
+    "price": "450",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-403.jpg",
+    "description": "Silah ve şarjör bölmeli, hızlı erişim sağlayan bel çantası."
+  },
+  {
+    "id": 34,
+    "code": "BA-404",
+    "category": "Çanta & Taşıma",
+    "name": "Uzun Ekipman Taşıma Çantası",
+    "price": "1200",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-404.jpg",
+    "description": "Tüfek ve uzun ekipmanlar için destekli taşıma kılıfı."
+  },
+  {
+    "id": 35,
+    "code": "BA-405",
+    "category": "Çanta & Taşıma",
+    "name": "Sırt Çantası Yağmur Kılıfı",
+    "price": "200",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-405.jpg",
+    "description": "Çantaları sağanak yağıştan koruyan su geçirmez kılıf."
+  },
+  {
+    "id": 36,
+    "code": "BA-406",
+    "category": "Çanta & Taşıma",
+    "name": "MOLLE Yardımcı Çanta",
+    "price": "300",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-406.jpg",
+    "description": "Büyük çantalara dışarıdan eklenebilir ekstra saklama alanı."
+  },
+  {
+    "id": 37,
+    "code": "BA-407",
+    "category": "Çanta & Taşıma",
+    "name": "Su Taşıma Sistemi (Hidrasyon)",
+    "price": "550",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-407.jpg",
+    "description": "Hareket halindeyken su içmeyi sağlayan 3 litrelik hortumlu sistem."
+  },
+  {
+    "id": 38,
+    "code": "BA-408",
+    "category": "Çanta & Taşıma",
+    "name": "Malzeme Taşıma Sandığı",
+    "price": "2500",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-408.jpg",
+    "description": "Darbeye ve suya dayanıklı sert plastik mühimmat sandığı."
+  },
+  {
+    "id": 39,
+    "code": "BA-409",
+    "category": "Çanta & Taşıma",
+    "name": "Gizli Taşıma Omuz Çantası",
+    "price": "600",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-409.jpg",
+    "description": "Sivil kullanım için uygun, ceket altı gizli taşıma çantası."
+  },
+  {
+    "id": 40,
+    "code": "BA-410",
+    "category": "Çanta & Taşıma",
+    "name": "Telsiz ve Telefon Cebi",
+    "price": "250",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-410.jpg",
+    "description": "Yelek ve kemerlere uyumlu evrensel iletişim ekipmanı cebi."
+  },
+  {
+    "id": 41,
+    "code": "BA-501",
+    "category": "Kamp & Saha",
+    "name": "Saha Tipi Komuta Çadırı",
+    "price": "4500",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-501.jpg",
+    "description": "Hızlı kurulan, 4 kişilik profesyonel saha çadırı."
+  },
+  {
+    "id": 42,
+    "code": "BA-502",
+    "category": "Kamp & Saha",
+    "name": "Tekli Kamp Çadırı",
+    "price": "1800",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-502.jpg",
+    "description": "Bireysel intikaller için ultra hafif, kamuflaj desenli çadır."
+  },
+  {
+    "id": 43,
+    "code": "BA-503",
+    "category": "Kamp & Saha",
+    "name": "Uyku Tulumu – 4 Mevsim",
+    "price": "1200",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-503.jpg",
+    "description": "Sıfırın altındaki derecelerde bile koruma sağlayan mumya tipi tulum."
+  },
+  {
+    "id": 44,
+    "code": "BA-504",
+    "category": "Kamp & Saha",
+    "name": "İzolasyonlu Kamp Matı",
+    "price": "400",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-504.jpg",
+    "description": "Zeminden gelen soğuğu tamamen kesen katlanabilir mat."
+  },
+  {
+    "id": 45,
+    "code": "BA-505",
+    "category": "Kamp & Saha",
+    "name": "Katlanır Saha Sedyesi",
+    "price": "2100",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-505.jpg",
+    "description": "Acil durumlar için alüminyum gövdeli, hafif sedye."
+  },
+  {
+    "id": 46,
+    "code": "BA-601",
+    "category": "Aksesuar & Teçhizat",
+    "name": "Taktik Kemer & Aksesuar Seti",
+    "price": "650",
+    "featured_on_homepage": true,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-601.jpg",
+    "description": "Metal tokalı, ağır yük taşıyabilen profesyonel teçhizat kemeri."
+  },
+  {
+    "id": 47,
+    "code": "BA-602",
+    "category": "Aksesuar & Teçhizat",
+    "name": "Çok Amaçlı Alet Seti (Multi-tool)",
+    "price": "950",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-602.jpg",
+    "description": "Pense, bıçak ve tornavida içeren paslanmaz çelik alet."
+  },
+  {
+    "id": 48,
+    "code": "BA-603",
+    "category": "Aksesuar & Teçhizat",
+    "name": "Taktik El Feneri",
+    "price": "750",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-603.jpg",
+    "description": "1000 lümen gücünde, şarj edilebilir su geçirmez fener."
+  },
+  {
+    "id": 49,
+    "code": "BA-604",
+    "category": "Aksesuar & Teçhizat",
+    "name": "Pusula – Saha Tipi",
+    "price": "350",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-604.jpg",
+    "description": "Askeri standartlarda, karanlıkta parlayan yön bulucu pusula."
+  },
+  {
+    "id": 50,
+    "code": "BA-605",
+    "category": "Aksesuar & Teçhizat",
+    "name": "İlk Yardım Çantası (Boş)",
+    "price": "250",
+    "featured_on_homepage": false,
+    "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-605.jpg",
+    "description": "Hızlı koparılabilir cırt cırtlı sisteme sahip medikal kese."
+  }
+]
