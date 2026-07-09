@@ -7,7 +7,9 @@
     "price": "1450",
     "featured_on_homepage": true,
     "image_url": "https://i.hizliresim.com/ffl3b0v.png",
-    "description": "Su itici kumaş, çok amaçlı modüler taktik yelek."
+    "description": "Su itici kumaş, çok amaçlı modüler taktik yelek.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
+    
   },
   {
     "id": 2,
@@ -17,7 +19,8 @@
     "price": "3200",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-102.jpg",
-    "description": "Hafif ve dayanıklı kompozit balistik kask."
+    "description": "Hafif ve dayanıklı kompozit balistik kask.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 3,
@@ -27,7 +30,8 @@
     "price": "450",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-103.jpg",
-    "description": "Esnek bantlı, darbe emici dizlik seti."
+    "description": "Esnek bantlı, darbe emici dizlik seti.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 4,
@@ -37,7 +41,8 @@
     "price": "350",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-104.jpg",
-    "description": "Hareket kabiliyetini kısıtlamayan koruyucu dirseklik."
+    "description": "Hareket kabiliyetini kısıtlamayan koruyucu dirseklik.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 5,
@@ -47,7 +52,8 @@
     "price": "200",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-105.jpg",
-    "description": "Nefes alabilen fileli tam yüz koruma maskesi."
+    "description": "Nefes alabilen fileli tam yüz koruma maskesi.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 6,
@@ -57,7 +63,8 @@
     "price": "650",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-106.jpg",
-    "description": "Soğuk hava şartlarına uygun termal taktik eldiven."
+    "description": "Soğuk hava şartlarına uygun termal taktik eldiven.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 7,
@@ -67,7 +74,8 @@
     "price": "550",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-107.jpg",
-    "description": "Terletmez kumaşlı, parmak uçları dokunmatik eldiven."
+    "description": "Terletmez kumaşlı, parmak uçları dokunmatik eldiven.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 8,
@@ -77,7 +85,8 @@
     "price": "850",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-108.jpg",
-    "description": "Değiştirilebilir lensli, buğu yapmaz balistik gözlük."
+    "description": "Değiştirilebilir lensli, buğu yapmaz balistik gözlük.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 9,
@@ -87,7 +96,8 @@
     "price": "300",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-109.jpg",
-    "description": "Yeleklere entegre edilebilir yedek plaka cebi."
+    "description": "Yeleklere entegre edilebilir yedek plaka cebi.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 10,
@@ -97,7 +107,8 @@
     "price": "150",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-110.jpg",
-    "description": "Rüzgar geçirmez polar boyunluk."
+    "description": "Rüzgar geçirmez polar boyunluk.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 11,
@@ -107,7 +118,8 @@
     "price": "1800",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-201.jpg",
-    "description": "Zorlu hava koşulları için çok katmanlı saha ceketi."
+    "description": "Zorlu hava koşulları için çok katmanlı saha ceketi.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 12,
@@ -117,7 +129,8 @@
     "price": "950",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-202.jpg",
-    "description": "Katlanabilir, ultra hafif tam koruma yağmurluk."
+    "description": "Katlanabilir, ultra hafif tam koruma yağmurluk.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 13,
@@ -127,7 +140,8 @@
     "price": "850",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-203.jpg",
-    "description": "Yırtılmaz ripstop kumaş, çok cepli operasyon pantolonu."
+    "description": "Yırtılmaz ripstop kumaş, çok cepli operasyon pantolonu.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 14,
@@ -137,7 +151,8 @@
     "price": "600",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-204.jpg",
-    "description": "Vücut ısısını koruyan, nefes alabilen termal takım."
+    "description": "Vücut ısısını koruyan, nefes alabilen termal takım.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 15,
@@ -147,7 +162,8 @@
     "price": "350",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-205.jpg",
-    "description": "Hızlı kuruyan, antibakteriyel saha tişörtü."
+    "description": "Hızlı kuruyan, antibakteriyel saha tişörtü.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 16,
@@ -157,7 +173,8 @@
     "price": "1650",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-206.jpg",
-    "description": "Su kaydırıcı yüzeyli, içi polar softshell mont."
+    "description": "Su kaydırıcı yüzeyli, içi polar softshell mont.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 17,
@@ -167,7 +184,8 @@
     "price": "450",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-207.jpg",
-    "description": "Yaz aylarında kullanıma uygun, dayanıklı kargo şort."
+    "description": "Yaz aylarında kullanıma uygun, dayanıklı kargo şort.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 18,
@@ -177,7 +195,8 @@
     "price": "150",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-208.jpg",
-    "description": "Ter emici iç astarlı standart kamuflaj bone."
+    "description": "Ter emici iç astarlı standart kamuflaj bone.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 19,
@@ -187,7 +206,8 @@
     "price": "700",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-209.jpg",
-    "description": "Fermuarlı ceplere sahip rahat kesim sweatshirt."
+    "description": "Fermuarlı ceplere sahip rahat kesim sweatshirt.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 20,
@@ -197,7 +217,8 @@
     "price": "800",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-210.jpg",
-    "description": "Göğüs cepli, katlanabilir kollu saha gömleği."
+    "description": "Göğüs cepli, katlanabilir kollu saha gömleği.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 21,
@@ -207,7 +228,8 @@
     "price": "2400",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-301.jpg",
-    "description": "Bilek destekli, kaymaz tabanlı uzun konç saha botu."
+    "description": "Bilek destekli, kaymaz tabanlı uzun konç saha botu.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 22,
@@ -217,7 +239,8 @@
     "price": "2200",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-302.jpg",
-    "description": "Günlük kullanıma uygun esnek kısa konç bot."
+    "description": "Günlük kullanıma uygun esnek kısa konç bot.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 23,
@@ -227,7 +250,8 @@
     "price": "2600",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-303.jpg",
-    "description": "Gore-Tex benzeri membranlı tam su geçirmez bot."
+    "description": "Gore-Tex benzeri membranlı tam su geçirmez bot.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 24,
@@ -237,7 +261,8 @@
     "price": "1800",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-304.jpg",
-    "description": "Şehir içi ve operasyonel kullanım için ultra hafif ayakkabı."
+    "description": "Şehir içi ve operasyonel kullanım için ultra hafif ayakkabı.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 25,
@@ -247,7 +272,8 @@
     "price": "2100",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-305.jpg",
-    "description": "Sıcak iklimler için nefes alabilen kum rengi bot."
+    "description": "Sıcak iklimler için nefes alabilen kum rengi bot.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 26,
@@ -257,7 +283,8 @@
     "price": "2800",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-306.jpg",
-    "description": "-20 dereceye kadar yalıtım sağlayan kışlık kar botu."
+    "description": "-20 dereceye kadar yalıtım sağlayan kışlık kar botu.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 27,
@@ -267,7 +294,8 @@
     "price": "900",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-307.jpg",
-    "description": "Sulu ortamlar ve kamplar için sağlam tabanlı sandalet."
+    "description": "Sulu ortamlar ve kamplar için sağlam tabanlı sandalet.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 28,
@@ -277,7 +305,8 @@
     "price": "250",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-308.jpg",
-    "description": "Ayak yorgunluğunu azaltan ısı yalıtımlı jel tabanlık."
+    "description": "Ayak yorgunluğunu azaltan ısı yalıtımlı jel tabanlık.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 29,
@@ -287,7 +316,8 @@
     "price": "400",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-309.jpg",
-    "description": "Özel membranlı, ayakları tamamen kuru tutan çorap."
+    "description": "Özel membranlı, ayakları tamamen kuru tutan çorap.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 30,
@@ -297,7 +327,8 @@
     "price": "2900",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-310.jpg",
-    "description": "Hızlı giyilip çıkarılabilen YKK fermuarlı çizme."
+    "description": "Hızlı giyilip çıkarılabilen YKK fermuarlı çizme.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 31,
@@ -307,7 +338,8 @@
     "price": "1400",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-401.jpg",
-    "description": "Uzun süreli intikaller için geniş hacimli, MOLLE sistemli çanta."
+    "description": "Uzun süreli intikaller için geniş hacimli, MOLLE sistemli çanta.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 32,
@@ -317,7 +349,8 @@
     "price": "950",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-402.jpg",
-    "description": "Günlük devriyeler ve şehir içi kullanım için kompakt çanta."
+    "description": "Günlük devriyeler ve şehir içi kullanım için kompakt çanta.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 33,
@@ -327,7 +360,8 @@
     "price": "450",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-403.jpg",
-    "description": "Silah ve şarjör bölmeli, hızlı erişim sağlayan bel çantası."
+    "description": "Silah ve şarjör bölmeli, hızlı erişim sağlayan bel çantası.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 34,
@@ -337,7 +371,8 @@
     "price": "1200",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-404.jpg",
-    "description": "Tüfek ve uzun ekipmanlar için destekli taşıma kılıfı."
+    "description": "Tüfek ve uzun ekipmanlar için destekli taşıma kılıfı.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 35,
@@ -347,7 +382,8 @@
     "price": "200",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-405.jpg",
-    "description": "Çantaları sağanak yağıştan koruyan su geçirmez kılıf."
+    "description": "Çantaları sağanak yağıştan koruyan su geçirmez kılıf.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 36,
@@ -357,7 +393,8 @@
     "price": "300",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-406.jpg",
-    "description": "Büyük çantalara dışarıdan eklenebilir ekstra saklama alanı."
+    "description": "Büyük çantalara dışarıdan eklenebilir ekstra saklama alanı.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 37,
@@ -367,7 +404,8 @@
     "price": "550",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-407.jpg",
-    "description": "Hareket halindeyken su içmeyi sağlayan 3 litrelik hortumlu sistem."
+    "description": "Hareket halindeyken su içmeyi sağlayan 3 litrelik hortumlu sistem.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 38,
@@ -377,7 +415,8 @@
     "price": "2500",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-408.jpg",
-    "description": "Darbeye ve suya dayanıklı sert plastik mühimmat sandığı."
+    "description": "Darbeye ve suya dayanıklı sert plastik mühimmat sandığı.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 39,
@@ -387,7 +426,8 @@
     "price": "600",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-409.jpg",
-    "description": "Sivil kullanım için uygun, ceket altı gizli taşıma çantası."
+    "description": "Sivil kullanım için uygun, ceket altı gizli taşıma çantası.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 40,
@@ -397,7 +437,8 @@
     "price": "250",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-410.jpg",
-    "description": "Yelek ve kemerlere uyumlu evrensel iletişim ekipmanı cebi."
+    "description": "Yelek ve kemerlere uyumlu evrensel iletişim ekipmanı cebi.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 41,
@@ -407,7 +448,8 @@
     "price": "4500",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-501.jpg",
-    "description": "Hızlı kurulan, 4 kişilik profesyonel saha çadırı."
+    "description": "Hızlı kurulan, 4 kişilik profesyonel saha çadırı.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 42,
@@ -417,7 +459,8 @@
     "price": "1800",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-502.jpg",
-    "description": "Bireysel intikaller için ultra hafif, kamuflaj desenli çadır."
+    "description": "Bireysel intikaller için ultra hafif, kamuflaj desenli çadır.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 43,
@@ -427,7 +470,8 @@
     "price": "1200",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-503.jpg",
-    "description": "Sıfırın altındaki derecelerde bile koruma sağlayan mumya tipi tulum."
+    "description": "Sıfırın altındaki derecelerde bile koruma sağlayan mumya tipi tulum.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 44,
@@ -437,7 +481,8 @@
     "price": "400",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-504.jpg",
-    "description": "Zeminden gelen soğuğu tamamen kesen katlanabilir mat."
+    "description": "Zeminden gelen soğuğu tamamen kesen katlanabilir mat.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 45,
@@ -447,7 +492,8 @@
     "price": "2100",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-505.jpg",
-    "description": "Acil durumlar için alüminyum gövdeli, hafif sedye."
+    "description": "Acil durumlar için alüminyum gövdeli, hafif sedye.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 46,
@@ -457,7 +503,8 @@
     "price": "650",
     "featured_on_homepage": true,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-601.jpg",
-    "description": "Metal tokalı, ağır yük taşıyabilen profesyonel teçhizat kemeri."
+    "description": "Metal tokalı, ağır yük taşıyabilen profesyonel teçhizat kemeri.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 47,
@@ -467,7 +514,8 @@
     "price": "950",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-602.jpg",
-    "description": "Pense, bıçak ve tornavida içeren paslanmaz çelik alet."
+    "description": "Pense, bıçak ve tornavida içeren paslanmaz çelik alet.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 48,
@@ -477,7 +525,8 @@
     "price": "750",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-603.jpg",
-    "description": "1000 lümen gücünde, şarj edilebilir su geçirmez fener."
+    "description": "1000 lümen gücünde, şarj edilebilir su geçirmez fener.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 49,
@@ -487,7 +536,8 @@
     "price": "350",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-604.jpg",
-    "description": "Askeri standartlarda, karanlıkta parlayan yön bulucu pusula."
+    "description": "Askeri standartlarda, karanlıkta parlayan yön bulucu pusula.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   },
   {
     "id": 50,
@@ -497,6 +547,7 @@
     "price": "250",
     "featured_on_homepage": false,
     "image_url": "https://ornek-bulut-sunucusu.com/resimler/ba-605.jpg",
-    "description": "Hızlı koparılabilir cırt cırtlı sisteme sahip medikal kese."
+    "description": "Hızlı koparılabilir cırt cırtlı sisteme sahip medikal kese.",
+    "buy_link": "https://www.hepsiburada.com/senin-yelek-urun-linkin"
   }
 ]
